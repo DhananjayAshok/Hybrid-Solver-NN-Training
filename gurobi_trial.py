@@ -5,7 +5,7 @@ import torch
 
 
 output_dim = 10
-input_dim = 12
+input_dim = 1875
 batch_size = 32
 # dummy example of a NN with a single layer.
 X = torch.randint(0, 1, (batch_size, input_dim))

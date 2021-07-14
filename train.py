@@ -8,18 +8,16 @@ train_loader = torch.utils.data.DataLoader(
                    transform=transforms.Compose([
                        transforms.ToTensor(),
                        transforms.Normalize((0.1307,), (0.3081,)),
-                       lambda x: 2*(x>0)-1,
                        lambda x: x.float(),
             ])),
-    batch_size=16, shuffle=True)
+    batch_size=32, shuffle=True)
 test_loader = torch.utils.data.DataLoader(
     datasets.MNIST('data', train=False, transform=transforms.Compose([
                        transforms.ToTensor(),
                        transforms.Normalize((0.1307,), (0.3081,)),
-                       lambda x: 2*(x>0)-1,
                        lambda x: x.float(),
                    ])),
-    batch_size=16, shuffle=True)
+    batch_size=32, shuffle=True)
 
 
 model = Model()
@@ -28,14 +26,14 @@ train_losses = []
 train_counter = []
 test_losses = []
 test_counter = [i*len(train_loader.dataset) for i in range(10 + 1)]
-metric = nn.L1Loss()
+metric = nn.CrossEntropyLoss()
 log_interval = 1500
 
 def encoder(labels):
     true_labels = []
     for item in labels:
-        base = [-1 for i in range(10)]
-        base[item] = 1
+        base = [0.0 for i in range(10)]
+        base[item] = 1.0
         true_labels.append(base)
     return torch.Tensor(true_labels)
 
@@ -44,7 +42,7 @@ def train(epoch):
   for batch_idx, (data, target) in enumerate(train_loader):
     optimizer.zero_grad()
     output = model(data)
-    target = encoder(target)
+    #target = encoder(target)
     #print(output.shape, target.shape)
     loss = metric(output, target)
     loss.backward()
