@@ -9,13 +9,13 @@ class MILPNet(nn.Module):
     Model will be an instance of a Sequential model, i.e list of NamedLinear layers
     The names of the layers must be index numbers.
     """
-    def __init__(self, model, classification=True):
+    def __init__(self, model, classification=True, w_range=10):
         nn.Module.__init__(self)
         self.model = model
         self.classification = classification
         self.n_layers = len(self.model)
         self.m = None
-        self.initialize_mlp_model() # defines self.m
+        self.initialize_mlp_model(w_range=w_range) # defines self.m
 
     def forward(self, x):
         return self.model(x)
@@ -51,7 +51,7 @@ class MILPNet(nn.Module):
         self.m.params.NonConvex = 2
 
 
-    def build_mlp_model(self, X, y):
+    def build_mlp_model(self, X, y, max_loss=None):
         """
         Encodes the entire network because one layer is the network here.
         :return:
@@ -59,10 +59,11 @@ class MILPNet(nn.Module):
         batch_size , n_units = X.shape
         inp_out_var_dict = {} # (n, l, j, 0) is the value of the forward pass pre activation of layer l, neuron j
         # when data point n is fed into the model. The input into layer l+1 is (n, l, j, 1) i.e post activation.
+        self.loss_vars = []
         for l in range(self.n_layers):
             output_dim = self.model[l].out_features
             input_dim = self.model[l].in_features
-            activation = (self.model[l].activation is not None)
+            activation = (self.model[l].activation == "relu")
             for n in range(batch_size):
                 output_constraint_string = None
                 for j in range(output_dim):
@@ -75,40 +76,51 @@ class MILPNet(nn.Module):
                         weighted_sum_string = " + ".join([f"self.w_b_var_dict[{(l, i, j)}] * {X[n][i]}"
                                                         for i in range(input_dim)]) +  f" + self.w_b_var_dict[{(l, j)}]"
                     else:
-                        weighted_sum_string = " + ".join([f"self.w_b_var_dict[{(l, i, j)}] * inp_out_var_dict[{(n, l-1, i, 1)}]"
+                        weighted_sum_string = " + ".join([f"self.w_b_var_dict[{(l, i, j)}] * " + inp_out_var_dict[(n, l-1, i)]
                                                           for i in range(input_dim)]) + f" + self.w_b_var_dict[{(l, j)}]"
-                    inp_out_var_dict[(n, l, j, 0)] = self.m.addVar(vtype=GRB.CONTINUOUS, name=f"ws_{n},{l},{j},{0}")
-                    inp_out_var_dict[(n, l, j, 1)] = self.m.addVar(vtype=GRB.CONTINUOUS, name=f"act_{n},{l},{j},{1}")
-                    weighted_sum_constraint_string = weighted_sum_string + f"== inp_out_var_dict[{(n, l, j, 0)}]"
-
                     if activation:
-                        activation_constraint_string = f"inp_out_var_dict[{(n, l, j, 1)}] == " \
-                                                       f"gp.max_(inp_out_var_dict[{(n, l, j, 0)}], 0)"
+                        inp_out_var_dict[(n, l, j)] = "gp.max_("+weighted_sum_string+", 0)"
                     else:
-                        activation_constraint_string = f"inp_out_var_dict[{(n, l, j, 1)}] == inp_out_var_dict[{(n, l, j, 0)}]"
+                        inp_out_var_dict[(n, l, j)] = weighted_sum_string
 
-                    self.m.addConstr(eval(weighted_sum_constraint_string), f"WS_{l},{j} datapoint {n}")
-                    self.m.addConstr(eval(activation_constraint_string), f"ACT_{l},{j} datapoint {n}")
                     if l == self.n_layers-1 and not self.classification:
-                        self.m.addConstr(inp_out_var_dict[(n, l, j, 1)] == y[n][j], f"Y_{j} datapoint {n}")
-
+                        if max_loss is None:
+                            target_string = inp_out_var_dict[(n, l, j)] + f" == {y[n][j]}"
+                            self.m.addConstr(eval(target_string), f"Y_{j} datapoint {n}")
+                        else:
+                            loss = self.m.addVar(ub=max_loss, vtype=GRB.CONTINUOUS, name="Loss_{j}_{n}")
+                            self.loss_vars.append(loss)
+                            lhs_target = inp_out_var_dict[(n, l, j)] + f"- {y[n][j]}"
+                            self.m.addConstr(eval(lhs_target) <= loss, f"Y_{j} datapoint {n} bound below {max_loss}")
+                            self.m.addConstr(-eval(lhs_target) <= loss, f"Y_{j} datapoint {n} bound below {max_loss}")
                 if l == self.n_layers - 1:
                     if self.classification:
                         correct_label = torch.argmax(y[n])
-                        max_string = "gp._max(" + ", ".join([f"inp_out_var_dict[{(n, l, j, 1)}]"] for j in output_dim) \
-                                     + ")"
-                        output_constraint_string = max_string + f" == inp_out_var_dict[{(n, l, correct_label, 1)}]"
-                        self.m.addConstr(eval(output_constraint_string), f"Output datapoint {n}")
+                        correct_expression = inp_out_var_dict[(n, l, int(correct_label))]
+                        for j in range(output_dim):
+                            if j == correct_label:
+                                pass
+                            else:
+                                self.m.addConstr(eval(correct_expression) + 0.0001 >= eval(inp_out_var_dict[(n, l, j)]),
+                                                 f"Output datapoint {n} {j} vs {correct_label}")
+        print(f"Finished Building Model")
         return
 
 
     def solve_mlp_model(self):
         self.m.optimize()
+        self.report_mlp()
 
     def solve_and_assign(self):
         self.solve_mlp_model()
         self.assign()
 
+    def report_mlp(self, verbose=False):
+        print(self.m)
+        if verbose:
+            print("Printing Variables")
+            for item in self.m.getVars():
+                print(item)
 
 class NamedLinear(nn.Linear):
 

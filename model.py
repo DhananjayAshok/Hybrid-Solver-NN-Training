@@ -1,13 +1,13 @@
 from torch import argmax
 import torch.nn as nn
-from gurobi_modules import NamedLinear, NamedConv2d
+from gurobi_modules import NamedLinear, NamedConv2d, MILPNet
 
 
 class Model(nn.Module):
     def __init__(self):
         nn.Module.__init__(self)
         self.conv = NamedConv2d(1, 3, 4)
-        self.fc = NamedLinear(1875, 10)
+        self.fc = MILPNet(nn.Sequential(NamedLinear(1875, 10)), w_range=1)
 
     def forward(self, x):
         h = self.forward_till_dense(x)

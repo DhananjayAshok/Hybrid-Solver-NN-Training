@@ -57,6 +57,38 @@ def train(epoch):
       #torch.save(model.state_dict(), '/results/model.pth')
       #torch.save(optimizer.state_dict(), '/results/optimizer.pth')
 
+def milp_train():
+    for batch_idx, (data, target) in enumerate(train_loader):
+        X = model.forward_till_dense(data)
+        output = model(data)
+        # target = encoder(target)
+        # print(output.shape, target.shape)
+        beforeloss = metric(output, target)
+
+        model.fc.build_mlp_model(X, target, )
+        model.fc.solve_and_assign()
+        output = model(data)
+        loss = metric(output, target)
+        print(f"Before loss was {beforeloss.item()}")
+        print(f"Now loss is {loss.item()}")
+        break
+
+def eval():
+    model.eval()
+    val_losses = []
+    for batch_idx, (data, target) in enumerate(train_loader):
+        output = model(data)
+        loss = metric(output, target)
+        val_losses.append(loss.item())
+    val_losses = torch.Tensor(val_losses)
+    print(f"Mean Loss: {torch.mean(val_losses)} Variance Loss: {torch.std(val_losses)}")
+
 for epoch in range(1, 10 + 1):
   train(epoch)
   pass
+
+eval()
+
+milp_train()
+
+eval()
