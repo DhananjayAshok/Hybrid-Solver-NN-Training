@@ -85,7 +85,7 @@ class MILPNet(nn.Module):
                         activation_constraint_string = f"inp_out_var_dict[{(n, l, j, 1)}] == " \
                                                        f"gp.max_(inp_out_var_dict[{(n, l, j, 0)}], 0)"
                     else:
-                        activation_constraint_string = f"inp_out_var_dict[{(n, l, j, 1)}] == [{(n, l, j, 0)}]"
+                        activation_constraint_string = f"inp_out_var_dict[{(n, l, j, 1)}] == inp_out_var_dict[{(n, l, j, 0)}]"
 
                     self.m.addConstr(eval(weighted_sum_constraint_string), f"WS_{l},{j} datapoint {n}")
                     self.m.addConstr(eval(activation_constraint_string), f"ACT_{l},{j} datapoint {n}")

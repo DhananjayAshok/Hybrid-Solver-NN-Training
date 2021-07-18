@@ -6,7 +6,7 @@ import sys
 #print(sys.getrecursionlimit())
 #sys.setrecursionlimit(1500)
 
-output_dim = 2
+output_dim = 10
 input_dim = 1875
 batch_size = 32
 # dummy example of a NN with a single layer.
@@ -15,7 +15,7 @@ Y = X[:, :output_dim] + 1
 X_v = torch.rand(batch_size, input_dim)
 Y_v = X_v[:, :output_dim] + 1
 
-sequential_model = nn.Sequential(NamedLinear(input_dim, 10, activation="relu"), NamedLinear(10, output_dim))
+sequential_model = nn.Sequential(NamedLinear(input_dim, 20, activation="relu"), NamedLinear(20, output_dim))
 model = MILPNet(sequential_model, classification=False)
 model.build_mlp_model(X, Y)
 model.solve_and_assign()
