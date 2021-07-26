@@ -8,7 +8,7 @@ import sys
 
 output_dim = 10
 input_dim = 1875
-batch_size = 40
+batch_size = 50
 # dummy example of a NN with a single layer.
 X = torch.rand(batch_size, input_dim)
 Y = X[:, :output_dim] + 1
@@ -17,7 +17,9 @@ Y_v = X_v[:, :output_dim] + 1
 
 sequential_model = nn.Sequential(NamedLinear(input_dim, output_dim))
 model = MILPNet(sequential_model, classification=False)
-model.build_mlp_model(X, Y, max_loss=0.0000001)
+
+
+model.build_mlp_model(X, Y, max_loss=0.01)
 model.solve_and_assign()
 relu = nn.ReLU()
 metric = nn.L1Loss()
