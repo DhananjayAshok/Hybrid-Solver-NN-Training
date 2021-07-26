@@ -1,49 +1,46 @@
 import torch
-
+import mnist as m_train
+from toy_data import IdentityDataset
 from model import *
 from torchvision import datasets, transforms
 
-train_loader = torch.utils.data.DataLoader(
-    datasets.MNIST('data', train=True, download=True,
-                   transform=transforms.Compose([
-                       transforms.ToTensor(),
-                       transforms.Normalize((0.1307,), (0.3081,)),
-                       lambda x: x.float(),
-            ])),
-    batch_size=32, shuffle=True)
-test_loader = torch.utils.data.DataLoader(
-    datasets.MNIST('data', train=False, transform=transforms.Compose([
-                       transforms.ToTensor(),
-                       transforms.Normalize((0.1307,), (0.3081,)),
-                       lambda x: x.float(),
-                   ])),
-    batch_size=32, shuffle=True)
+def get_loaders(key):
+    if key == "mnist":
+        return m_train.loaders()
+    elif key == "identity":
+        return IdentityDataset.loaders()
+
+def get_model(key):
+    if key == "mnist":
+        return m_train.model()
+    elif key == "identity":
+        return IdentityDataset.model()
+
+def get_metric(key):
+    if key == "mnist":
+        return m_train.metric()
+    elif key == "identity":
+        return IdentityDataset.metric()
 
 
-model = Model()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.001)
-train_losses = []
-train_counter = []
-test_losses = []
-test_counter = [i*len(train_loader.dataset) for i in range(10 + 1)]
-metric = nn.CrossEntropyLoss()
+epochs = 100
+lr = 0.001
+key = "identity"
+
+train_loader, test_loader = get_loaders(key)
+model = get_model(key)
+metric = get_metric(key)
+optimizer = torch.optim.SGD(model.parameters(), lr=lr)
+train_losses, train_counter, test_losses = [], [], []
+test_counter = [i*len(train_loader.dataset) for i in range(epochs + 1)]
 log_interval = 1500
-
-def encoder(labels):
-    true_labels = []
-    for item in labels:
-        base = [0.0 for i in range(10)]
-        base[item] = 1.0
-        true_labels.append(base)
-    return torch.Tensor(true_labels)
+l1_metric = nn.L1Loss()
 
 def train(epoch):
   model.train()
   for batch_idx, (data, target) in enumerate(train_loader):
     optimizer.zero_grad()
     output = model(data)
-    #target = encoder(target)
-    #print(output.shape, target.shape)
     loss = metric(output, target)
     loss.backward()
     optimizer.step()
@@ -64,13 +61,23 @@ def milp_train():
         # target = encoder(target)
         # print(output.shape, target.shape)
         beforeloss = metric(output, target)
-
-        model.fc.build_mlp_model(X, target, )
-        model.fc.solve_and_assign()
+        beforeL1 = None
+        afterL1 = None
+        if model.milp_model.classification:
+            model.milp_model.build_mlp_model(X, target)
+        else:
+            beforeL1 = l1_metric(output, target)
+            model.milp_model.build_mlp_model(X, target, max_loss=float(beforeL1))
+        model.milp_model.solve_and_assign()
         output = model(data)
         loss = metric(output, target)
+        if not model.milp_model.classification:
+            afterL1 = l1_metric(output, target)
         print(f"Before loss was {beforeloss.item()}")
         print(f"Now loss is {loss.item()}")
+        if not model.milp_model.classification:
+            print(f"Before L1 was {beforeL1.item()}")
+            print(f"Now L1 is {afterL1.item()}")
         break
 
 def eval():
@@ -83,7 +90,7 @@ def eval():
     val_losses = torch.Tensor(val_losses)
     print(f"Mean Loss: {torch.mean(val_losses)} Variance Loss: {torch.std(val_losses)}")
 
-for epoch in range(1, 10 + 1):
+for epoch in range(1, epochs + 1):
   train(epoch)
   pass
 

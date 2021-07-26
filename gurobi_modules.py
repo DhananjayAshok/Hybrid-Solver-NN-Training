@@ -23,6 +23,9 @@ class MILPNet(nn.Module):
         return self.model(x)
 
     def assign(self):
+        if self.m.SolCount <= 0:
+            print(f"Cannot Assign: MLP solver found no solutions")
+            return
         with torch.no_grad():
             for l in range(self.n_layers):
                 output_dim = self.model[l].out_features
@@ -124,6 +127,9 @@ class MILPNet(nn.Module):
         self.assign()
 
     def report_mlp(self, verbose=False):
+        if self.m.SolCount <= 0:
+            print(f"Cannot Report: MLP solver found no solutions")
+            return
         print(self.m)
         if len(self.constraints) != 0:
             self.loop_constraints(verbose=verbose)
@@ -159,7 +165,6 @@ class NamedConv2d(nn.Conv2d):
         super(NamedConv2d, self).__init__(*kargs, **kwargs)
         self.name = name
         self.activation = activation
-
 
 def utils_eval_expression(model, expression, cuteq=False):
     expression = expression.replace("]", "].x")

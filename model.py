@@ -3,15 +3,15 @@ import torch.nn as nn
 from gurobi_modules import NamedLinear, NamedConv2d, MILPNet
 
 
-class Model(nn.Module):
+class MNISTModel(nn.Module):
     def __init__(self):
         nn.Module.__init__(self)
         self.conv = NamedConv2d(1, 3, 4)
-        self.fc = MILPNet(nn.Sequential(NamedLinear(1875, 10)), w_range=1)
+        self.milp_model = MILPNet(nn.Sequential(NamedLinear(1875, 10)), w_range=1)
 
     def forward(self, x):
         h = self.forward_till_dense(x)
-        y = self.fc(h)
+        y = self.milp_model(h)
         out = y
         return out
 
@@ -25,3 +25,25 @@ class Model(nn.Module):
         logits = self.forward(x)
         predictions = argmax(logits, dim=1)
         return predictions
+
+
+class SimpleRegression(nn.Module):
+    def __init__(self, input_dim, output_dim, w_range=0.1):
+        nn.Module.__init__(self)
+        assert output_dim < input_dim
+        self.layer_1 = nn.Linear(input_dim, (input_dim + output_dim)//2)
+        self.milp_model = MILPNet(nn.Sequential(NamedLinear((input_dim + output_dim)//2, output_dim) ),
+                                  classification=False, w_range=w_range)
+    def forward(self, x):
+        h = self.forward_till_dense(x)
+        y = self.milp_model(h)
+        out = y
+        return out
+
+    def forward_till_dense(self, x):
+        x = self.layer_1(x)
+        r = nn.functional.relu(x)
+        return r
+
+    def predict(self, x):
+        return self.forward(x)
