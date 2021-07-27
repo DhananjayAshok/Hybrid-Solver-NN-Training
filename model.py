@@ -47,3 +47,20 @@ class SimpleRegression(nn.Module):
 
     def predict(self, x):
         return self.forward(x)
+
+
+class SingleLayerRegression(nn.Module):
+    def __init__(self, input_dim, output_dim, w_range=0.1):
+        nn.Module.__init__(self)
+        self.milp_model = MILPNet(nn.Sequential(NamedLinear(input_dim, output_dim)) ,
+                                  classification=False, w_range=w_range)
+    def forward(self, x):
+        y = self.milp_model(x)
+        out = y
+        return out
+
+    def forward_till_dense(self, x):
+        return x
+
+    def predict(self, x):
+        return self.forward(x)

@@ -17,10 +17,22 @@ class MILPNet(nn.Module):
         self.classification = classification
         self.n_layers = len(self.model)
         self.m = None
+        self.constraints = {}
         self.initialize_mlp_model(w_range=w_range) # defines self.m
+        self.report_mlp()
 
     def forward(self, x):
         return self.model(x)
+
+    def constraint_type(self):
+        if len(self.constraints) == 0:
+            return None
+        _, key = next(enumerate(self.constraints.keys()))
+        if len(key) == 2:
+            return "regreesion_eq"
+        if len(key) == 3:
+            return "regression_max_loss"
+
 
     def assign(self):
         if self.m.SolCount <= 0:
@@ -34,6 +46,16 @@ class MILPNet(nn.Module):
                     for i in range(input_dim):
                         self.model[l].weight[j, i] = self.m.getVarByName(f"w_{l},{i},{j}").x
                     self.model[l].bias[j] = self.m.getVarByName(f"b_{l},{j}").x
+
+    def assign_start(self):
+        with torch.no_grad():
+            for l in range(self.n_layers):
+                output_dim = self.model[l].out_features
+                input_dim = self.model[l].in_features
+                for j in range(output_dim):
+                    for i in range(input_dim):
+                        self.model[l].weight[j, i] = self.m.getVarByName(f"w_{l},{i},{j}").start
+                    self.model[l].bias[j] = self.m.getVarByName(f"b_{l},{j}").start
 
     def initialize_mlp_model(self, w_range=10):
         """
@@ -51,10 +73,14 @@ class MILPNet(nn.Module):
                                                        ub=float(self.model[l].weight[j, i])+w_range/2,
                                                        vtype=GRB.CONTINUOUS, name=f"w_{l},{i},{j}")
                     w_b_var_dict[(l, i, j)].start = float(self.model[l].weight[j, i])
+                    m.update()
+                    print(f"Var start is {w_b_var_dict[(l, i, j)].start} value is {float(self.model[l].weight[j, i])}")
                 w_b_var_dict[(l, j)] = m.addVar(vtype=GRB.CONTINUOUS, name=f"b_{l},{j}")
                 w_b_var_dict[(l, j)].start = float(self.model[l].bias[j])
+                m.update()
         self.w_b_var_dict = w_b_var_dict
         self.m = m
+        self.m.update()
         #self.m.params.NonConvex = 2
 
 
@@ -101,7 +127,8 @@ class MILPNet(nn.Module):
                         else:
                             #loss = self.m.addVar(ub=max_loss, vtype=GRB.CONTINUOUS, name=f"Loss_{j}_{n}")
                             #self.loss_vars.append(loss)
-                            lhs_target = inp_out_var_dict[(n, l, j)] + f"- {y[n][j]}"
+                            lhs_target = inp_out_var_dict[(n, l, j)] + f"- {tensor_round(y[n][j])}"
+                            self.constraints[(j, n, 0)] = (inp_out_var_dict[(n, l, j)], X[n], tensor_round(y[n][j]), max_loss)
                             self.m.addConstr(eval(lhs_target) <= max_loss, f"Y_{j} datapoint {n} bound above {max_loss}")
                             self.m.addConstr(-eval(lhs_target) <= max_loss, f"Y_{j} datapoint {n} bound below {max_loss}")
                 if l == self.n_layers - 1:
@@ -115,6 +142,7 @@ class MILPNet(nn.Module):
                                 self.m.addConstr(eval(correct_expression) + 0.0001 >= eval(inp_out_var_dict[(n, l, j)]),
                                                  f"Output datapoint {n} {j} vs {correct_label}")
         print(f"Finished Building Model")
+        self.m.update()
         return
 
 
@@ -126,31 +154,68 @@ class MILPNet(nn.Module):
         self.solve_mlp_model()
         self.assign()
 
-    def report_mlp(self, verbose=False):
-        if self.m.SolCount <= 0:
-            print(f"Cannot Report: MLP solver found no solutions")
-            return
+    def report_mlp(self, verbose=False, constraint_loop_verbose=False):
         print(self.m)
         if len(self.constraints) != 0:
-            self.loop_constraints(verbose=verbose)
+            self.loop_constraints(eval_attr="start", verbose=constraint_loop_verbose)
+        if self.m.SolCount <= 0:
+            print(f"MLP solver has not found solutions")
+        elif len(self.constraints) != 0:
+            self.loop_constraints(verbose=constraint_loop_verbose)
+
         if verbose:
             print("Printing Variables")
-            for item in self.m.getVars():
-                print(item)
+            items = self.m.getVars()
+            if len(items) == 0:
+                pass
+            else:
+                self.m.printAttr("start")
+                if hasattr(items[0], 'x'):
+                    self.m.printAttr('x')
 
-    def loop_constraints(self, verbose=False):
+    def loop_constraints(self, eval_attr="x", verbose=False):
         if self.constraints is not None:
             overall = len(self.constraints)
             true = 0
-            for key_j, key_n in self.constraints:
-                expression = self.constraints[(key_j, key_n)][0]
-                result = round(utils_eval_expression(self, expression, cuteq=True), ndigits=n_digits)
-                intended = self.constraints[(key_j, key_n)][2]
-                if verbose:
-                    print(f"{key_j, key_n}|| Result: {result} vs Intended {intended}")
-                if(result == intended):
+            for key in self.constraints:
+                if(self.check_constraint(key, eval_attr=eval_attr, verbose=verbose)):
                     true += 1
-            print(f"After assignment {(100*true)/overall}% of the constraints ({true}/{overall}) were true")
+            if eval_attr == "x":
+                print(f"After assignment {(100*true)/overall}% of the constraints ({true}/{overall}) were true")
+            elif eval_attr == "start":
+                print(f"Warm Start assignment {(100*true)/overall}% of the constraints ({true}/{overall}) were true")
+
+    def check_constraint(self, key, eval_attr="x", verbose=False):
+        c_type = self.constraint_type()
+        if c_type is None:
+            return False
+        elif c_type == "regression_eq":
+            return self.check_constraint_regression_eq(key, eval_attr=eval_attr, verbose=verbose)
+        elif c_type == "regression_max_loss":
+            return self.check_constraint_regression_max_loss(key, eval_attr=eval_attr, verbose=verbose)
+        else:
+            print(f"Unknown Constraint Type")
+            return False
+
+    def check_constraint_regression_eq(self, key, eval_attr="x", verbose=False):
+        expression = self.constraints[key][0]
+        result = round(utils_eval_expression_regression(self, expression, eval_attr, cuteq=True), ndigits=n_digits)
+        intended = self.constraints[key][2]
+        if verbose:
+            print(f"{key[0], key[1]} {'SAT' if result == intended else 'UNSAT'}|| Result: {result} vs Intended {intended}")
+        return intended == result
+
+    def check_constraint_regression_max_loss(self, key, eval_attr="x", verbose=False):
+        expression = self.constraints[key][0]
+        output = round(utils_eval_expression_regression(self, expression, eval_attr, cuteq=False), ndigits=n_digits)
+        intended = self.constraints[key][2]
+        max_loss = self.constraints[key][3]
+        abs_diff = abs(intended - output)
+        if verbose:
+            print(f"{key[0], key[1]} {'SAT' if abs_diff <= max_loss else 'UNSAT'}|| Result: {output} vs Intended {intended} (diff {abs_diff}) with "
+                  f"max_loss {max_loss}")
+        return abs_diff <= max_loss
+
 
 class NamedLinear(nn.Linear):
 
@@ -166,8 +231,8 @@ class NamedConv2d(nn.Conv2d):
         self.name = name
         self.activation = activation
 
-def utils_eval_expression(model, expression, cuteq=False):
-    expression = expression.replace("]", "].x")
+def utils_eval_expression_regression(model, expression, eval_attr="x", cuteq=False):
+    expression = expression.replace("]", f"].{eval_attr}")
     expression = expression.replace("self", "model")
     if cuteq:
         expression = expression.split("==")[0]
@@ -175,7 +240,7 @@ def utils_eval_expression(model, expression, cuteq=False):
 
 def utils_model_eval(model, key, cuteq = False):
     expression = model.constraints[key][0]
-    return utils_eval_expression(model, expression, cuteq)
+    return utils_eval_expression_regression(model, expression, cuteq)
 
 def tensor_round(arr, ndigits=n_digits):
     """

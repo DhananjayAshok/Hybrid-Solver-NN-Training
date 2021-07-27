@@ -63,11 +63,13 @@ def milp_train():
         beforeloss = metric(output, target)
         beforeL1 = None
         afterL1 = None
+        model.milp_model.initialize_mlp_model(w_range=0.1)
         if model.milp_model.classification:
             model.milp_model.build_mlp_model(X, target)
         else:
             beforeL1 = l1_metric(output, target)
             model.milp_model.build_mlp_model(X, target, max_loss=float(beforeL1))
+            model.milp_model.report_mlp(verbose=True, constraint_loop_verbose=True)
         model.milp_model.solve_and_assign()
         output = model(data)
         loss = metric(output, target)
@@ -96,6 +98,6 @@ for epoch in range(1, epochs + 1):
 
 eval()
 
-milp_train()
+#milp_train()
 
 eval()
