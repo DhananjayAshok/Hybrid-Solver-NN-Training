@@ -19,6 +19,7 @@ class MILPNet(nn.Module):
         self.m = None
         self.constraints = {}
         self.initialize_mlp_model(w_range=w_range) # defines self.m
+        self.w_range = w_range
         self.report_mlp()
 
     def forward(self, x):
@@ -73,8 +74,6 @@ class MILPNet(nn.Module):
                                                        ub=float(self.model[l].weight[j, i])+w_range/2,
                                                        vtype=GRB.CONTINUOUS, name=f"w_{l},{i},{j}")
                     w_b_var_dict[(l, i, j)].start = float(self.model[l].weight[j, i])
-                    m.update()
-                    print(f"Var start is {w_b_var_dict[(l, i, j)].start} value is {float(self.model[l].weight[j, i])}")
                 w_b_var_dict[(l, j)] = m.addVar(vtype=GRB.CONTINUOUS, name=f"b_{l},{j}")
                 w_b_var_dict[(l, j)].start = float(self.model[l].bias[j])
                 m.update()
@@ -84,11 +83,14 @@ class MILPNet(nn.Module):
         #self.m.params.NonConvex = 2
 
 
-    def build_mlp_model(self, X, y, max_loss=None):
+    def build_mlp_model(self, X, y, max_loss=None, w_range=None):
         """
         Encodes the entire network because one layer is the network here.
         :return:
         """
+        if w_range is None:
+            w_range = self.w_range
+        self.initialize_mlp_model(w_range=w_range)
         batch_size , n_units = X.shape
         inp_out_var_dict = {} # (n, l, j, 0) is the value of the forward pass pre activation of layer l, neuron j
         # when data point n is fed into the model. The input into layer l+1 is (n, l, j, 1) i.e post activation.
