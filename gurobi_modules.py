@@ -4,6 +4,7 @@ import gurobipy as gp
 from gurobipy import GRB
 
 n_digits = 7
+epsilon = 0.0000001
 
 class MILPNet(nn.Module):
     """
@@ -31,9 +32,10 @@ class MILPNet(nn.Module):
         _, key = next(enumerate(self.constraints.keys()))
         if len(key) == 2:
             return "regreesion_eq"
-        if len(key) == 3:
+        elif len(key) == 3 and key[2] == 0:
             return "regression_max_loss"
-
+        elif len(key) == 3 and key[2] == 1:
+            return "classification"
 
     def assign(self):
         if self.m.SolCount <= 0:
@@ -82,7 +84,6 @@ class MILPNet(nn.Module):
         self.m.update()
         #self.m.params.NonConvex = 2
 
-
     def build_mlp_model(self, X, y, max_loss=None, w_range=None):
         """
         Encodes the entire network because one layer is the network here.
@@ -130,23 +131,25 @@ class MILPNet(nn.Module):
                             #loss = self.m.addVar(ub=max_loss, vtype=GRB.CONTINUOUS, name=f"Loss_{j}_{n}")
                             #self.loss_vars.append(loss)
                             lhs_target = inp_out_var_dict[(n, l, j)] + f"- {tensor_round(y[n][j])}"
-                            self.constraints[(j, n, 0)] = (inp_out_var_dict[(n, l, j)], X[n], tensor_round(y[n][j]), max_loss)
+                            self.constraints[(j, n, 0)] = (inp_out_var_dict[(n, l, j)], X[n], tensor_round(y[n][j])
+                                                           , max_loss)
                             self.m.addConstr(eval(lhs_target) <= max_loss, f"Y_{j} datapoint {n} bound above {max_loss}")
                             self.m.addConstr(-eval(lhs_target) <= max_loss, f"Y_{j} datapoint {n} bound below {max_loss}")
                 if l == self.n_layers - 1:
                     if self.classification:
-                        correct_label = torch.argmax(y[n])
+                        correct_label = y[n]
                         correct_expression = inp_out_var_dict[(n, l, int(correct_label))]
                         for j in range(output_dim):
                             if j == correct_label:
                                 pass
                             else:
-                                self.m.addConstr(eval(correct_expression) + 0.0001 >= eval(inp_out_var_dict[(n, l, j)]),
+                                self.constraints[(j, n, 1)] = (correct_expression, inp_out_var_dict[(n, l, j)], X[n],
+                                                               correct_label)
+                                self.m.addConstr(eval(correct_expression) >= epsilon + eval(inp_out_var_dict[(n, l, j)]),
                                                  f"Output datapoint {n} {j} vs {correct_label}")
         print(f"Finished Building Model")
         self.m.update()
         return
-
 
     def solve_mlp_model(self):
         self.m.optimize()
@@ -180,7 +183,7 @@ class MILPNet(nn.Module):
             overall = len(self.constraints)
             true = 0
             for key in self.constraints:
-                if(self.check_constraint(key, eval_attr=eval_attr, verbose=verbose)):
+                if self.check_constraint(key, eval_attr=eval_attr, verbose=verbose):
                     true += 1
             if eval_attr == "x":
                 print(f"After assignment {(100*true)/overall}% of the constraints ({true}/{overall}) were true")
@@ -195,6 +198,8 @@ class MILPNet(nn.Module):
             return self.check_constraint_regression_eq(key, eval_attr=eval_attr, verbose=verbose)
         elif c_type == "regression_max_loss":
             return self.check_constraint_regression_max_loss(key, eval_attr=eval_attr, verbose=verbose)
+        elif c_type == "classification":
+            return self.check_constraint_classification(key, eval_attr=eval_attr, verbose=verbose)
         else:
             print(f"Unknown Constraint Type")
             return False
@@ -218,6 +223,21 @@ class MILPNet(nn.Module):
                   f"max_loss {max_loss}")
         return abs_diff <= max_loss
 
+    def check_constraint_classification(self, key, eval_attr="x", verbose=True):
+        correct_expression = self.constraints[key][0]
+        incorrect_expression = self.constraints[key][1]
+        label = self.constraints[key][3]
+        correct_eval = round(utils_eval_expression_regression(self, correct_expression, eval_attr, cuteq=False),
+                             ndigits=n_digits)
+        incorrect_eval = round(utils_eval_expression_regression(self, incorrect_expression, eval_attr, cuteq=False),
+                               ndigits=n_digits)
+        condition = correct_eval >= incorrect_eval + epsilon
+        if verbose:
+            print(
+                f"{key[0], key[1]} {'SAT' if condition else 'UNSAT'}|| Label {key[0]} confidence {incorrect_eval}| correct label "
+                f": {label} confidence {correct_eval} ")
+        return condition
+
 
 class NamedLinear(nn.Linear):
 
@@ -226,12 +246,14 @@ class NamedLinear(nn.Linear):
         self.name = name
         self.activation = activation
 
+
 class NamedConv2d(nn.Conv2d):
 
     def __init__(self, *kargs, name="", activation="",**kwargs):
         super(NamedConv2d, self).__init__(*kargs, **kwargs)
         self.name = name
         self.activation = activation
+
 
 def utils_eval_expression_regression(model, expression, eval_attr="x", cuteq=False):
     expression = expression.replace("]", f"].{eval_attr}")
@@ -240,9 +262,11 @@ def utils_eval_expression_regression(model, expression, eval_attr="x", cuteq=Fal
         expression = expression.split("==")[0]
     return eval(expression)
 
+
 def utils_model_eval(model, key, cuteq = False):
     expression = model.constraints[key][0]
     return utils_eval_expression_regression(model, expression, cuteq)
+
 
 def tensor_round(arr, ndigits=n_digits):
     """
