@@ -95,7 +95,7 @@ def milp_train():
             model.milp_model.build_mlp_model(X, target)
         else:
             beforeL1 = l1_metric(output, target)
-            model.milp_model.build_mlp_model(X, target, max_loss=float(beforeL1)-0.2)
+            model.milp_model.build_mlp_model(X, target, max_loss=float(beforeL1))
         model.milp_model.report_mlp(verbose=False, constraint_loop_verbose=True)
         model.milp_model.solve_and_assign()
         #model.milp_model.report_mlp(verbose=False, constraint_loop_verbose=True)

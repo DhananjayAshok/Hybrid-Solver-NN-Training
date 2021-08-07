@@ -101,12 +101,7 @@ class MILPNet(nn.Module):
             input_dim = self.model[l].in_features
             activation = (self.model[l].activation == "relu")
             for n in range(batch_size):
-                output_constraint_string = None
                 for j in range(output_dim):
-                    # y_j = sum over i wijxi
-                    weighted_sum_string = None
-                    weighted_sum_constraint_string = None
-                    activation_constraint_string = None
                     if l == 0:
                         assert n_units == input_dim
                         weighted_sum_string = " + ".join([f"self.w_b_var_dict[{(l, i, j)}] * {tensor_round(X[n][i])}"
@@ -122,9 +117,6 @@ class MILPNet(nn.Module):
                     if l == self.n_layers-1 and not self.classification:
                         if max_loss is None:
                             target_string = inp_out_var_dict[(n, l, j)] + f" == {tensor_round(y[n][j])}"
-                            #print(X[n])
-                            #print(f"{y[n][j].data} ", y[n][j])
-                            #print(target_string)
                             self.constraints[(j, n)] = (target_string, X[n], tensor_round(y[n][j]))
                             self.m.addConstr(eval(target_string), f"Y_{j} datapoint {n}")
                         else:
