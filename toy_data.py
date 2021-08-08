@@ -31,7 +31,7 @@ class IdentityDataset(Dataset):
         return train_loader, test_loader
 
     def model(input_dim=input_dim, output_dim=output_dim):
-        return SimpleRegression(input_dim, output_dim, w_range=100)
+        return SimpleRegression(input_dim, output_dim, w_range=0.1)
 
 
 class AffineDataset(Dataset):
@@ -102,7 +102,7 @@ class FormulaDataset(Dataset):
     def metric():
         return nn.MSELoss()
 
-    def loaders(n=1000, input_dim=input_dim, output_dim=output_dim, batch_size=32):
+    def loaders(n=1000, input_dim=input_dim, output_dim=output_dim, batch_size=100):
         train_dataset = FormulaDataset(n, input_dim, output_dim)
         test_dataset = FormulaDataset(n, input_dim, output_dim)
         train_loader = DataLoader(train_dataset, batch_size=batch_size)

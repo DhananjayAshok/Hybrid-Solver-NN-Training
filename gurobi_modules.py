@@ -122,11 +122,12 @@ class MILPNet(nn.Module):
                         else:
                             #loss = self.m.addVar(ub=max_loss, vtype=GRB.CONTINUOUS, name=f"Loss_{j}_{n}")
                             #self.loss_vars.append(loss)
+                            max_loss_val = float(max_loss[n][j])
                             lhs_target = inp_out_var_dict[(n, l, j)] + f"- {tensor_round(y[n][j])}"
                             self.constraints[(j, n, 0)] = (inp_out_var_dict[(n, l, j)], X[n], tensor_round(y[n][j])
-                                                           , max_loss)
-                            self.m.addConstr(eval(lhs_target) <= max_loss, f"Y_{j} datapoint {n} bound above {max_loss}")
-                            self.m.addConstr(-eval(lhs_target) <= max_loss, f"Y_{j} datapoint {n} bound below {max_loss}")
+                                                           , max_loss_val)
+                            self.m.addConstr(eval(lhs_target) + epsilon <= max_loss_val, f"Y_{j} datapoint {n} bound above {max_loss_val}")
+                            self.m.addConstr(-eval(lhs_target) + epsilon <= max_loss_val, f"Y_{j} datapoint {n} bound below {max_loss_val}")
                 if l == self.n_layers - 1:
                     if self.classification:
                         correct_label = y[n]
