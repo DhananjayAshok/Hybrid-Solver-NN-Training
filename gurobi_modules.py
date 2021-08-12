@@ -6,6 +6,7 @@ from gurobipy import GRB
 n_digits = 7
 epsilon = 0.0000001
 
+
 class MILPNet(nn.Module):
     """
     Class to hold the last few dense layers of a network.

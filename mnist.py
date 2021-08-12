@@ -5,6 +5,7 @@ from model import MNISTModel
 import torch.nn as nn
 from torchvision import datasets, transforms
 
+
 def loaders():
     train_loader = torch.utils.data.DataLoader(
         datasets.MNIST('data', train=True, download=True,
@@ -23,8 +24,10 @@ def loaders():
         batch_size=32, shuffle=True)
     return train_loader, test_loader
 
+
 def model():
     return MNISTModel()
+
 
 def metric():
     return nn.CrossEntropyLoss()

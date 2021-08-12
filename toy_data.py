@@ -9,7 +9,7 @@ output_dim = 2
 
 
 class IdentityDataset(Dataset):
-    def __init__(self, n, input_dim, output_dim):
+    def __init__(self, n, input_dim=input_dim, output_dim=output_dim):
         self.n = n
         self.X = torch.rand(n, input_dim)
         self.y = self.X[:, :output_dim]

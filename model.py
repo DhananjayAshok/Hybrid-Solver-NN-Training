@@ -7,7 +7,7 @@ class MNISTModel(nn.Module):
     def __init__(self):
         nn.Module.__init__(self)
         self.conv = NamedConv2d(1, 3, 4)
-        self.milp_model = MILPNet(nn.Sequential(NamedLinear(1875, 10)), w_range=1)
+        self.milp_model = MILPNet(nn.Sequential(NamedLinear(1875, 10)), w_range=0.01)
 
     def forward(self, x):
         h = self.forward_till_dense(x)

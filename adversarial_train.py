@@ -1,7 +1,11 @@
 import torch
 import mnist as m_train
 from toy_data import IdentityDataset, AffineDataset, PolynomialDataset, FormulaDataset, ThresholdDataset
+from foolbox.models import PyTorchModel
+from foolbox.attacks import LinfPGD
+import matplotlib.pyplot as plt
 from model import *
+
 
 def get_loaders(key):
     if key == "mnist":
@@ -48,7 +52,7 @@ def get_metric(key):
         return ThresholdDataset.metric()
 
 
-epochs = 2
+epochs = 10
 lr = 0.001
 key = "mnist"
 
@@ -78,16 +82,51 @@ def train(epoch):
             train_counter.append((batch_idx*64) + ((epoch-1)*len(train_loader.dataset)))
 
 
+def get_adversarial_examples(model, data, target):
+    data = data.cuda()
+    model = model.cuda()
+    target = target.cuda()
+    fmodel = PyTorchModel(model, bounds=(0, 1))
+    attack = LinfPGD()
+    epsilons = [
+        0.0,
+        0.0002,
+        0.0005,
+        0.0008,
+        0.001,
+        0.0015,
+        0.002,
+        0.003,
+        0.01,
+        0.1,
+        0.3,
+        0.5,
+        1.0,
+    ]
+    raw_advs, clipped_advs, success = attack(fmodel, data, target, epsilons=epsilons)
+    robust_accuracy = 1 - success.float().mean(axis=-1)
+    print("robust accuracy for perturbations with")
+    for eps, acc in zip(epsilons, robust_accuracy):
+        print(f"  Linf norm ≤ {eps:<6}: {acc.item() * 100:4.1f} %")
+    return clipped_advs[-1]
+
+
+
+
 def milp_train():
+    t_model = model.cuda()
     for batch_idx, (data, target) in enumerate(train_loader):
-        X = model.forward_till_dense(data)
-        output = model(data)
-        # target = encoder(target)
-        # print(output.shape, target.shape)
+        data = data.cuda()
+        target = target.cuda()
+        advs = get_adversarial_examples(model, data, target).cuda()
+        data = torch.cat([data, advs])
+        target = torch.cat([target, target])
+        X = t_model.forward_till_dense(data)
+        output = t_model(data)
         beforeloss = metric(output, target)
         beforeL1 = None
         afterL1 = None
-        model.milp_model.initialize_mlp_model(w_range=0.1)
+        model.milp_model.initialize_mlp_model(w_range=10)
         if model.milp_model.classification:
             model.milp_model.build_mlp_model(X, target)
         else:
@@ -97,7 +136,7 @@ def milp_train():
         #model.milp_model.report_mlp(verbose=False, constraint_loop_verbose=True)
         model.milp_model.solve_and_assign()
         #model.milp_model.report_mlp(verbose=False, constraint_loop_verbose=True)
-        output = model(data)
+        output = t_model(data)
         loss = metric(output, target)
         if not model.milp_model.classification:
             afterL1 = l1_metric(output, target)
@@ -110,10 +149,13 @@ def milp_train():
 
 
 def evaluate():
-    model.eval()
+    emodel = model.cuda()
+    emodel.eval()
     val_losses = []
     for batch_idx, (data, target) in enumerate(test_loader):
-        output = model(data)
+        data = data.cuda()
+        target = target.cuda()
+        output = emodel(data)
         loss = metric(output, target)
         val_losses.append(loss.item())
     val_losses = torch.Tensor(val_losses)
@@ -121,10 +163,13 @@ def evaluate():
 
 
 def acc_evaluate():
-    model.eval()
+    emodel = model.cuda()
+    emodel.eval()
     val_losses = []
     for batch_idx, (data, target) in enumerate(test_loader):
-        output = model(data)
+        data = data.cuda()
+        target =  target.cuda()
+        output = emodel(data)
         predictions = torch.argmax(output, axis=1)
         acc = (torch.sum(predictions == target)*100)/len(target)
         val_losses.append(acc.item())
