@@ -4,7 +4,7 @@ from model import SimpleRegression, SingleLayerRegression, SimpleClassification
 from torch.utils.data import Dataset, DataLoader
 
 
-input_dim = 100
+input_dim = 3
 output_dim = 2
 
 

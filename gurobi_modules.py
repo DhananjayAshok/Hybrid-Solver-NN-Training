@@ -13,16 +13,18 @@ class MILPNet(nn.Module):
     Model will be an instance of a Sequential model, i.e list of NamedLinear layers
     The names of the layers must be index numbers.
     """
-    def __init__(self, model, classification=True, w_range=10):
+    def __init__(self, model, classification=True, w_range=10, verbose=False):
         nn.Module.__init__(self)
         self.model = model
         self.classification = classification
         self.n_layers = len(self.model)
         self.m = None
         self.constraints = {}
-        self.initialize_mlp_model(w_range=w_range) # defines self.m
         self.w_range = w_range
-        self.report_mlp()
+        self.verbose = verbose
+        self.initialize_mlp_model(w_range=w_range) # defines self.m
+        if self.verbose:
+            self.report_mlp()
 
     def forward(self, x):
         return self.model(x)
@@ -67,6 +69,10 @@ class MILPNet(nn.Module):
         :return:
         """
         m = gp.Model("MLP")
+        if self.verbose:
+            m.setParam('OutputFlag', 1)
+        else:
+            m.setParam('OutputFlag', 0)
         w_b_var_dict = {}
         for l in range(self.n_layers):
             output_dim = self.model[l].out_features
@@ -123,7 +129,11 @@ class MILPNet(nn.Module):
                         else:
                             #loss = self.m.addVar(ub=max_loss, vtype=GRB.CONTINUOUS, name=f"Loss_{j}_{n}")
                             #self.loss_vars.append(loss)
-                            max_loss_val = float(max_loss[n][j])
+                            max_loss_val = None
+                            if not hasattr(max_loss, "shape") or max_loss.shape == (1,) or max_loss.shape == ():
+                                max_loss_val = float(max_loss)
+                            else:
+                                max_loss_val = float(max_loss[n][j])
                             lhs_target = inp_out_var_dict[(n, l, j)] + f"- {tensor_round(y[n][j])}"
                             self.constraints[(j, n, 0)] = (inp_out_var_dict[(n, l, j)], X[n], tensor_round(y[n][j])
                                                            , max_loss_val)
@@ -147,7 +157,8 @@ class MILPNet(nn.Module):
 
     def solve_mlp_model(self):
         self.m.optimize()
-        self.report_mlp()
+        if self.verbose:
+            self.report_mlp()
 
     def solve_and_assign(self):
         self.solve_mlp_model()
