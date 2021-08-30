@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import gurobipy as gp
 from gurobipy import GRB
+import warnings
 
 n_digits = 7
 epsilon = 0.0000001
@@ -157,6 +158,8 @@ class MILPNet(nn.Module):
 
     def solve_mlp_model(self):
         self.m.optimize()
+        if self.m.SolCount <= 0:
+            warnings.warn("Infeasible Model: MLP solver found no solutions", UserWarning)
         if self.verbose:
             self.report_mlp()
 

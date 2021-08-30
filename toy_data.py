@@ -57,7 +57,7 @@ class AffineDataset(Dataset):
         return train_loader, test_loader
 
     def model(input_dim=input_dim, output_dim=output_dim):
-        return SimpleRegression(input_dim, output_dim, w_range=10)
+        return SimpleRegression(input_dim, output_dim, w_range=1000)
 
 
 class PolynomialDataset(Dataset):
@@ -93,6 +93,7 @@ class FormulaDataset(Dataset):
         self.X = torch.rand(n, input_dim)
         self.y = 2*torch.exp(self.X[:, :output_dim]) + 3 * torch.sin(self.X[:, :output_dim]) * self.X[:, :output_dim]**5
 
+
     def __getitem__(self, item):
         return self.X[item], self.y[item]
 
@@ -110,7 +111,7 @@ class FormulaDataset(Dataset):
         return train_loader, test_loader
 
     def model(input_dim=input_dim, output_dim=output_dim):
-        return SimpleRegression(input_dim, output_dim, w_range=10)
+        return SimpleRegression(input_dim, output_dim, w_range=100)
 
 
 class ThresholdDataset(Dataset):
