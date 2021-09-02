@@ -118,17 +118,15 @@ class ThresholdDataset(Dataset):
     def __init__(self, n, input_dim):
         self.n = n
         self.X = torch.rand(n, input_dim)
-        intermediate = self.X - 0.5
+        self.X = self.X - torch.mean(self.X)
         self.y = torch.rand(n)
         for i in range(self.X.shape[0]):
-            row_sum = sum(intermediate[i])
+            row_sum = sum(self.X[i])
             if row_sum <= 0:
                 self.y[i] = 0
             else:
                 self.y[i] = 1
         self.y = self.y.type(torch.LongTensor)
-        for i in self.y:
-            print(i)
 
     def __getitem__(self, item):
         return self.X[item], self.y[item]

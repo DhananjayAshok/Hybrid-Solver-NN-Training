@@ -5,7 +5,7 @@ from gurobipy import GRB
 import warnings
 
 n_digits = 7
-epsilon = 0.0000001
+epsilon = 0.0001
 
 
 class MILPNet(nn.Module):
@@ -14,7 +14,7 @@ class MILPNet(nn.Module):
     Model will be an instance of a Sequential model, i.e list of NamedLinear layers
     The names of the layers must be index numbers.
     """
-    def __init__(self, model, classification=True, w_range=10, verbose=False):
+    def __init__(self, model, classification=True, w_range=10, verbose=True):
         nn.Module.__init__(self)
         self.model = model
         self.classification = classification
@@ -24,8 +24,6 @@ class MILPNet(nn.Module):
         self.w_range = w_range
         self.verbose = verbose
         self.initialize_mlp_model(w_range=w_range) # defines self.m
-        if self.verbose:
-            self.report_mlp()
 
     def forward(self, x):
         return self.model(x)
@@ -70,10 +68,7 @@ class MILPNet(nn.Module):
         :return:
         """
         m = gp.Model("MLP")
-        if self.verbose:
-            m.setParam('OutputFlag', 1)
-        else:
-            m.setParam('OutputFlag', 0)
+        m.setParam('OutputFlag', 0)
         w_b_var_dict = {}
         for l in range(self.n_layers):
             output_dim = self.model[l].out_features
@@ -92,7 +87,7 @@ class MILPNet(nn.Module):
         self.m.update()
         #self.m.params.NonConvex = 2
 
-    def build_mlp_model(self, X, y, max_loss=None, w_range=None):
+    def build_mlp_model(self, X, y, max_loss=None, min_acc=None, w_range=None):
         """
         Encodes the entire network because one layer is the network here.
         :return:
@@ -100,10 +95,13 @@ class MILPNet(nn.Module):
         if w_range is None:
             w_range = self.w_range
         self.initialize_mlp_model(w_range=w_range)
-        batch_size , n_units = X.shape
+        batch_size, n_units = X.shape
+        self.batch_size = batch_size
         inp_out_var_dict = {} # (n, l, j, 0) is the value of the forward pass pre activation of layer l, neuron j
         # when data point n is fed into the model. The input into layer l+1 is (n, l, j, 1) i.e post activation.
         self.constraints = {}
+        self.classification_constraints = {}
+        self.classification_indicators = {}
         for l in range(self.n_layers):
             output_dim = self.model[l].out_features
             input_dim = self.model[l].in_features
@@ -144,14 +142,40 @@ class MILPNet(nn.Module):
                     if self.classification:
                         correct_label = y[n]
                         correct_expression = inp_out_var_dict[(n, l, int(correct_label))]
+                        node_indicators = []
                         for j in range(output_dim):
                             if j == correct_label:
                                 pass
                             else:
+                                node_indicator = self.m.addVar(name=f"indicator_{j, n}", vtype=GRB.BINARY)
+                                exp = eval(correct_expression) >= epsilon + eval(inp_out_var_dict[(n, l, j)])
+                                self.m.addConstr((node_indicator == 1) >> exp, name=f"indicator_{j, n} exp")
+                                #notexp = eval(correct_expression) <= eval(inp_out_var_dict[(n, l, j)])
+                                #self.m.addConstr((node_indicator == 0) >> notexp, name=f"indicator_{j, n} notexp")
+                                self.classification_constraints[(j, n)] = (node_indicator, eval(correct_expression),
+                                                                           epsilon + eval(inp_out_var_dict[(n, l, j)]))
+                                node_indicators.append(node_indicator)
                                 self.constraints[(j, n, 1)] = (correct_expression, inp_out_var_dict[(n, l, j)], X[n],
                                                                correct_label)
-                                self.m.addConstr(eval(correct_expression) >= epsilon + eval(inp_out_var_dict[(n, l, j)]),
-                                                 f"Output datapoint {n} {j} vs {correct_label}")
+                                #self.m.addConstr(eval(correct_expression) >= epsilon + eval(inp_out_var_dict[(n, l, j)]),
+                                #                 f"Output datapoint {n} {j} vs {correct_label}")
+                        self.classification_indicators[n] = self.m.addVar(name=f"indicator_{n}", vtype=GRB.BINARY)
+                        indicator_sum = sum(node_indicators)
+                        self.m.addConstr((self.classification_indicators[n] == 1) >> (indicator_sum == output_dim-1)
+                                         , name=f"indicator_{n}")
+                        #self.m.addConstr((self.classification_indicators[n] == 0) >> (indicator_sum <= output_dim-2)
+                        #                 , name=f"indicator_{n} not")
+            if self.classification:
+                if min_acc is None:
+                    min_acc_raw = int((1 / output_dim) * len(y))
+                else:
+                    min_acc_raw = int(min_acc * len(y))
+                s = 0
+                for n in range(batch_size):
+                    s += self.classification_indicators[n]
+                #self.m.addConstr(s >= min_acc_raw, name="Minimum Accuracy Constraint")
+                self.m.setObjective(s, GRB.MAXIMIZE)
+
         print(f"Finished Building Model")
         self.m.update()
         return
@@ -160,6 +184,8 @@ class MILPNet(nn.Module):
         self.m.optimize()
         if self.m.SolCount <= 0:
             warnings.warn("Infeasible Model: MLP solver found no solutions", UserWarning)
+        else:
+            print(f"MILP Solved: Solutions found")
         if self.verbose:
             self.report_mlp()
 
@@ -175,6 +201,8 @@ class MILPNet(nn.Module):
             print(f"MLP solver has not found solutions")
         elif len(self.constraints) != 0:
             self.loop_constraints(verbose=constraint_loop_verbose)
+            if self.classification:
+                print(f"Accuracy on Training Sample: {100*(self.m.getObjective().getValue())/self.batch_size}%")
 
         if verbose:
             print("Printing Variables")
@@ -185,6 +213,7 @@ class MILPNet(nn.Module):
                 self.m.printAttr("start")
                 if hasattr(items[0], 'x'):
                     self.m.printAttr('x')
+
 
     def loop_constraints(self, eval_attr="x", verbose=False):
         if self.constraints is not None:

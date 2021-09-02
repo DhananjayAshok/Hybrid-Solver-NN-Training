@@ -48,9 +48,9 @@ def get_metric(key):
         return ThresholdDataset.metric()
 
 
-epochs = 4
+epochs = 0
 lr = 0.001
-key = "identity"
+key = "threshold"
 
 train_loader, test_loader = get_loaders(key)
 model = get_model(key)
@@ -94,6 +94,7 @@ def milp_train():
             beforeL1 = l1_metric(output, target)
             l1 = torch.abs(output - target)
             l1= l1.mean()
+            #l1 = None
             model.milp_model.build_mlp_model(X, target, max_loss=l1)
         #model.milp_model.report_mlp(verbose=False, constraint_loop_verbose=True)
         model.milp_model.solve_and_assign()
@@ -141,6 +142,10 @@ evaluate()
 #acc_evaluate()
 
 milp_train()
+
+for epoch in range(1, epochs + 1):
+    pass
+    train(epoch)
 
 evaluate()
 

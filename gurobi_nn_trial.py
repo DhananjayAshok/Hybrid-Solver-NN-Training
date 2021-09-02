@@ -1,34 +1,22 @@
-from gurobi_modules import NamedLinear, MILPNet
+from model import SingleLayerRegression
+from gurobi_modules import MILPNet, NamedLinear
 import torch
+import gurobipy as gp
+from gurobipy import GRB
 import torch.nn as nn
 
-import sys
-#print(sys.getrecursionlimit())
-#sys.setrecursionlimit(1500)
+from toy_data import ThresholdDataset
 
-output_dim = 3
 input_dim = 3
-batch_size = 50
+output_dim = 2
+t = ThresholdDataset(100, input_dim)
 # dummy example of a NN with a single layer.
-X = torch.rand(batch_size, input_dim)
-Y = X[:, :output_dim]**2 + 2*X[:, :output_dim] + 1
-X_v = torch.rand(batch_size, input_dim)
-Y_v = X_v[:, :output_dim]**2 + 2*X_v[:, :output_dim] + 1
+X = t.X
+Y = t.y
 
-sequential_model = nn.Sequential(NamedLinear(input_dim, output_dim))
-model = MILPNet(sequential_model, classification=False)
+
 # 5
-
-model.build_mlp_model(X, Y, max_loss=0.001)
+model = MILPNet(nn.Sequential(NamedLinear(input_dim, output_dim)), classification=True, w_range=10)
+model.build_mlp_model(X, Y)
 model.solve_and_assign()
-model.report_mlp(verbose=False, constraint_loop_verbose=True)
-relu = nn.ReLU()
-metric = nn.L1Loss()
-pred = model(X)#sequential_model[1](relu(sequential_model[0](X)))
-
-print(f"Train {metric} Error", metric(pred, Y))
-
-pred =model(X_v)# sequential_model[1](relu(sequential_model[0](X_v)))
-
-print(f"Test {metric} Error", metric(pred, Y_v))
-
+#model.report_mlp(verbose=True, constraint_loop_verbose=True)
