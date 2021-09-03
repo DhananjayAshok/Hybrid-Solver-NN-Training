@@ -173,7 +173,7 @@ class MILPNet(nn.Module):
                 s = 0
                 for n in range(batch_size):
                     s += self.classification_indicators[n]
-                #self.m.addConstr(s >= min_acc_raw, name="Minimum Accuracy Constraint")
+                self.m.addConstr(s >= min_acc_raw, name="Minimum Accuracy Constraint")
                 self.m.setObjective(s, GRB.MAXIMIZE)
 
         print(f"Finished Building Model")

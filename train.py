@@ -1,7 +1,9 @@
 import torch
 import mnist as m_train
+from adults import AdultsDataset
 from toy_data import IdentityDataset, AffineDataset, PolynomialDataset, FormulaDataset, ThresholdDataset
 from model import *
+
 
 def get_loaders(key):
     if key == "mnist":
@@ -16,6 +18,8 @@ def get_loaders(key):
         return FormulaDataset.loaders()
     elif key == "threshold":
         return ThresholdDataset.loaders()
+    elif key == "adults":
+        return AdultsDataset.loaders()
 
 
 def get_model(key):
@@ -31,6 +35,8 @@ def get_model(key):
         return FormulaDataset.model()
     elif key == "threshold":
         return ThresholdDataset.model()
+    elif key == "adults":
+        return AdultsDataset.model()
 
 
 def get_metric(key):
@@ -46,11 +52,13 @@ def get_metric(key):
         return FormulaDataset.metric()
     elif key == "threshold":
         return ThresholdDataset.metric()
+    elif key == "adults":
+        return AdultsDataset.metric()
 
 
-epochs = 0
+epochs = 2
 lr = 0.001
-key = "threshold"
+key = "adults"
 
 train_loader, test_loader = get_loaders(key)
 model = get_model(key)
@@ -89,7 +97,9 @@ def milp_train():
         afterL1 = None
         model.milp_model.initialize_mlp_model(w_range=0.1)
         if model.milp_model.classification:
-            model.milp_model.build_mlp_model(X, target)
+            beforeAcc = torch.sum(torch.argmax(output, dim=1) == target)/len(target)
+            min_accuracy = beforeAcc + 0.03
+            model.milp_model.build_mlp_model(X, target, min_acc=min_accuracy)
         else:
             beforeL1 = l1_metric(output, target)
             l1 = torch.abs(output - target)
@@ -101,11 +111,16 @@ def milp_train():
         #model.milp_model.report_mlp(verbose=False, constraint_loop_verbose=True)
         output = model(data)
         loss = metric(output, target)
-        if not model.milp_model.classification:
+        if model.milp_model.classification:
+            afterAcc = torch.sum(torch.argmax(output, dim=1) == target)/len(target)
+        else:
             afterL1 = l1_metric(output, target)
         print(f"Before loss was {beforeloss.item()}")
         print(f"Now loss is {loss.item()}")
-        if not model.milp_model.classification:
+        if model.milp_model.classification:
+            print(f"Before Accuracy was {beforeAcc*100}%")
+            print(f"Now L1 is {afterAcc*100}%")
+        else:
             print(f"Before L1 was {beforeL1.item()}")
             print(f"Now L1 is {afterL1.item()}")
         break
