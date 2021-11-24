@@ -38,7 +38,7 @@ class AdultsDataset(Dataset):
         return train_loader, test_loader
 
     def model(self=None):
-        return SimpleClassification(input_dim=13, output_dim=2, w_range=100)
+        return SimpleClassification(input_dim=13, output_dim=2, w_range=10000)
 
     def get_dataset(test_ratio=0.2):
         url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"

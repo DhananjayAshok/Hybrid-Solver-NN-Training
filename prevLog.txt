@@ -1,0 +1,2392 @@
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 0 with epochs 0
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 2 with epochs 3
+Mean Loss: 2.6247122287750244 Variance Loss: 0.1601090282201767
+Mean Accuracy: 14.207268714904785 Variance Accuracy: 6.6469926834106445
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18780 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 77.77777777777777% of the constraints (14/18) were true
+After assignment 100.0% of the constraints (18/18) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3960886001586914
+Now loss is 1.5306110382080078
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 2.5792763233184814 Variance Loss: 0.1810024082660675
+Mean Accuracy: 22.07468032836914 Variance Accuracy: 7.853900909423828
+Mean Loss: 2.761932134628296 Variance Loss: 0.24450747668743134
+Mean Accuracy: 22.553913116455078 Variance Accuracy: 7.681650161743164
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 2 with epochs 11
+Mean Loss: 3.29925274848938 Variance Loss: 0.27817437052726746
+Mean Accuracy: 15.615015983581543 Variance Accuracy: 6.302356719970703
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18780 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 55.55555555555556% of the constraints (10/18) were true
+After assignment 94.44444444444444% of the constraints (17/18) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.826599597930908
+Now loss is 1.4019349813461304
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 3.131892204284668 Variance Loss: 0.3087512254714966
+Mean Accuracy: 22.733625411987305 Variance Accuracy: 7.956152439117432
+Mean Loss: 3.3845059871673584 Variance Loss: 0.3738213777542114
+Mean Accuracy: 27.815494537353516 Variance Accuracy: 8.006270408630371
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 3 with epochs 2
+Mean Loss: 2.3374297618865967 Variance Loss: 0.08472935110330582
+Mean Accuracy: 15.734824180603027 Variance Accuracy: 6.492234230041504
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18790 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 11.11111111111111% of the constraints (3/27) were true
+After assignment 100.0% of the constraints (27/27) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.761441469192505
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 265.4108581542969 Variance Loss: 34.77373123168945
+Mean Accuracy: 22.004793167114258 Variance Accuracy: 7.511134624481201
+Mean Loss: 265.50238037109375 Variance Loss: 36.58586502075195
+Mean Accuracy: 21.954872131347656 Variance Accuracy: 7.076279163360596
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 3 with epochs 3
+Mean Loss: 2.8492584228515625 Variance Loss: 0.23888124525547028
+Mean Accuracy: 20.956470489501953 Variance Accuracy: 6.692467212677002
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18790 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 25.925925925925927% of the constraints (7/27) were true
+After assignment 100.0% of the constraints (27/27) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.514836549758911
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 504.45721435546875 Variance Loss: 65.66177368164062
+Mean Accuracy: 23.612220764160156 Variance Accuracy: 7.407937526702881
+Mean Loss: 504.37005615234375 Variance Loss: 74.0587158203125
+Mean Accuracy: 23.652156829833984 Variance Accuracy: 7.901680946350098
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 3 with epochs 4
+Mean Loss: 2.357419729232788 Variance Loss: 0.08876363188028336
+Mean Accuracy: 12.23043155670166 Variance Accuracy: 5.853485107421875
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18790 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.851851851851855% of the constraints (14/27) were true
+After assignment 100.0% of the constraints (27/27) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.5753164291381836
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 203.9918670654297 Variance Loss: 23.634357452392578
+Mean Accuracy: 22.0147762298584 Variance Accuracy: 7.04875373840332
+Mean Loss: 204.0490264892578 Variance Loss: 24.321533203125
+Mean Accuracy: 22.034744262695312 Variance Accuracy: 7.254042625427246
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 3 with epochs 5
+Mean Loss: 3.0254268646240234 Variance Loss: 0.2857045531272888
+Mean Accuracy: 19.898162841796875 Variance Accuracy: 6.1763176918029785
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18790 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 37.03703703703704% of the constraints (10/27) were true
+After assignment 100.0% of the constraints (27/27) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.483322858810425
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 783.2070922851562 Variance Loss: 123.58552551269531
+Mean Accuracy: 22.973243713378906 Variance Accuracy: 7.18502140045166
+Mean Loss: 783.5625610351562 Variance Loss: 113.03520965576172
+Mean Accuracy: 22.963258743286133 Variance Accuracy: 7.403224945068359
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 3 with epochs 6
+Mean Loss: 2.9261586666107178 Variance Loss: 0.25845229625701904
+Mean Accuracy: 18.690095901489258 Variance Accuracy: 7.572195529937744
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18790 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 44.44444444444444% of the constraints (12/27) were true
+After assignment 100.0% of the constraints (27/27) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.2321155071258545
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 665.2718505859375 Variance Loss: 96.1839370727539
+Mean Accuracy: 21.944889068603516 Variance Accuracy: 7.157746315002441
+Mean Loss: 665.1255493164062 Variance Loss: 94.35387420654297
+Mean Accuracy: 21.954872131347656 Variance Accuracy: 7.190363883972168
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 3 with epochs 7
+Mean Loss: 2.732062578201294 Variance Loss: 0.23777277767658234
+Mean Accuracy: 22.294328689575195 Variance Accuracy: 7.498422622680664
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18790 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 22.22222222222222% of the constraints (6/27) were true
+After assignment 100.0% of the constraints (27/27) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.3716583251953125
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 478.3277893066406 Variance Loss: 64.26995849609375
+Mean Accuracy: 23.172924041748047 Variance Accuracy: 7.430581569671631
+Mean Loss: 478.37225341796875 Variance Loss: 65.83328247070312
+Mean Accuracy: 23.162939071655273 Variance Accuracy: 7.409125328063965
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 3 with epochs 8
+Mean Loss: 2.2984519004821777 Variance Loss: 0.11829093098640442
+Mean Accuracy: 19.888179779052734 Variance Accuracy: 7.548585891723633
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18790 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 40.74074074074074% of the constraints (11/27) were true
+After assignment 100.0% of the constraints (27/27) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.531623125076294
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 224.89341735839844 Variance Loss: 28.733285903930664
+Mean Accuracy: 24.730430603027344 Variance Accuracy: 7.952808380126953
+Mean Loss: 224.89089965820312 Variance Loss: 29.29842185974121
+Mean Accuracy: 24.730430603027344 Variance Accuracy: 7.765626430511475
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 3 with epochs 9
+Mean Loss: 2.757213592529297 Variance Loss: 0.23815248906612396
+Mean Accuracy: 20.736820220947266 Variance Accuracy: 7.473576545715332
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18790 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 37.03703703703704% of the constraints (10/27) were true
+After assignment 100.0% of the constraints (27/27) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.203336000442505
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 522.5530395507812 Variance Loss: 74.2285385131836
+Mean Accuracy: 22.85343360900879 Variance Accuracy: 7.496235370635986
+Mean Loss: 522.7007446289062 Variance Loss: 73.534423828125
+Mean Accuracy: 22.923322677612305 Variance Accuracy: 7.332566738128662
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 3 with epochs 10
+Mean Loss: 3.0900251865386963 Variance Loss: 0.2647639513015747
+Mean Accuracy: 22.434104919433594 Variance Accuracy: 7.756168842315674
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18790 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 40.74074074074074% of the constraints (11/27) were true
+After assignment 100.0% of the constraints (27/27) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.9171676635742188
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 286.27557373046875 Variance Loss: 37.771263122558594
+Mean Accuracy: 24.22124671936035 Variance Accuracy: 7.6558051109313965
+Mean Loss: 286.3330078125 Variance Loss: 38.56142807006836
+Mean Accuracy: 24.201278686523438 Variance Accuracy: 7.395846366882324
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 3 with epochs 11
+Mean Loss: 2.8328475952148438 Variance Loss: 0.25244903564453125
+Mean Accuracy: 24.60063934326172 Variance Accuracy: 7.01205587387085
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18790 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 25.925925925925927% of the constraints (7/27) were true
+After assignment 100.0% of the constraints (27/27) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.3766767978668213
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 391.00762939453125 Variance Loss: 52.87632369995117
+Mean Accuracy: 19.72843360900879 Variance Accuracy: 6.981699466705322
+Mean Loss: 390.9915771484375 Variance Loss: 53.15834426879883
+Mean Accuracy: 19.748401641845703 Variance Accuracy: 6.615067005157471
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 4 with epochs 2
+Mean Loss: 2.2928314208984375 Variance Loss: 0.03889293968677521
+Mean Accuracy: 18.630191802978516 Variance Accuracy: 7.1110148429870605
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18800 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 30.555555555555557% of the constraints (11/36) were true
+After assignment 100.0% of the constraints (36/36) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.4345879554748535
+Now loss is 0.0
+Before Accuracy was 25.0%
+Now Accuracy is 100.0%
+Mean Loss: 92.84429168701172 Variance Loss: 9.71504020690918
+Mean Accuracy: 14.486821174621582 Variance Accuracy: 6.597128868103027
+Mean Loss: 92.90511322021484 Variance Loss: 10.898307800292969
+Mean Accuracy: 14.496805191040039 Variance Accuracy: 6.240488529205322
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 4 with epochs 3
+Mean Loss: 2.4401395320892334 Variance Loss: 0.15026220679283142
+Mean Accuracy: 21.315895080566406 Variance Accuracy: 6.7321553230285645
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18800 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 36.111111111111114% of the constraints (13/36) were true
+After assignment 100.0% of the constraints (36/36) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.9460949897766113
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 189.3113555908203 Variance Loss: 28.995426177978516
+Mean Accuracy: 27.106630325317383 Variance Accuracy: 8.382194519042969
+Mean Loss: 189.38134765625 Variance Loss: 29.080392837524414
+Mean Accuracy: 27.106630325317383 Variance Accuracy: 7.4110822677612305
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 4 with epochs 4
+Mean Loss: 2.4457333087921143 Variance Loss: 0.11861182749271393
+Mean Accuracy: 20.087860107421875 Variance Accuracy: 7.0114850997924805
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18800 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 33.333333333333336% of the constraints (12/36) were true
+After assignment 100.0% of the constraints (36/36) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.7726805210113525
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 119.02265167236328 Variance Loss: 17.235675811767578
+Mean Accuracy: 20.387380599975586 Variance Accuracy: 6.7694549560546875
+Mean Loss: 118.99246215820312 Variance Loss: 17.36827850341797
+Mean Accuracy: 20.3574275970459 Variance Accuracy: 6.925137042999268
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 4 with epochs 5
+Mean Loss: 2.9064197540283203 Variance Loss: 0.31606757640838623
+Mean Accuracy: 29.333066940307617 Variance Accuracy: 8.257031440734863
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18800 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 33.333333333333336% of the constraints (12/36) were true
+After assignment 100.0% of the constraints (36/36) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.8210718631744385
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 268.6368408203125 Variance Loss: 45.48336410522461
+Mean Accuracy: 27.765575408935547 Variance Accuracy: 7.812218189239502
+Mean Loss: 268.338134765625 Variance Loss: 47.68603515625
+Mean Accuracy: 27.755590438842773 Variance Accuracy: 7.515646457672119
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 4 with epochs 6
+Mean Loss: 2.6780476570129395 Variance Loss: 0.2180461883544922
+Mean Accuracy: 28.783945083618164 Variance Accuracy: 7.650735378265381
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18800 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 38.888888888888886% of the constraints (14/36) were true
+After assignment 100.0% of the constraints (36/36) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.1041271686553955
+Now loss is 0.0
+Before Accuracy was 25.0%
+Now Accuracy is 100.0%
+Mean Loss: 869.2427978515625 Variance Loss: 123.81354522705078
+Mean Accuracy: 28.574281692504883 Variance Accuracy: 7.901199817657471
+Mean Loss: 869.470458984375 Variance Loss: 127.39350891113281
+Mean Accuracy: 28.584264755249023 Variance Accuracy: 8.255167007446289
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 4 with epochs 7
+Mean Loss: 2.9849207401275635 Variance Loss: 0.34175392985343933
+Mean Accuracy: 26.31789207458496 Variance Accuracy: 7.643058776855469
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18800 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 33.333333333333336% of the constraints (12/36) were true
+After assignment 100.0% of the constraints (36/36) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 4.25174617767334
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 439.0296630859375 Variance Loss: 66.58209991455078
+Mean Accuracy: 23.152956008911133 Variance Accuracy: 7.040492057800293
+Mean Loss: 438.73004150390625 Variance Loss: 72.23397827148438
+Mean Accuracy: 23.14297103881836 Variance Accuracy: 7.542343616485596
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 4 with epochs 8
+Mean Loss: 2.5905659198760986 Variance Loss: 0.2010696530342102
+Mean Accuracy: 26.96685218811035 Variance Accuracy: 7.411608695983887
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18800 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 38.888888888888886% of the constraints (14/36) were true
+After assignment 100.0% of the constraints (36/36) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.194822311401367
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 245.86558532714844 Variance Loss: 39.31490707397461
+Mean Accuracy: 25.469249725341797 Variance Accuracy: 7.812384605407715
+Mean Loss: 245.86920166015625 Variance Loss: 35.84079360961914
+Mean Accuracy: 25.479232788085938 Variance Accuracy: 7.793725490570068
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 4 with epochs 9
+Mean Loss: 2.759960412979126 Variance Loss: 0.24569234251976013
+Mean Accuracy: 27.476037979125977 Variance Accuracy: 7.70661735534668
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18800 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 55.55555555555556% of the constraints (20/36) were true
+After assignment 100.0% of the constraints (36/36) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.255234718322754
+Now loss is 0.0
+Before Accuracy was 25.0%
+Now Accuracy is 100.0%
+Mean Loss: 199.49977111816406 Variance Loss: 22.74819564819336
+Mean Accuracy: 13.05910587310791 Variance Accuracy: 6.174374103546143
+Mean Loss: 199.49093627929688 Variance Loss: 22.228178024291992
+Mean Accuracy: 13.069089889526367 Variance Accuracy: 6.261557579040527
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 4 with epochs 10
+Mean Loss: 2.478210687637329 Variance Loss: 0.20050489902496338
+Mean Accuracy: 25.97843360900879 Variance Accuracy: 7.6777567863464355
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18800 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 41.666666666666664% of the constraints (15/36) were true
+After assignment 100.0% of the constraints (36/36) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.9522905349731445
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 215.10316467285156 Variance Loss: 37.09534454345703
+Mean Accuracy: 27.895366668701172 Variance Accuracy: 7.819127559661865
+Mean Loss: 215.08424377441406 Variance Loss: 35.80844497680664
+Mean Accuracy: 27.875398635864258 Variance Accuracy: 7.470484733581543
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 4 with epochs 11
+Mean Loss: 2.777949094772339 Variance Loss: 0.2529444992542267
+Mean Accuracy: 25.72883415222168 Variance Accuracy: 8.22998046875
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18800 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 41.666666666666664% of the constraints (15/36) were true
+After assignment 100.0% of the constraints (36/36) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.450503349304199
+Now loss is 7.661003473913297e-05
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 108.41294860839844 Variance Loss: 15.422738075256348
+Mean Accuracy: 12.779552459716797 Variance Accuracy: 6.2336907386779785
+Mean Loss: 108.43025207519531 Variance Loss: 15.531347274780273
+Mean Accuracy: 12.76956844329834 Variance Accuracy: 6.2416582107543945
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 5 with epochs 2
+Mean Loss: 2.334883689880371 Variance Loss: 0.09206286817789078
+Mean Accuracy: 22.40415382385254 Variance Accuracy: 7.116482734680176
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18810 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 46.666666666666664% of the constraints (21/45) were true
+After assignment 100.0% of the constraints (45/45) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.5660290718078613
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 98.69161224365234 Variance Loss: 11.877497673034668
+Mean Accuracy: 16.15415382385254 Variance Accuracy: 6.108232021331787
+Mean Loss: 98.69428253173828 Variance Loss: 11.595170021057129
+Mean Accuracy: 16.12420082092285 Variance Accuracy: 6.1439642906188965
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 5 with epochs 3
+Mean Loss: 2.285658836364746 Variance Loss: 0.11343761533498764
+Mean Accuracy: 26.36781120300293 Variance Accuracy: 7.790503978729248
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18810 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 48.888888888888886% of the constraints (22/45) were true
+After assignment 100.0% of the constraints (45/45) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.475160598754883
+Now loss is 0.0
+Before Accuracy was 20.0%
+Now Accuracy is 100.0%
+Mean Loss: 193.85317993164062 Variance Loss: 30.923690795898438
+Mean Accuracy: 21.96485710144043 Variance Accuracy: 7.296117782592773
+Mean Loss: 193.85023498535156 Variance Loss: 30.313758850097656
+Mean Accuracy: 21.984825134277344 Variance Accuracy: 7.444483757019043
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 5 with epochs 4
+Mean Loss: 2.294792413711548 Variance Loss: 0.0498005636036396
+Mean Accuracy: 21.156150817871094 Variance Accuracy: 7.348900318145752
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18810 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 57.77777777777778% of the constraints (26/45) were true
+After assignment 100.0% of the constraints (45/45) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.256049394607544
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 118.26754760742188 Variance Loss: 11.866364479064941
+Mean Accuracy: 13.997603416442871 Variance Accuracy: 6.481381416320801
+Mean Loss: 118.24083709716797 Variance Loss: 12.516119003295898
+Mean Accuracy: 13.977635383605957 Variance Accuracy: 6.184601783752441
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 5 with epochs 5
+Mean Loss: 2.3120639324188232 Variance Loss: 0.14602725207805634
+Mean Accuracy: 25.73881721496582 Variance Accuracy: 7.635217666625977
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18810 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 46.666666666666664% of the constraints (21/45) were true
+After assignment 100.0% of the constraints (45/45) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.61185884475708
+Now loss is 0.0
+Before Accuracy was 20.0%
+Now Accuracy is 100.0%
+Mean Loss: 133.4310760498047 Variance Loss: 20.199573516845703
+Mean Accuracy: 24.740415573120117 Variance Accuracy: 7.836182594299316
+Mean Loss: 133.42465209960938 Variance Loss: 21.585132598876953
+Mean Accuracy: 24.750398635864258 Variance Accuracy: 8.097763061523438
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 5 with epochs 6
+Mean Loss: 2.3039331436157227 Variance Loss: 0.17370744049549103
+Mean Accuracy: 29.742412567138672 Variance Accuracy: 7.728218078613281
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18810 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 57.77777777777778% of the constraints (26/45) were true
+After assignment 100.0% of the constraints (45/45) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.5608654022216797
+Now loss is 0.0
+Before Accuracy was 20.0%
+Now Accuracy is 100.0%
+Mean Loss: 179.19398498535156 Variance Loss: 27.54550552368164
+Mean Accuracy: 23.262779235839844 Variance Accuracy: 7.167421340942383
+Mean Loss: 179.19261169433594 Variance Loss: 28.041217803955078
+Mean Accuracy: 23.252796173095703 Variance Accuracy: 7.365320205688477
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 5 with epochs 7
+Mean Loss: 2.556347370147705 Variance Loss: 0.2428310513496399
+Mean Accuracy: 28.684104919433594 Variance Accuracy: 7.860391616821289
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18810 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 66.66666666666667% of the constraints (30/45) were true
+After assignment 100.0% of the constraints (45/45) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.643160104751587
+Now loss is 0.0
+Before Accuracy was 20.0%
+Now Accuracy is 100.0%
+Mean Loss: 185.66578674316406 Variance Loss: 26.369110107421875
+Mean Accuracy: 21.455671310424805 Variance Accuracy: 7.234993934631348
+Mean Loss: 185.7022705078125 Variance Loss: 26.507801055908203
+Mean Accuracy: 21.425718307495117 Variance Accuracy: 6.975451469421387
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 5 with epochs 8
+Mean Loss: 2.6845149993896484 Variance Loss: 0.2713661789894104
+Mean Accuracy: 29.4528751373291 Variance Accuracy: 7.7974324226379395
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18810 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 64.44444444444444% of the constraints (29/45) were true
+After assignment 100.0% of the constraints (45/45) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.5874381065368652
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 159.92132568359375 Variance Loss: 22.051118850708008
+Mean Accuracy: 19.748401641845703 Variance Accuracy: 7.1952714920043945
+Mean Loss: 159.90066528320312 Variance Loss: 21.585498809814453
+Mean Accuracy: 19.768369674682617 Variance Accuracy: 6.821709632873535
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 5 with epochs 9
+Mean Loss: 2.315655469894409 Variance Loss: 0.168979674577713
+Mean Accuracy: 28.993610382080078 Variance Accuracy: 7.524370193481445
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18810 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.111111111111114% of the constraints (23/45) were true
+After assignment 100.0% of the constraints (45/45) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.759072780609131
+Now loss is 0.0
+Before Accuracy was 20.0%
+Now Accuracy is 100.0%
+Mean Loss: 231.34088134765625 Variance Loss: 36.6932487487793
+Mean Accuracy: 22.833465576171875 Variance Accuracy: 7.4904704093933105
+Mean Loss: 231.19610595703125 Variance Loss: 36.71525192260742
+Mean Accuracy: 22.80351448059082 Variance Accuracy: 6.995250225067139
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 5 with epochs 10
+Mean Loss: 2.6835598945617676 Variance Loss: 0.24109657108783722
+Mean Accuracy: 30.62100601196289 Variance Accuracy: 8.135008811950684
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18810 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 60.0% of the constraints (27/45) were true
+After assignment 100.0% of the constraints (45/45) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.4991023540496826
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 169.52426147460938 Variance Loss: 21.075883865356445
+Mean Accuracy: 21.34584617614746 Variance Accuracy: 6.897602558135986
+Mean Loss: 169.49708557128906 Variance Loss: 21.816328048706055
+Mean Accuracy: 21.33586311340332 Variance Accuracy: 7.148645401000977
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 5 with epochs 11
+Mean Loss: 2.359251022338867 Variance Loss: 0.20489466190338135
+Mean Accuracy: 28.724040985107422 Variance Accuracy: 8.003472328186035
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18810 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 57.77777777777778% of the constraints (26/45) were true
+After assignment 100.0% of the constraints (45/45) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.667869806289673
+Now loss is 0.0
+Before Accuracy was 20.0%
+Now Accuracy is 100.0%
+Mean Loss: 185.6040802001953 Variance Loss: 26.420177459716797
+Mean Accuracy: 22.91333770751953 Variance Accuracy: 7.408302307128906
+Mean Loss: 185.56878662109375 Variance Loss: 28.013086318969727
+Mean Accuracy: 22.873401641845703 Variance Accuracy: 7.748235702514648
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 6 with epochs 2
+Mean Loss: 2.2838351726531982 Variance Loss: 0.12339465320110321
+Mean Accuracy: 26.15814781188965 Variance Accuracy: 7.549685001373291
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18820 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 25.925925925925927% of the constraints (14/54) were true
+After assignment 100.0% of the constraints (54/54) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.822734832763672
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 216.47593688964844 Variance Loss: 27.149829864501953
+Mean Accuracy: 13.807907104492188 Variance Accuracy: 6.398898601531982
+Mean Loss: 216.604736328125 Variance Loss: 29.13722038269043
+Mean Accuracy: 13.787939071655273 Variance Accuracy: 5.9782514572143555
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 6 with epochs 3
+Mean Loss: 2.312901020050049 Variance Loss: 0.06954801827669144
+Mean Accuracy: 18.7000789642334 Variance Accuracy: 7.39450740814209
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18820 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 46.2962962962963% of the constraints (25/54) were true
+After assignment 100.0% of the constraints (54/54) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3991212844848633
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 41.28821563720703 Variance Loss: 5.241382598876953
+Mean Accuracy: 16.59345054626465 Variance Accuracy: 5.996823310852051
+Mean Loss: 41.31177520751953 Variance Loss: 5.654616355895996
+Mean Accuracy: 16.573482513427734 Variance Accuracy: 6.54398250579834
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 6 with epochs 4
+Mean Loss: 2.2823898792266846 Variance Loss: 0.057472795248031616
+Mean Accuracy: 22.344249725341797 Variance Accuracy: 7.522549152374268
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18820 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 50.0% of the constraints (27/54) were true
+After assignment 100.0% of the constraints (54/54) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.319883108139038
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 200.81712341308594 Variance Loss: 23.56573486328125
+Mean Accuracy: 12.839456558227539 Variance Accuracy: 6.159975528717041
+Mean Loss: 200.87460327148438 Variance Loss: 22.23575210571289
+Mean Accuracy: 12.829472541809082 Variance Accuracy: 6.117180347442627
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 6 with epochs 5
+Mean Loss: 2.2750322818756104 Variance Loss: 0.10797493904829025
+Mean Accuracy: 32.797523498535156 Variance Accuracy: 7.772821426391602
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18820 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 55.55555555555556% of the constraints (30/54) were true
+After assignment 100.0% of the constraints (54/54) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.445481061935425
+Now loss is 0.0
+Before Accuracy was 33.333335876464844%
+Now Accuracy is 100.0%
+Mean Loss: 265.3403625488281 Variance Loss: 35.47474670410156
+Mean Accuracy: 15.305511474609375 Variance Accuracy: 6.271818161010742
+Mean Loss: 265.2555236816406 Variance Loss: 32.856746673583984
+Mean Accuracy: 15.325479507446289 Variance Accuracy: 6.342278957366943
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 6 with epochs 6
+Mean Loss: 2.3107333183288574 Variance Loss: 0.17549628019332886
+Mean Accuracy: 32.65774917602539 Variance Accuracy: 8.47636604309082
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18820 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 44.44444444444444% of the constraints (24/54) were true
+After assignment 100.0% of the constraints (54/54) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.7808074951171875
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 330.1985168457031 Variance Loss: 44.98014450073242
+Mean Accuracy: 14.936101913452148 Variance Accuracy: 6.045816421508789
+Mean Loss: 330.14990234375 Variance Loss: 42.90874481201172
+Mean Accuracy: 14.936101913452148 Variance Accuracy: 5.909677505493164
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 6 with epochs 7
+Mean Loss: 2.2941536903381348 Variance Loss: 0.049299851059913635
+Mean Accuracy: 21.8250789642334 Variance Accuracy: 7.594968795776367
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18820 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 53.7037037037037% of the constraints (29/54) were true
+After assignment 100.0% of the constraints (54/54) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.2844483852386475
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 96.24073028564453 Variance Loss: 11.010313034057617
+Mean Accuracy: 14.556709289550781 Variance Accuracy: 5.953561305999756
+Mean Loss: 96.22814178466797 Variance Loss: 10.063732147216797
+Mean Accuracy: 14.546725273132324 Variance Accuracy: 6.370863437652588
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 6 with epochs 8
+Mean Loss: 2.3457813262939453 Variance Loss: 0.16851112246513367
+Mean Accuracy: 30.011980056762695 Variance Accuracy: 7.972864151000977
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18820 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 42.592592592592595% of the constraints (23/54) were true
+After assignment 100.0% of the constraints (54/54) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.72196364402771
+Now loss is 0.0
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 282.97308349609375 Variance Loss: 34.41667938232422
+Mean Accuracy: 14.117412567138672 Variance Accuracy: 6.134125709533691
+Mean Loss: 283.05157470703125 Variance Loss: 34.457950592041016
+Mean Accuracy: 14.067492485046387 Variance Accuracy: 6.265628337860107
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 6 with epochs 9
+Mean Loss: 2.357614040374756 Variance Loss: 0.178669735789299
+Mean Accuracy: 32.06869125366211 Variance Accuracy: 8.314251899719238
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18820 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 53.7037037037037% of the constraints (29/54) were true
+After assignment 100.0% of the constraints (54/54) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.559954881668091
+Now loss is 0.0
+Before Accuracy was 16.666667938232422%
+Now Accuracy is 100.0%
+Mean Loss: 328.6522216796875 Variance Loss: 39.34535217285156
+Mean Accuracy: 16.174121856689453 Variance Accuracy: 6.391956329345703
+Mean Loss: 328.59564208984375 Variance Loss: 40.460182189941406
+Mean Accuracy: 16.194089889526367 Variance Accuracy: 7.095768451690674
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 6 with epochs 10
+Mean Loss: 2.370131015777588 Variance Loss: 0.25688496232032776
+Mean Accuracy: 36.19209289550781 Variance Accuracy: 8.685539245605469
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18820 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.851851851851855% of the constraints (28/54) were true
+After assignment 100.0% of the constraints (54/54) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.850532293319702
+Now loss is 0.0
+Before Accuracy was 16.666667938232422%
+Now Accuracy is 100.0%
+Mean Loss: 147.0508575439453 Variance Loss: 21.355457305908203
+Mean Accuracy: 15.615015983581543 Variance Accuracy: 6.6030988693237305
+Mean Loss: 147.0070343017578 Variance Loss: 20.48470687866211
+Mean Accuracy: 15.595047950744629 Variance Accuracy: 6.386165142059326
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 6 with epochs 11
+Mean Loss: 2.3119595050811768 Variance Loss: 0.16085819900035858
+Mean Accuracy: 33.20686721801758 Variance Accuracy: 8.872879981994629
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18820 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 61.111111111111114% of the constraints (33/54) were true
+After assignment 100.0% of the constraints (54/54) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.444350004196167
+Now loss is 0.0
+Before Accuracy was 16.666667938232422%
+Now Accuracy is 100.0%
+Mean Loss: 204.34471130371094 Variance Loss: 28.496383666992188
+Mean Accuracy: 14.506789207458496 Variance Accuracy: 6.6242218017578125
+Mean Loss: 204.56451416015625 Variance Loss: 28.765169143676758
+Mean Accuracy: 14.486821174621582 Variance Accuracy: 6.3209099769592285
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 7 with epochs 2
+Mean Loss: 2.289156913757324 Variance Loss: 0.0478137731552124
+Mean Accuracy: 22.60383415222168 Variance Accuracy: 6.933694839477539
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18830 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 28.571428571428573% of the constraints (18/63) were true
+After assignment 100.0% of the constraints (63/63) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.453681707382202
+Now loss is 0.0
+Before Accuracy was 14.285715103149414%
+Now Accuracy is 100.0%
+Mean Loss: 182.5775909423828 Variance Loss: 27.512371063232422
+Mean Accuracy: 13.378594398498535 Variance Accuracy: 6.05479097366333
+Mean Loss: 182.6234588623047 Variance Loss: 24.39019012451172
+Mean Accuracy: 13.39856243133545 Variance Accuracy: 6.215150833129883
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 7 with epochs 3
+Mean Loss: 2.3197414875030518 Variance Loss: 0.14873994886875153
+Mean Accuracy: 26.198083877563477 Variance Accuracy: 7.597180366516113
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18830 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 42.857142857142854% of the constraints (27/63) were true
+After assignment 100.0% of the constraints (63/63) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.694654941558838
+Now loss is 3.916871094133967e-07
+Before Accuracy was 14.285715103149414%
+Now Accuracy is 100.0%
+Mean Loss: 385.0546875 Variance Loss: 62.41796112060547
+Mean Accuracy: 11.930910110473633 Variance Accuracy: 6.1097540855407715
+Mean Loss: 385.0499572753906 Variance Loss: 61.58867645263672
+Mean Accuracy: 11.94089412689209 Variance Accuracy: 5.672379016876221
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 7 with epochs 4
+Mean Loss: 2.2920448780059814 Variance Loss: 0.12719935178756714
+Mean Accuracy: 27.14656639099121 Variance Accuracy: 7.819140434265137
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18830 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 38.095238095238095% of the constraints (24/63) were true
+After assignment 100.0% of the constraints (63/63) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.604093551635742
+Now loss is 0.0
+Before Accuracy was 14.285715103149414%
+Now Accuracy is 100.0%
+Mean Loss: 309.3354797363281 Variance Loss: 44.27863311767578
+Mean Accuracy: 13.358626365661621 Variance Accuracy: 5.689980983734131
+Mean Loss: 309.444580078125 Variance Loss: 44.345760345458984
+Mean Accuracy: 13.368610382080078 Variance Accuracy: 6.012145519256592
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 7 with epochs 5
+Mean Loss: 2.297531843185425 Variance Loss: 0.07658649981021881
+Mean Accuracy: 16.104232788085938 Variance Accuracy: 7.064865589141846
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18830 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 41.26984126984127% of the constraints (26/63) were true
+After assignment 100.0% of the constraints (63/63) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.373131275177002
+Now loss is 0.25873467326164246
+Before Accuracy was 14.285715103149414%
+Now Accuracy is 85.71428680419922%
+Mean Loss: 28.97015953063965 Variance Loss: 4.150266647338867
+Mean Accuracy: 16.723243713378906 Variance Accuracy: 6.651143550872803
+Mean Loss: 29.562368392944336 Variance Loss: 4.034017562866211
+Mean Accuracy: 15.79472827911377 Variance Accuracy: 6.902255058288574
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 7 with epochs 6
+Mean Loss: 2.307415723800659 Variance Loss: 0.0919482558965683
+Mean Accuracy: 12.5 Variance Accuracy: 5.770899772644043
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18830 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 47.61904761904762% of the constraints (30/63) were true
+After assignment 100.0% of the constraints (63/63) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.425830364227295
+Now loss is 0.0
+Before Accuracy was 14.285715103149414%
+Now Accuracy is 100.0%
+Mean Loss: 42.61251449584961 Variance Loss: 5.606569766998291
+Mean Accuracy: 17.881389617919922 Variance Accuracy: 7.1050214767456055
+Mean Loss: 42.585182189941406 Variance Loss: 5.950873374938965
+Mean Accuracy: 17.891374588012695 Variance Accuracy: 7.3891096115112305
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 7 with epochs 7
+Mean Loss: 2.4462015628814697 Variance Loss: 0.2259608805179596
+Mean Accuracy: 27.416133880615234 Variance Accuracy: 7.627814292907715
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18830 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 33.333333333333336% of the constraints (21/63) were true
+After assignment 100.0% of the constraints (63/63) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.3656551837921143
+Now loss is 0.0
+Before Accuracy was 14.285715103149414%
+Now Accuracy is 100.0%
+Mean Loss: 434.2091064453125 Variance Loss: 60.086639404296875
+Mean Accuracy: 13.308706283569336 Variance Accuracy: 5.732912540435791
+Mean Loss: 434.1656799316406 Variance Loss: 67.77760314941406
+Mean Accuracy: 13.318690299987793 Variance Accuracy: 5.706862926483154
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 7 with epochs 8
+Mean Loss: 2.3951611518859863 Variance Loss: 0.1829908937215805
+Mean Accuracy: 25.599040985107422 Variance Accuracy: 7.704579830169678
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18830 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 36.507936507936506% of the constraints (23/63) were true
+After assignment 100.0% of the constraints (63/63) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.8854479789733887
+Now loss is 0.0
+Before Accuracy was 14.285715103149414%
+Now Accuracy is 100.0%
+Mean Loss: 120.27799224853516 Variance Loss: 23.40865135192871
+Mean Accuracy: 20.55710792541504 Variance Accuracy: 7.247891902923584
+Mean Loss: 120.30753326416016 Variance Loss: 22.336856842041016
+Mean Accuracy: 20.5471248626709 Variance Accuracy: 7.217931270599365
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 7 with epochs 9
+Mean Loss: 2.5990536212921143 Variance Loss: 0.29287195205688477
+Mean Accuracy: 28.254793167114258 Variance Accuracy: 8.492925643920898
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18830 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 36.507936507936506% of the constraints (23/63) were true
+After assignment 100.0% of the constraints (63/63) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.4209954738616943
+Now loss is 0.0
+Before Accuracy was 14.285715103149414%
+Now Accuracy is 100.0%
+Mean Loss: 231.4653778076172 Variance Loss: 43.322261810302734
+Mean Accuracy: 15.99440860748291 Variance Accuracy: 6.104645252227783
+Mean Loss: 231.61077880859375 Variance Loss: 41.91561508178711
+Mean Accuracy: 15.984424591064453 Variance Accuracy: 6.27463960647583
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 7 with epochs 10
+Mean Loss: 2.4527292251586914 Variance Loss: 0.2417978048324585
+Mean Accuracy: 31.968849182128906 Variance Accuracy: 8.29336929321289
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18830 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 39.682539682539684% of the constraints (25/63) were true
+After assignment 100.0% of the constraints (63/63) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.1327340602874756
+Now loss is 0.0
+Before Accuracy was 14.285715103149414%
+Now Accuracy is 100.0%
+Mean Loss: 232.54969787597656 Variance Loss: 41.009830474853516
+Mean Accuracy: 17.851438522338867 Variance Accuracy: 7.589199542999268
+Mean Loss: 232.58731079101562 Variance Loss: 40.16755294799805
+Mean Accuracy: 17.87140655517578 Variance Accuracy: 6.493790149688721
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 7 with epochs 11
+Mean Loss: 2.514486312866211 Variance Loss: 0.25487685203552246
+Mean Accuracy: 28.86381721496582 Variance Accuracy: 8.215764045715332
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18830 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 36.507936507936506% of the constraints (23/63) were true
+After assignment 100.0% of the constraints (63/63) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.344797134399414
+Now loss is 0.0
+Before Accuracy was 14.285715103149414%
+Now Accuracy is 100.0%
+Mean Loss: 207.7027130126953 Variance Loss: 35.85997772216797
+Mean Accuracy: 18.630191802978516 Variance Accuracy: 6.818909168243408
+Mean Loss: 207.6044158935547 Variance Loss: 35.91245651245117
+Mean Accuracy: 18.620206832885742 Variance Accuracy: 7.200509071350098
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 8 with epochs 2
+Mean Loss: 2.2921040058135986 Variance Loss: 0.08315950632095337
+Mean Accuracy: 21.5455265045166 Variance Accuracy: 7.137333393096924
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18840 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 56.94444444444444% of the constraints (41/72) were true
+After assignment 100.0% of the constraints (72/72) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.2867069244384766
+Now loss is 0.0
+Before Accuracy was 25.0%
+Now Accuracy is 100.0%
+Mean Loss: 287.67413330078125 Variance Loss: 52.58036422729492
+Mean Accuracy: 18.680110931396484 Variance Accuracy: 7.300625801086426
+Mean Loss: 288.21917724609375 Variance Loss: 56.46059799194336
+Mean Accuracy: 18.620206832885742 Variance Accuracy: 6.907656669616699
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 8 with epochs 3
+Mean Loss: 2.335134983062744 Variance Loss: 0.1311042457818985
+Mean Accuracy: 18.520366668701172 Variance Accuracy: 6.730595588684082
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18840 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.388888888888886% of the constraints (37/72) were true
+After assignment 100.0% of the constraints (72/72) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3140974044799805
+Now loss is 0.0
+Before Accuracy was 25.0%
+Now Accuracy is 100.0%
+Mean Loss: 85.40086364746094 Variance Loss: 18.71340560913086
+Mean Accuracy: 26.577476501464844 Variance Accuracy: 7.812986373901367
+Mean Loss: 85.44344329833984 Variance Loss: 18.457138061523438
+Mean Accuracy: 26.56749153137207 Variance Accuracy: 7.812999248504639
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 8 with epochs 4
+Mean Loss: 2.1943745613098145 Variance Loss: 0.1745777428150177
+Mean Accuracy: 36.04233169555664 Variance Accuracy: 7.963087558746338
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18840 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 62.5% of the constraints (45/72) were true
+After assignment 100.0% of the constraints (72/72) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.1081011295318604
+Now loss is 3.57627357061574e-07
+Before Accuracy was 50.0%
+Now Accuracy is 100.0%
+Mean Loss: 309.08612060546875 Variance Loss: 61.68255615234375
+Mean Accuracy: 21.066293716430664 Variance Accuracy: 7.010158538818359
+Mean Loss: 309.04681396484375 Variance Loss: 65.49436950683594
+Mean Accuracy: 21.03634262084961 Variance Accuracy: 7.2026753425598145
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 8 with epochs 5
+Mean Loss: 2.251183271408081 Variance Loss: 0.11967385560274124
+Mean Accuracy: 26.976837158203125 Variance Accuracy: 8.197155952453613
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18840 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 56.94444444444444% of the constraints (41/72) were true
+After assignment 100.0% of the constraints (72/72) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.197895050048828
+Now loss is 7.450578465295621e-08
+Before Accuracy was 25.0%
+Now Accuracy is 100.0%
+Mean Loss: 210.39498901367188 Variance Loss: 39.836273193359375
+Mean Accuracy: 23.2028751373291 Variance Accuracy: 7.785380840301514
+Mean Loss: 210.46144104003906 Variance Loss: 41.429962158203125
+Mean Accuracy: 23.24281120300293 Variance Accuracy: 7.6975417137146
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 8 with epochs 6
+Mean Loss: 2.2891366481781006 Variance Loss: 0.18720301985740662
+Mean Accuracy: 31.93889808654785 Variance Accuracy: 8.634244918823242
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18840 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 61.111111111111114% of the constraints (44/72) were true
+After assignment 100.0% of the constraints (72/72) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.1355395317077637
+Now loss is 0.0
+Before Accuracy was 37.5%
+Now Accuracy is 100.0%
+Mean Loss: 185.89955139160156 Variance Loss: 41.2031135559082
+Mean Accuracy: 23.612220764160156 Variance Accuracy: 7.437455177307129
+Mean Loss: 185.82481384277344 Variance Loss: 40.92238235473633
+Mean Accuracy: 23.602235794067383 Variance Accuracy: 7.628810405731201
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 8 with epochs 7
+Mean Loss: 2.3392770290374756 Variance Loss: 0.17125502228736877
+Mean Accuracy: 21.595447540283203 Variance Accuracy: 7.062331676483154
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18840 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 63.888888888888886% of the constraints (46/72) were true
+After assignment 100.0% of the constraints (72/72) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.1831045150756836
+Now loss is 0.0
+Before Accuracy was 37.5%
+Now Accuracy is 100.0%
+Mean Loss: 117.18842315673828 Variance Loss: 23.991939544677734
+Mean Accuracy: 24.351037979125977 Variance Accuracy: 7.450552940368652
+Mean Loss: 117.12727355957031 Variance Loss: 24.00139045715332
+Mean Accuracy: 24.380990982055664 Variance Accuracy: 7.328174114227295
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 8 with epochs 8
+Mean Loss: 2.1878960132598877 Variance Loss: 0.14641574025154114
+Mean Accuracy: 33.20686721801758 Variance Accuracy: 8.35696029663086
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18840 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 66.66666666666667% of the constraints (48/72) were true
+After assignment 100.0% of the constraints (72/72) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.0404014587402344
+Now loss is 0.0
+Before Accuracy was 37.5%
+Now Accuracy is 100.0%
+Mean Loss: 226.870361328125 Variance Loss: 45.77286911010742
+Mean Accuracy: 22.27436065673828 Variance Accuracy: 7.440856456756592
+Mean Loss: 227.11341857910156 Variance Loss: 43.41477966308594
+Mean Accuracy: 22.284345626831055 Variance Accuracy: 7.706876754760742
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 8 with epochs 9
+Mean Loss: 2.3591694831848145 Variance Loss: 0.3216008245944977
+Mean Accuracy: 39.77635955810547 Variance Accuracy: 8.74970817565918
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18840 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 61.111111111111114% of the constraints (44/72) were true
+After assignment 100.0% of the constraints (72/72) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.419623374938965
+Now loss is 0.0016776603879407048
+Before Accuracy was 37.5%
+Now Accuracy is 100.0%
+Mean Loss: 226.73912048339844 Variance Loss: 56.053466796875
+Mean Accuracy: 23.073083877563477 Variance Accuracy: 7.001122951507568
+Mean Loss: 227.0421142578125 Variance Loss: 52.17439270019531
+Mean Accuracy: 23.113019943237305 Variance Accuracy: 7.1446852684021
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 8 with epochs 10
+Mean Loss: 2.2858047485351562 Variance Loss: 0.11803900450468063
+Mean Accuracy: 20.636980056762695 Variance Accuracy: 7.118351459503174
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18840 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 66.66666666666667% of the constraints (48/72) were true
+After assignment 100.0% of the constraints (72/72) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.222853660583496
+Now loss is 0.019013289362192154
+Before Accuracy was 37.5%
+Now Accuracy is 100.0%
+Mean Loss: 25.356975555419922 Variance Loss: 3.4449338912963867
+Mean Accuracy: 23.951677322387695 Variance Accuracy: 7.207713603973389
+Mean Loss: 26.22684097290039 Variance Loss: 3.9763011932373047
+Mean Accuracy: 23.891773223876953 Variance Accuracy: 7.33653450012207
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 8 with epochs 11
+Mean Loss: 2.2985618114471436 Variance Loss: 0.2387637346982956
+Mean Accuracy: 31.83905792236328 Variance Accuracy: 8.670581817626953
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18840 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 62.5% of the constraints (45/72) were true
+After assignment 100.0% of the constraints (72/72) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.2896177768707275
+Now loss is 0.0
+Before Accuracy was 25.0%
+Now Accuracy is 100.0%
+Mean Loss: 171.97938537597656 Variance Loss: 32.51408004760742
+Mean Accuracy: 24.331069946289062 Variance Accuracy: 7.635531902313232
+Mean Loss: 171.8935546875 Variance Loss: 35.778018951416016
+Mean Accuracy: 24.341054916381836 Variance Accuracy: 7.422313690185547
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 9 with epochs 2
+Mean Loss: 2.3050618171691895 Variance Loss: 0.09123167395591736
+Mean Accuracy: 12.160543441772461 Variance Accuracy: 5.459604263305664
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18850 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 53.08641975308642% of the constraints (43/81) were true
+After assignment 98.76543209876543% of the constraints (80/81) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3812174797058105
+Now loss is 0.18326729536056519
+Before Accuracy was 11.111111640930176%
+Now Accuracy is 100.0%
+Mean Loss: 110.71920013427734 Variance Loss: 23.625118255615234
+Mean Accuracy: 19.329072952270508 Variance Accuracy: 7.136744976043701
+Mean Loss: 106.4716796875 Variance Loss: 21.332969665527344
+Mean Accuracy: 20.16773223876953 Variance Accuracy: 7.154979228973389
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 9 with epochs 3
+Mean Loss: 2.345960855484009 Variance Loss: 0.16190394759178162
+Mean Accuracy: 22.84345054626465 Variance Accuracy: 7.016632080078125
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18850 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.851851851851855% of the constraints (42/81) were true
+After assignment 100.0% of the constraints (81/81) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.4687469005584717
+Now loss is 1.676750798651483e-05
+Before Accuracy was 11.111111640930176%
+Now Accuracy is 100.0%
+Mean Loss: 216.3604736328125 Variance Loss: 44.598873138427734
+Mean Accuracy: 22.004793167114258 Variance Accuracy: 7.121834754943848
+Mean Loss: 216.44775390625 Variance Loss: 46.70710372924805
+Mean Accuracy: 22.0147762298584 Variance Accuracy: 7.310330867767334
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 9 with epochs 4
+Mean Loss: 2.346402645111084 Variance Loss: 0.10522618889808655
+Mean Accuracy: 11.451677322387695 Variance Accuracy: 5.72126579284668
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18850 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 50.617283950617285% of the constraints (41/81) were true
+After assignment 98.76543209876543% of the constraints (80/81) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.4377424716949463
+Now loss is 0.5543846487998962
+Before Accuracy was 11.111111640930176%
+Now Accuracy is 77.77777862548828%
+Mean Loss: 20.52392578125 Variance Loss: 3.9991002082824707
+Mean Accuracy: 19.109424591064453 Variance Accuracy: 6.675845623016357
+Mean Loss: 20.83114242553711 Variance Loss: 4.144423007965088
+Mean Accuracy: 19.97803497314453 Variance Accuracy: 6.640129089355469
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 9 with epochs 5
+Mean Loss: 2.217283010482788 Variance Loss: 0.17609278857707977
+Mean Accuracy: 26.75718879699707 Variance Accuracy: 8.311460494995117
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18850 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 54.32098765432099% of the constraints (44/81) were true
+After assignment 100.0% of the constraints (81/81) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.365032911300659
+Now loss is 2.0530299025267595e-06
+Before Accuracy was 22.22222328186035%
+Now Accuracy is 100.0%
+Mean Loss: 207.7109832763672 Variance Loss: 43.43370819091797
+Mean Accuracy: 16.493610382080078 Variance Accuracy: 6.60267448425293
+Mean Loss: 207.70079040527344 Variance Loss: 44.25273132324219
+Mean Accuracy: 16.493610382080078 Variance Accuracy: 6.497546195983887
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 9 with epochs 6
+Mean Loss: 2.2229390144348145 Variance Loss: 0.27577757835388184
+Mean Accuracy: 37.63977813720703 Variance Accuracy: 8.658833503723145
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18850 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 56.79012345679013% of the constraints (46/81) were true
+After assignment 100.0% of the constraints (81/81) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.533428192138672
+Now loss is 0.11241589486598969
+Before Accuracy was 33.333335876464844%
+Now Accuracy is 100.0%
+Mean Loss: 163.71543884277344 Variance Loss: 39.09501647949219
+Mean Accuracy: 21.365814208984375 Variance Accuracy: 6.761635780334473
+Mean Loss: 162.2403106689453 Variance Loss: 36.08842468261719
+Mean Accuracy: 21.016374588012695 Variance Accuracy: 6.779389381408691
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 9 with epochs 7
+Mean Loss: 2.230219602584839 Variance Loss: 0.22162775695323944
+Mean Accuracy: 31.409744262695312 Variance Accuracy: 8.117411613464355
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18850 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 56.79012345679013% of the constraints (46/81) were true
+After assignment 100.0% of the constraints (81/81) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.459397315979004
+Now loss is 0.0017423786921426654
+Before Accuracy was 22.22222328186035%
+Now Accuracy is 100.0%
+Mean Loss: 184.26593017578125 Variance Loss: 41.374603271484375
+Mean Accuracy: 22.0147762298584 Variance Accuracy: 7.2974748611450195
+Mean Loss: 184.6668243408203 Variance Loss: 45.96787643432617
+Mean Accuracy: 22.0147762298584 Variance Accuracy: 7.550440311431885
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 9 with epochs 8
+Mean Loss: 2.3456127643585205 Variance Loss: 0.2932673990726471
+Mean Accuracy: 36.51158142089844 Variance Accuracy: 8.590447425842285
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18850 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 56.79012345679013% of the constraints (46/81) were true
+After assignment 100.0% of the constraints (81/81) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.6592864990234375
+Now loss is 0.0
+Before Accuracy was 11.111111640930176%
+Now Accuracy is 100.0%
+Mean Loss: 252.6258544921875 Variance Loss: 55.70201110839844
+Mean Accuracy: 23.24281120300293 Variance Accuracy: 7.640402317047119
+Mean Loss: 252.5235595703125 Variance Loss: 57.38431167602539
+Mean Accuracy: 23.212860107421875 Variance Accuracy: 7.393898963928223
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 9 with epochs 9
+Mean Loss: 2.3194401264190674 Variance Loss: 0.26726341247558594
+Mean Accuracy: 34.08546447753906 Variance Accuracy: 8.927474975585938
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18850 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.851851851851855% of the constraints (42/81) were true
+After assignment 100.0% of the constraints (81/81) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.773099660873413
+Now loss is 0.027413848787546158
+Before Accuracy was 22.22222328186035%
+Now Accuracy is 100.0%
+Mean Loss: 249.06202697753906 Variance Loss: 56.855716705322266
+Mean Accuracy: 20.097843170166016 Variance Accuracy: 7.474191665649414
+Mean Loss: 252.77340698242188 Variance Loss: 50.85163116455078
+Mean Accuracy: 20.45726776123047 Variance Accuracy: 6.623406410217285
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 9 with epochs 10
+Mean Loss: 2.4454448223114014 Variance Loss: 0.2835603356361389
+Mean Accuracy: 30.940494537353516 Variance Accuracy: 8.630874633789062
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18850 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 48.148148148148145% of the constraints (39/81) were true
+After assignment 100.0% of the constraints (81/81) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.8294451236724854
+Now loss is 0.03234074264764786
+Before Accuracy was 11.111111640930176%
+Now Accuracy is 100.0%
+Mean Loss: 252.72166442871094 Variance Loss: 54.9080924987793
+Mean Accuracy: 17.77156639099121 Variance Accuracy: 6.744547367095947
+Mean Loss: 253.61778259277344 Variance Loss: 60.669124603271484
+Mean Accuracy: 17.691692352294922 Variance Accuracy: 6.586737632751465
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 9 with epochs 11
+Mean Loss: 2.4707417488098145 Variance Loss: 0.3476867377758026
+Mean Accuracy: 38.33865737915039 Variance Accuracy: 9.116798400878906
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18850 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 48.148148148148145% of the constraints (39/81) were true
+After assignment 100.0% of the constraints (81/81) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 3.0623934268951416
+Now loss is 0.14830680191516876
+Before Accuracy was 22.22222328186035%
+Now Accuracy is 88.8888931274414%
+Mean Loss: 164.88157653808594 Variance Loss: 37.11221694946289
+Mean Accuracy: 23.322683334350586 Variance Accuracy: 7.168635368347168
+Mean Loss: 159.6962432861328 Variance Loss: 35.158973693847656
+Mean Accuracy: 23.921724319458008 Variance Accuracy: 7.773812294006348
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 10 with epochs 2
+Mean Loss: 2.2908759117126465 Variance Loss: 0.03975624591112137
+Mean Accuracy: 17.881389617919922 Variance Accuracy: 7.244621276855469
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18860 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.111111111111114% of the constraints (46/90) were true
+After assignment 100.0% of the constraints (90/90) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.283968687057495
+Now loss is 0.0886104628443718
+Before Accuracy was 10.0%
+Now Accuracy is 100.0%
+Mean Loss: 23.115934371948242 Variance Loss: 3.767876148223877
+Mean Accuracy: 24.840255737304688 Variance Accuracy: 7.479234218597412
+Mean Loss: 26.177207946777344 Variance Loss: 4.28878116607666
+Mean Accuracy: 23.722043991088867 Variance Accuracy: 7.387593746185303
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 10 with epochs 3
+Mean Loss: 2.224724769592285 Variance Loss: 0.16227911412715912
+Mean Accuracy: 31.289936065673828 Variance Accuracy: 8.118889808654785
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18860 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 54.44444444444444% of the constraints (49/90) were true
+After assignment 100.0% of the constraints (90/90) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.511086940765381
+Now loss is 0.00022726459428668022
+Before Accuracy was 30.000001907348633%
+Now Accuracy is 100.0%
+Mean Loss: 125.91820526123047 Variance Loss: 28.97273063659668
+Mean Accuracy: 22.46405792236328 Variance Accuracy: 7.35409688949585
+Mean Loss: 125.94501495361328 Variance Loss: 32.33686065673828
+Mean Accuracy: 22.424121856689453 Variance Accuracy: 7.237094402313232
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 10 with epochs 4
+Mean Loss: 2.297734260559082 Variance Loss: 0.16730256378650665
+Mean Accuracy: 24.390974044799805 Variance Accuracy: 7.74229621887207
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18860 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 52.22222222222222% of the constraints (47/90) were true
+After assignment 100.0% of the constraints (90/90) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.470249652862549
+Now loss is 0.006982737686485052
+Before Accuracy was 10.0%
+Now Accuracy is 100.0%
+Mean Loss: 75.05034637451172 Variance Loss: 15.964373588562012
+Mean Accuracy: 21.555511474609375 Variance Accuracy: 7.313230037689209
+Mean Loss: 75.04629516601562 Variance Loss: 16.59494972229004
+Mean Accuracy: 21.615415573120117 Variance Accuracy: 7.233860015869141
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 10 with epochs 5
+Mean Loss: 2.32608699798584 Variance Loss: 0.0666467696428299
+Mean Accuracy: 15.395367622375488 Variance Accuracy: 5.897803783416748
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18860 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 43.333333333333336% of the constraints (39/90) were true
+After assignment 100.0% of the constraints (90/90) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.4131178855895996
+Now loss is 0.020480364561080933
+Before Accuracy was 10.0%
+Now Accuracy is 100.0%
+Mean Loss: 22.610923767089844 Variance Loss: 3.7540063858032227
+Mean Accuracy: 23.592252731323242 Variance Accuracy: 7.504928112030029
+Mean Loss: 23.22966766357422 Variance Loss: 3.9505655765533447
+Mean Accuracy: 22.523962020874023 Variance Accuracy: 7.15918493270874
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 10 with epochs 6
+Mean Loss: 2.284581184387207 Variance Loss: 0.1533612459897995
+Mean Accuracy: 23.592252731323242 Variance Accuracy: 7.189682483673096
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18860 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.111111111111114% of the constraints (46/90) were true
+After assignment 100.0% of the constraints (90/90) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.5336623191833496
+Now loss is 0.1355953961610794
+Before Accuracy was 10.0%
+Now Accuracy is 100.0%
+Mean Loss: 61.742088317871094 Variance Loss: 14.434903144836426
+Mean Accuracy: 25.898561477661133 Variance Accuracy: 7.679398059844971
+Mean Loss: 76.15899658203125 Variance Loss: 19.030593872070312
+Mean Accuracy: 25.758785247802734 Variance Accuracy: 7.926939010620117
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 10 with epochs 7
+Mean Loss: 2.2649362087249756 Variance Loss: 0.17327040433883667
+Mean Accuracy: 28.444488525390625 Variance Accuracy: 7.889699459075928
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18860 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 46.666666666666664% of the constraints (42/90) were true
+After assignment 100.0% of the constraints (90/90) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.5627307891845703
+Now loss is 0.08955909311771393
+Before Accuracy was 10.0%
+Now Accuracy is 100.0%
+Mean Loss: 106.14999389648438 Variance Loss: 25.511863708496094
+Mean Accuracy: 28.81389808654785 Variance Accuracy: 8.387846946716309
+Mean Loss: 106.58728790283203 Variance Loss: 25.07372283935547
+Mean Accuracy: 28.913738250732422 Variance Accuracy: 7.632256984710693
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 10 with epochs 8
+Mean Loss: 2.2540781497955322 Variance Loss: 0.1895521581172943
+Mean Accuracy: 31.609424591064453 Variance Accuracy: 8.12257194519043
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18860 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.111111111111114% of the constraints (46/90) were true
+After assignment 100.0% of the constraints (90/90) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.5589914321899414
+Now loss is 0.0045671844854950905
+Before Accuracy was 10.0%
+Now Accuracy is 100.0%
+Mean Loss: 93.22660827636719 Variance Loss: 18.241966247558594
+Mean Accuracy: 24.081470489501953 Variance Accuracy: 7.512173175811768
+Mean Loss: 93.22064971923828 Variance Loss: 20.523080825805664
+Mean Accuracy: 24.081470489501953 Variance Accuracy: 8.166955947875977
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 10 with epochs 9
+Mean Loss: 2.298985242843628 Variance Loss: 0.2728630602359772
+Mean Accuracy: 36.531551361083984 Variance Accuracy: 8.464277267456055
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18860 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 54.44444444444444% of the constraints (49/90) were true
+After assignment 100.0% of the constraints (90/90) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.7879343032836914
+Now loss is 0.00016516765754204243
+Before Accuracy was 10.0%
+Now Accuracy is 100.0%
+Mean Loss: 134.92098999023438 Variance Loss: 32.36344528198242
+Mean Accuracy: 22.893369674682617 Variance Accuracy: 7.31329870223999
+Mean Loss: 134.91879272460938 Variance Loss: 35.46074295043945
+Mean Accuracy: 22.933307647705078 Variance Accuracy: 7.485342025756836
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 10 with epochs 10
+Mean Loss: 2.312323808670044 Variance Loss: 0.2859795391559601
+Mean Accuracy: 37.54991912841797 Variance Accuracy: 8.501140594482422
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18860 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.111111111111114% of the constraints (46/90) were true
+After assignment 100.0% of the constraints (90/90) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.8425488471984863
+Now loss is 0.1442861258983612
+Before Accuracy was 20.0%
+Now Accuracy is 100.0%
+Mean Loss: 159.64791870117188 Variance Loss: 36.84056854248047
+Mean Accuracy: 20.097843170166016 Variance Accuracy: 6.971508026123047
+Mean Loss: 166.37351989746094 Variance Loss: 39.22877502441406
+Mean Accuracy: 20.377395629882812 Variance Accuracy: 7.230126857757568
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 10 with epochs 11
+Mean Loss: 2.235142469406128 Variance Loss: 0.13062959909439087
+Mean Accuracy: 23.991613388061523 Variance Accuracy: 7.736831188201904
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18860 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 48.888888888888886% of the constraints (44/90) were true
+After assignment 100.0% of the constraints (90/90) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.4254403114318848
+Now loss is 0.0
+Before Accuracy was 10.0%
+Now Accuracy is 100.0%
+Mean Loss: 69.65538024902344 Variance Loss: 12.154194831848145
+Mean Accuracy: 23.522363662719727 Variance Accuracy: 7.691407680511475
+Mean Loss: 69.66251373291016 Variance Loss: 12.735902786254883
+Mean Accuracy: 23.5323486328125 Variance Accuracy: 7.80440616607666
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 11 with epochs 2
+Mean Loss: 2.3068442344665527 Variance Loss: 0.032466866075992584
+Mean Accuracy: 13.49840259552002 Variance Accuracy: 5.819646835327148
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18870 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 54.54545454545455% of the constraints (54/99) were true
+After assignment 100.0% of the constraints (99/99) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.270216941833496
+Now loss is 0.0036140012089163065
+Before Accuracy was 18.18181800842285%
+Now Accuracy is 100.0%
+Mean Loss: 11.255794525146484 Variance Loss: 2.184546709060669
+Mean Accuracy: 21.7352237701416 Variance Accuracy: 7.75494384765625
+Mean Loss: 12.067804336547852 Variance Loss: 2.0075600147247314
+Mean Accuracy: 22.244409561157227 Variance Accuracy: 7.482255458831787
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 11 with epochs 3
+Mean Loss: 2.27268385887146 Variance Loss: 0.06407515704631805
+Mean Accuracy: 24.301118850708008 Variance Accuracy: 7.397522449493408
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18870 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 50.505050505050505% of the constraints (50/99) were true
+After assignment 100.0% of the constraints (99/99) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.312143087387085
+Now loss is 0.2655474841594696
+Before Accuracy was 27.272727966308594%
+Now Accuracy is 100.0%
+Mean Loss: 21.343124389648438 Variance Loss: 4.521132469177246
+Mean Accuracy: 25.409345626831055 Variance Accuracy: 7.484353065490723
+Mean Loss: 26.38265037536621 Variance Loss: 5.620479583740234
+Mean Accuracy: 25.1397762298584 Variance Accuracy: 7.61647891998291
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 11 with epochs 4
+Mean Loss: 2.2854318618774414 Variance Loss: 0.16910108923912048
+Mean Accuracy: 28.494409561157227 Variance Accuracy: 7.885528564453125
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18870 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 54.54545454545455% of the constraints (54/99) were true
+After assignment 95.95959595959596% of the constraints (95/99) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.380601167678833
+Now loss is 0.46156203746795654
+Before Accuracy was 36.3636360168457%
+Now Accuracy is 90.90909576416016%
+Mean Loss: 45.155887603759766 Variance Loss: 10.921689987182617
+Mean Accuracy: 23.00319480895996 Variance Accuracy: 7.2562479972839355
+Mean Loss: 86.97205352783203 Variance Loss: 21.864273071289062
+Mean Accuracy: 26.048322677612305 Variance Accuracy: 8.164690017700195
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 11 with epochs 5
+Mean Loss: 2.3177003860473633 Variance Loss: 0.07980966567993164
+Mean Accuracy: 11.371805191040039 Variance Accuracy: 5.968742847442627
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18870 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 47.474747474747474% of the constraints (47/99) were true
+After assignment 100.0% of the constraints (99/99) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.4100215435028076
+Now loss is 0.14983896911144257
+Before Accuracy was 9.090909004211426%
+Now Accuracy is 100.0%
+Mean Loss: 17.309486389160156 Variance Loss: 2.7682363986968994
+Mean Accuracy: 19.568689346313477 Variance Accuracy: 7.113165855407715
+Mean Loss: 18.367456436157227 Variance Loss: 2.9457759857177734
+Mean Accuracy: 19.52875328063965 Variance Accuracy: 7.178964614868164
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 11 with epochs 6
+Mean Loss: 2.2649343013763428 Variance Loss: 0.19494383037090302
+Mean Accuracy: 33.55630874633789 Variance Accuracy: 8.839751243591309
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18870 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 54.54545454545455% of the constraints (54/99) were true
+After assignment 98.98989898989899% of the constraints (98/99) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.291348457336426
+Now loss is 0.3028500974178314
+Before Accuracy was 36.3636360168457%
+Now Accuracy is 100.0%
+Mean Loss: 58.196022033691406 Variance Loss: 13.85821533203125
+Mean Accuracy: 22.693689346313477 Variance Accuracy: 7.170141696929932
+Mean Loss: 86.76062774658203 Variance Loss: 20.22686767578125
+Mean Accuracy: 21.47563934326172 Variance Accuracy: 7.188388824462891
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 11 with epochs 7
+Mean Loss: 2.230534315109253 Variance Loss: 0.20313842594623566
+Mean Accuracy: 34.305110931396484 Variance Accuracy: 8.588911056518555
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18870 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 55.55555555555556% of the constraints (55/99) were true
+After assignment 98.98989898989899% of the constraints (98/99) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3861565589904785
+Now loss is 0.23242954909801483
+Before Accuracy was 36.3636360168457%
+Now Accuracy is 81.81818389892578%
+Mean Loss: 25.947914123535156 Variance Loss: 7.101343154907227
+Mean Accuracy: 30.52116584777832 Variance Accuracy: 7.951437950134277
+Mean Loss: 26.91209602355957 Variance Loss: 7.302646160125732
+Mean Accuracy: 31.1102237701416 Variance Accuracy: 8.044188499450684
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 11 with epochs 8
+Mean Loss: 2.2776362895965576 Variance Loss: 0.16655613481998444
+Mean Accuracy: 27.476037979125977 Variance Accuracy: 8.118027687072754
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18870 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 56.56565656565657% of the constraints (56/99) were true
+After assignment 97.97979797979798% of the constraints (97/99) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3065946102142334
+Now loss is 0.2862527072429657
+Before Accuracy was 36.3636360168457%
+Now Accuracy is 90.90909576416016%
+Mean Loss: 27.137313842773438 Variance Loss: 5.890202522277832
+Mean Accuracy: 27.046724319458008 Variance Accuracy: 8.074018478393555
+Mean Loss: 28.60403060913086 Variance Loss: 5.818417072296143
+Mean Accuracy: 26.527555465698242 Variance Accuracy: 7.605862617492676
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 11 with epochs 9
+Mean Loss: 2.2259559631347656 Variance Loss: 0.22309467196464539
+Mean Accuracy: 34.23522186279297 Variance Accuracy: 8.600801467895508
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18870 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 58.58585858585859% of the constraints (58/99) were true
+After assignment 100.0% of the constraints (99/99) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.269505500793457
+Now loss is 0.27655333280563354
+Before Accuracy was 36.3636360168457%
+Now Accuracy is 100.0%
+Mean Loss: 22.98072624206543 Variance Loss: 5.320886135101318
+Mean Accuracy: 24.400959014892578 Variance Accuracy: 7.983893871307373
+Mean Loss: 24.682310104370117 Variance Loss: 5.554869174957275
+Mean Accuracy: 23.96166229248047 Variance Accuracy: 7.682092666625977
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 11 with epochs 10
+Mean Loss: 2.1569998264312744 Variance Loss: 0.2614978849887848
+Mean Accuracy: 37.87939453125 Variance Accuracy: 9.033903121948242
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18870 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 62.62626262626262% of the constraints (62/99) were true
+After assignment 98.98989898989899% of the constraints (98/99) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3013556003570557
+Now loss is 0.27984389662742615
+Before Accuracy was 36.3636360168457%
+Now Accuracy is 81.81818389892578%
+Mean Loss: 46.28311538696289 Variance Loss: 11.248324394226074
+Mean Accuracy: 24.580671310424805 Variance Accuracy: 7.439754009246826
+Mean Loss: 46.594871520996094 Variance Loss: 11.153594017028809
+Mean Accuracy: 24.90015983581543 Variance Accuracy: 7.584164142608643
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 11 with epochs 11
+Mean Loss: 2.32328200340271 Variance Loss: 0.26424989104270935
+Mean Accuracy: 33.20686721801758 Variance Accuracy: 8.047866821289062
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18870 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 52.525252525252526% of the constraints (52/99) were true
+After assignment 97.97979797979798% of the constraints (97/99) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.5115602016448975
+Now loss is 0.3175019919872284
+Before Accuracy was 27.272727966308594%
+Now Accuracy is 100.0%
+Mean Loss: 66.24974060058594 Variance Loss: 16.360492706298828
+Mean Accuracy: 22.623802185058594 Variance Accuracy: 7.996684551239014
+Mean Loss: 63.74072265625 Variance Loss: 15.361769676208496
+Mean Accuracy: 22.21445655822754 Variance Accuracy: 7.5399298667907715
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 12 with epochs 2
+Mean Loss: 2.292168378829956 Variance Loss: 0.039284754544496536
+Mean Accuracy: 14.956069946289062 Variance Accuracy: 6.06873083114624
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18880 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 62.03703703703704% of the constraints (67/108) were true
+After assignment 100.0% of the constraints (108/108) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.2331900596618652
+Now loss is 0.47190603613853455
+Before Accuracy was 16.666667938232422%
+Now Accuracy is 91.66667175292969%
+Mean Loss: 21.64006996154785 Variance Loss: 4.995368480682373
+Mean Accuracy: 24.56070327758789 Variance Accuracy: 7.5596394538879395
+Mean Loss: 21.05673599243164 Variance Loss: 4.729228496551514
+Mean Accuracy: 23.851837158203125 Variance Accuracy: 7.809990882873535
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 12 with epochs 3
+Mean Loss: 2.324695110321045 Variance Loss: 0.042886462062597275
+Mean Accuracy: 11.950878143310547 Variance Accuracy: 5.801558971405029
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18880 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 43.51851851851852% of the constraints (47/108) were true
+After assignment 100.0% of the constraints (108/108) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.347862482070923
+Now loss is 0.18065883219242096
+Before Accuracy was 8.333333969116211%
+Now Accuracy is 100.0%
+Mean Loss: 10.105277061462402 Variance Loss: 1.9133161306381226
+Mean Accuracy: 30.740814208984375 Variance Accuracy: 8.299504280090332
+Mean Loss: 10.26400375366211 Variance Loss: 1.9030646085739136
+Mean Accuracy: 30.700878143310547 Variance Accuracy: 7.855123043060303
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 12 with epochs 4
+Mean Loss: 2.296722412109375 Variance Loss: 0.10403275489807129
+Mean Accuracy: 19.33905792236328 Variance Accuracy: 7.0365424156188965
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18880 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 52.77777777777778% of the constraints (57/108) were true
+After assignment 99.07407407407408% of the constraints (107/108) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.2948567867279053
+Now loss is 0.34707000851631165
+Before Accuracy was 25.0%
+Now Accuracy is 66.66667175292969%
+Mean Loss: 24.624797821044922 Variance Loss: 3.815764904022217
+Mean Accuracy: 18.929712295532227 Variance Accuracy: 7.043403148651123
+Mean Loss: 45.3000373840332 Variance Loss: 7.00089693069458
+Mean Accuracy: 25.33945655822754 Variance Accuracy: 7.892829418182373
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 12 with epochs 5
+Mean Loss: 2.2635657787323 Variance Loss: 0.11844038963317871
+Mean Accuracy: 28.21485710144043 Variance Accuracy: 7.853939056396484
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18880 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 57.407407407407405% of the constraints (62/108) were true
+After assignment 100.0% of the constraints (108/108) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.2247889041900635
+Now loss is 0.37877967953681946
+Before Accuracy was 41.666664123535156%
+Now Accuracy is 100.0%
+Mean Loss: 28.266286849975586 Variance Loss: 6.773852825164795
+Mean Accuracy: 30.730831146240234 Variance Accuracy: 7.930521011352539
+Mean Loss: 25.3951358795166 Variance Loss: 5.8791303634643555
+Mean Accuracy: 31.53953742980957 Variance Accuracy: 8.533099174499512
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 12 with epochs 6
+Mean Loss: 2.2514686584472656 Variance Loss: 0.10265223681926727
+Mean Accuracy: 26.208066940307617 Variance Accuracy: 7.947990894317627
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18880 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 60.18518518518518% of the constraints (65/108) were true
+After assignment 100.0% of the constraints (108/108) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.206202983856201
+Now loss is 0.005502407904714346
+Before Accuracy was 25.0%
+Now Accuracy is 100.0%
+Mean Loss: 43.346290588378906 Variance Loss: 10.24236011505127
+Mean Accuracy: 19.638578414916992 Variance Accuracy: 7.172707557678223
+Mean Loss: 44.1683464050293 Variance Loss: 10.766473770141602
+Mean Accuracy: 19.748401641845703 Variance Accuracy: 7.2516021728515625
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 12 with epochs 7
+Mean Loss: 2.257143497467041 Variance Loss: 0.09062056243419647
+Mean Accuracy: 18.8897762298584 Variance Accuracy: 6.85971736907959
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18880 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 61.111111111111114% of the constraints (66/108) were true
+After assignment 100.0% of the constraints (108/108) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.178712844848633
+Now loss is 0.369081050157547
+Before Accuracy was 25.0%
+Now Accuracy is 91.66667175292969%
+Mean Loss: 32.70741653442383 Variance Loss: 7.096649646759033
+Mean Accuracy: 23.5323486328125 Variance Accuracy: 7.459915637969971
+Mean Loss: 39.97452926635742 Variance Loss: 9.156905174255371
+Mean Accuracy: 23.791933059692383 Variance Accuracy: 7.30358362197876
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 12 with epochs 8
+Mean Loss: 2.2875845432281494 Variance Loss: 0.24642206728458405
+Mean Accuracy: 38.218849182128906 Variance Accuracy: 8.575406074523926
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18880 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 66.66666666666667% of the constraints (72/108) were true
+After assignment 100.0% of the constraints (108/108) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.168440818786621
+Now loss is 0.26236799359321594
+Before Accuracy was 41.666664123535156%
+Now Accuracy is 91.66667175292969%
+Mean Loss: 48.280120849609375 Variance Loss: 11.729456901550293
+Mean Accuracy: 21.305910110473633 Variance Accuracy: 7.342896938323975
+Mean Loss: 51.73662185668945 Variance Loss: 12.232051849365234
+Mean Accuracy: 21.37579917907715 Variance Accuracy: 7.350124835968018
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 12 with epochs 9
+Mean Loss: 2.2636702060699463 Variance Loss: 0.15592680871486664
+Mean Accuracy: 26.95686912536621 Variance Accuracy: 7.950041770935059
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18880 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 58.333333333333336% of the constraints (63/108) were true
+After assignment 100.0% of the constraints (108/108) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.1799514293670654
+Now loss is 0.29837021231651306
+Before Accuracy was 41.666664123535156%
+Now Accuracy is 100.0%
+Mean Loss: 51.90214538574219 Variance Loss: 10.72631549835205
+Mean Accuracy: 18.45047950744629 Variance Accuracy: 6.660038471221924
+Mean Loss: 55.242549896240234 Variance Loss: 11.663829803466797
+Mean Accuracy: 19.059505462646484 Variance Accuracy: 7.320077896118164
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 12 with epochs 10
+Mean Loss: 2.3526973724365234 Variance Loss: 0.15382912755012512
+Mean Accuracy: 23.622203826904297 Variance Accuracy: 7.487545967102051
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18880 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 57.407407407407405% of the constraints (62/108) were true
+After assignment 99.07407407407408% of the constraints (107/108) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3336434364318848
+Now loss is 0.23763637244701385
+Before Accuracy was 25.0%
+Now Accuracy is 83.33332824707031%
+Mean Loss: 33.56085205078125 Variance Loss: 7.186134338378906
+Mean Accuracy: 26.727235794067383 Variance Accuracy: 8.055865287780762
+Mean Loss: 33.29423141479492 Variance Loss: 6.933568000793457
+Mean Accuracy: 28.983625411987305 Variance Accuracy: 8.088805198669434
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 12 with epochs 11
+Mean Loss: 2.3310344219207764 Variance Loss: 0.1026742085814476
+Mean Accuracy: 13.418530464172363 Variance Accuracy: 5.78433084487915
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18880 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 53.7037037037037% of the constraints (58/108) were true
+After assignment 100.0% of the constraints (108/108) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.327125310897827
+Now loss is 0.00031275697983801365
+Before Accuracy was 25.0%
+Now Accuracy is 100.0%
+Mean Loss: 8.314087867736816 Variance Loss: 1.3107537031173706
+Mean Accuracy: 23.991613388061523 Variance Accuracy: 7.6062703132629395
+Mean Loss: 8.71096134185791 Variance Loss: 1.3495019674301147
+Mean Accuracy: 24.231229782104492 Variance Accuracy: 7.358732223510742
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 13 with epochs 2
+Mean Loss: 2.279258966445923 Variance Loss: 0.09687600284814835
+Mean Accuracy: 16.613418579101562 Variance Accuracy: 6.4706807136535645
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18890 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 56.41025641025641% of the constraints (66/117) were true
+After assignment 100.0% of the constraints (117/117) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3575024604797363
+Now loss is 0.22007149457931519
+Before Accuracy was 7.692307949066162%
+Now Accuracy is 92.30769348144531%
+Mean Loss: 68.92466735839844 Variance Loss: 15.123414993286133
+Mean Accuracy: 21.106229782104492 Variance Accuracy: 7.401144504547119
+Mean Loss: 69.54031372070312 Variance Loss: 17.01025390625
+Mean Accuracy: 20.636980056762695 Variance Accuracy: 7.08308744430542
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 13 with epochs 3
+Mean Loss: 2.27862811088562 Variance Loss: 0.04346176236867905
+Mean Accuracy: 17.87140655517578 Variance Accuracy: 7.167393684387207
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18890 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 45.2991452991453% of the constraints (53/117) were true
+After assignment 99.14529914529915% of the constraints (116/117) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3599488735198975
+Now loss is 0.7878007888793945
+Before Accuracy was 7.692307949066162%
+Now Accuracy is 84.61538696289062%
+Mean Loss: 14.38200569152832 Variance Loss: 2.330990791320801
+Mean Accuracy: 19.758386611938477 Variance Accuracy: 7.130506992340088
+Mean Loss: 33.47947692871094 Variance Loss: 4.982729434967041
+Mean Accuracy: 19.768369674682617 Variance Accuracy: 7.283277988433838
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 13 with epochs 4
+Mean Loss: 2.3232643604278564 Variance Loss: 0.12606404721736908
+Mean Accuracy: 21.355831146240234 Variance Accuracy: 7.620561122894287
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18890 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.282051282051285% of the constraints (60/117) were true
+After assignment 95.72649572649573% of the constraints (112/117) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.404898166656494
+Now loss is 1.079042673110962
+Before Accuracy was 23.076923370361328%
+Now Accuracy is 53.84615707397461%
+Mean Loss: 3.369528293609619 Variance Loss: 0.52327561378479
+Mean Accuracy: 25.219648361206055 Variance Accuracy: 7.278319358825684
+Mean Loss: 3.6075291633605957 Variance Loss: 0.5862354636192322
+Mean Accuracy: 25.62899398803711 Variance Accuracy: 7.50250244140625
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 13 with epochs 5
+Mean Loss: 2.256486415863037 Variance Loss: 0.08472821861505508
+Mean Accuracy: 25.279552459716797 Variance Accuracy: 8.179472923278809
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18890 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 53.84615384615385% of the constraints (63/117) were true
+After assignment 100.0% of the constraints (117/117) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.2989020347595215
+Now loss is 0.5958348512649536
+Before Accuracy was 30.76923179626465%
+Now Accuracy is 92.30769348144531%
+Mean Loss: 14.942044258117676 Variance Loss: 3.283560276031494
+Mean Accuracy: 32.93730163574219 Variance Accuracy: 8.206703186035156
+Mean Loss: 15.437041282653809 Variance Loss: 3.9376461505889893
+Mean Accuracy: 33.88578414916992 Variance Accuracy: 8.379521369934082
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 13 with epochs 6
+Mean Loss: 2.380474805831909 Variance Loss: 0.2112143337726593
+Mean Accuracy: 28.254793167114258 Variance Accuracy: 7.655595779418945
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18890 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 59.82905982905983% of the constraints (70/117) were true
+After assignment 100.0% of the constraints (117/117) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.374082088470459
+Now loss is 0.24495472013950348
+Before Accuracy was 23.076923370361328%
+Now Accuracy is 100.0%
+Mean Loss: 73.02755737304688 Variance Loss: 18.761188507080078
+Mean Accuracy: 23.68210792541504 Variance Accuracy: 7.195882797241211
+Mean Loss: 75.51306915283203 Variance Loss: 19.03298568725586
+Mean Accuracy: 24.36102294921875 Variance Accuracy: 7.296487808227539
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 13 with epochs 7
+Mean Loss: 2.425156354904175 Variance Loss: 0.13283438980579376
+Mean Accuracy: 18.400558471679688 Variance Accuracy: 7.0569915771484375
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18890 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 51.282051282051285% of the constraints (60/117) were true
+After assignment 97.43589743589743% of the constraints (114/117) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.450035572052002
+Now loss is 1.6534079313278198
+Before Accuracy was 23.076923370361328%
+Now Accuracy is 61.5384635925293%
+Mean Loss: 3.3608129024505615 Variance Loss: 0.5077204704284668
+Mean Accuracy: 20.06789207458496 Variance Accuracy: 6.816136837005615
+Mean Loss: 4.013757705688477 Variance Loss: 0.6518477201461792
+Mean Accuracy: 19.43889808654785 Variance Accuracy: 6.397961139678955
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 13 with epochs 8
+Mean Loss: 2.239213228225708 Variance Loss: 0.19946885108947754
+Mean Accuracy: 30.71086311340332 Variance Accuracy: 8.193215370178223
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18890 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 64.1025641025641% of the constraints (75/117) were true
+After assignment 100.0% of the constraints (117/117) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.1942126750946045
+Now loss is 0.3264610171318054
+Before Accuracy was 38.46154022216797%
+Now Accuracy is 92.30769348144531%
+Mean Loss: 119.74532318115234 Variance Loss: 28.68291664123535
+Mean Accuracy: 21.595447540283203 Variance Accuracy: 7.458937168121338
+Mean Loss: 125.15067291259766 Variance Loss: 28.626216888427734
+Mean Accuracy: 22.044729232788086 Variance Accuracy: 7.316114902496338
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 13 with epochs 9
+Mean Loss: 2.2480828762054443 Variance Loss: 0.2588143050670624
+Mean Accuracy: 34.39496994018555 Variance Accuracy: 8.76055908203125
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18890 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 64.1025641025641% of the constraints (75/117) were true
+After assignment 100.0% of the constraints (117/117) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.2431604862213135
+Now loss is 0.23942884802818298
+Before Accuracy was 30.76923179626465%
+Now Accuracy is 92.30769348144531%
+Mean Loss: 122.6327896118164 Variance Loss: 31.583749771118164
+Mean Accuracy: 23.622203826904297 Variance Accuracy: 7.62014102935791
+Mean Loss: 125.02606964111328 Variance Loss: 30.706462860107422
+Mean Accuracy: 23.592252731323242 Variance Accuracy: 8.08321475982666
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 13 with epochs 10
+Mean Loss: 2.2525057792663574 Variance Loss: 0.18568184971809387
+Mean Accuracy: 25.888578414916992 Variance Accuracy: 7.863800525665283
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18890 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 57.26495726495727% of the constraints (67/117) were true
+After assignment 100.0% of the constraints (117/117) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.2809829711914062
+Now loss is 0.5256845951080322
+Before Accuracy was 23.076923370361328%
+Now Accuracy is 92.30769348144531%
+Mean Loss: 23.03719139099121 Variance Loss: 6.899307727813721
+Mean Accuracy: 25.3294734954834 Variance Accuracy: 7.5714430809021
+Mean Loss: 25.60037612915039 Variance Loss: 6.79114294052124
+Mean Accuracy: 25.52915382385254 Variance Accuracy: 7.48518180847168
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 13 with epochs 11
+Mean Loss: 2.391507625579834 Variance Loss: 0.17881907522678375
+Mean Accuracy: 22.933307647705078 Variance Accuracy: 7.177961349487305
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18890 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 58.11965811965812% of the constraints (68/117) were true
+After assignment 100.0% of the constraints (117/117) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3981611728668213
+Now loss is 0.22843632102012634
+Before Accuracy was 30.76923179626465%
+Now Accuracy is 92.30769348144531%
+Mean Loss: 17.890663146972656 Variance Loss: 3.60953688621521
+Mean Accuracy: 28.75399398803711 Variance Accuracy: 8.392566680908203
+Mean Loss: 21.19314956665039 Variance Loss: 4.654266357421875
+Mean Accuracy: 29.113418579101562 Variance Accuracy: 8.447152137756348
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 14 with epochs 2
+Mean Loss: 2.287783622741699 Variance Loss: 0.05316845700144768
+Mean Accuracy: 13.837859153747559 Variance Accuracy: 5.874732971191406
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18900 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 60.317460317460316% of the constraints (76/126) were true
+After assignment 96.82539682539682% of the constraints (122/126) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.2396252155303955
+Now loss is 0.5731733441352844
+Before Accuracy was 21.428571701049805%
+Now Accuracy is 100.0%
+Mean Loss: 16.472240447998047 Variance Loss: 3.200190782546997
+Mean Accuracy: 23.88178825378418 Variance Accuracy: 7.225381374359131
+Mean Loss: 183.8975067138672 Variance Loss: 52.36085891723633
+Mean Accuracy: 28.704072952270508 Variance Accuracy: 7.445827007293701
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 14 with epochs 3
+Mean Loss: 2.2958879470825195 Variance Loss: 0.028234535828232765
+Mean Accuracy: 13.188898086547852 Variance Accuracy: 5.914971828460693
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18900 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 43.65079365079365% of the constraints (55/126) were true
+After assignment 100.0% of the constraints (126/126) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.3282196521759033
+Now loss is 0.15354947745800018
+Before Accuracy was 0.0%
+Now Accuracy is 100.0%
+Mean Loss: 20.218358993530273 Variance Loss: 4.239284038543701
+Mean Accuracy: 26.627395629882812 Variance Accuracy: 7.935953617095947
+Mean Loss: 20.336883544921875 Variance Loss: 4.687352657318115
+Mean Accuracy: 26.647363662719727 Variance Accuracy: 7.5185465812683105
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 14 with epochs 4
+Mean Loss: 2.252314567565918 Variance Loss: 0.08688253909349442
+Mean Accuracy: 23.372604370117188 Variance Accuracy: 7.303350925445557
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18900 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 61.111111111111114% of the constraints (77/126) were true
+After assignment 97.61904761904762% of the constraints (123/126) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.1872339248657227
+Now loss is 0.8276256918907166
+Before Accuracy was 28.571430206298828%
+Now Accuracy is 85.71428680419922%
+Mean Loss: 4.495357990264893 Variance Loss: 0.6713138222694397
+Mean Accuracy: 21.994808197021484 Variance Accuracy: 7.2418599128723145
+Mean Loss: 7.187295436859131 Variance Loss: 1.1238276958465576
+Mean Accuracy: 24.50079917907715 Variance Accuracy: 7.72388219833374
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 14 with epochs 5
+Mean Loss: 2.208514451980591 Variance Loss: 0.10155562311410904
+Mean Accuracy: 23.891773223876953 Variance Accuracy: 6.873988628387451
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18900 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 64.28571428571429% of the constraints (81/126) were true
+After assignment 100.0% of the constraints (126/126) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.14841628074646
+Now loss is 0.2742760181427002
+Before Accuracy was 35.71428680419922%
+Now Accuracy is 100.0%
+Mean Loss: 32.69632339477539 Variance Loss: 7.875828742980957
+Mean Accuracy: 27.34624671936035 Variance Accuracy: 8.507843017578125
+Mean Loss: 36.43857192993164 Variance Loss: 8.792069435119629
+Mean Accuracy: 27.805511474609375 Variance Accuracy: 7.781847953796387
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 14 with epochs 6
+Mean Loss: 2.293342351913452 Variance Loss: 0.1028822511434555
+Mean Accuracy: 21.166133880615234 Variance Accuracy: 7.415587902069092
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18900 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 64.28571428571429% of the constraints (81/126) were true
+After assignment 100.0% of the constraints (126/126) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.1508634090423584
+Now loss is 0.3534727990627289
+Before Accuracy was 28.571430206298828%
+Now Accuracy is 92.85713958740234%
+Mean Loss: 17.147716522216797 Variance Loss: 4.3874382972717285
+Mean Accuracy: 26.387779235839844 Variance Accuracy: 7.754737377166748
+Mean Loss: 20.621623992919922 Variance Loss: 5.11646842956543
+Mean Accuracy: 25.319488525390625 Variance Accuracy: 8.054598808288574
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 14 with epochs 7
+Mean Loss: 2.231729030609131 Variance Loss: 0.19281113147735596
+Mean Accuracy: 29.28314781188965 Variance Accuracy: 8.132488250732422
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18900 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 69.04761904761905% of the constraints (87/126) were true
+After assignment 94.44444444444444% of the constraints (119/126) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.010380983352661
+Now loss is 0.9417122602462769
+Before Accuracy was 35.71428680419922%
+Now Accuracy is 57.142860412597656%
+Mean Loss: 62.64958572387695 Variance Loss: 12.664883613586426
+Mean Accuracy: 11.511581420898438 Variance Accuracy: 5.480718612670898
+Mean Loss: 582.3506469726562 Variance Loss: 144.09922790527344
+Mean Accuracy: 13.947683334350586 Variance Accuracy: 5.813663959503174
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 14 with epochs 8
+Mean Loss: 2.171879529953003 Variance Loss: 0.14935541152954102
+Mean Accuracy: 27.476037979125977 Variance Accuracy: 7.596166610717773
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 18900 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 68.25396825396825% of the constraints (86/126) were true
+After assignment 100.0% of the constraints (126/126) were true
+Accuracy on Training Sample: 100.0%
+Before loss was 2.0844147205352783
+Now loss is 0.4414536952972412
+Before Accuracy was 35.71428680419922%
+Now Accuracy is 85.71428680419922%
+Mean Loss: 37.26282501220703 Variance Loss: 8.858518600463867
+Mean Accuracy: 23.622203826904297 Variance Accuracy: 7.677431106567383
+Mean Loss: 191.29286193847656 Variance Loss: 45.29851531982422
+Mean Accuracy: 24.16134262084961 Variance Accuracy: 7.775265693664551
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Doing Process for batch size 14 with epochs 9
+Mean Loss: 2.23649263381958 Variance Loss: 0.10100330412387848
+Mean Accuracy: 21.23602294921875 Variance Accuracy: 7.100825786590576

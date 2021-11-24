@@ -57,8 +57,9 @@ def get_metric(key):
 
 
 epochs = 2
-lr = 0.001
-key = "adults"
+batch_limit = 1
+lr = 0.01
+key = "mnist"
 
 train_loader, test_loader = get_loaders(key)
 model = get_model(key)
@@ -84,6 +85,9 @@ def train(epoch):
                 loss.item()))
             train_losses.append(loss.item())
             train_counter.append((batch_idx*64) + ((epoch-1)*len(train_loader.dataset)))
+        if batch_limit is not None and batch_idx >= batch_limit:
+            print(f"Early exit reached batch limit")
+            break
 
 
 def milp_train():
@@ -98,7 +102,7 @@ def milp_train():
         model.milp_model.initialize_mlp_model(w_range=0.1)
         if model.milp_model.classification:
             beforeAcc = torch.sum(torch.argmax(output, dim=1) == target)/len(target)
-            min_accuracy = beforeAcc + 0.03
+            min_accuracy = beforeAcc + 0.05
             model.milp_model.build_mlp_model(X, target, min_acc=min_accuracy)
         else:
             beforeL1 = l1_metric(output, target)
@@ -119,7 +123,7 @@ def milp_train():
         print(f"Now loss is {loss.item()}")
         if model.milp_model.classification:
             print(f"Before Accuracy was {beforeAcc*100}%")
-            print(f"Now L1 is {afterAcc*100}%")
+            print(f"Now Accuracy is {afterAcc*100}%")
         else:
             print(f"Before L1 was {beforeL1.item()}")
             print(f"Now L1 is {afterL1.item()}")
@@ -154,9 +158,11 @@ for epoch in range(1, epochs + 1):
 
 evaluate()
 
-#acc_evaluate()
+acc_evaluate()
 
 milp_train()
+
+acc_evaluate()
 
 for epoch in range(1, epochs + 1):
     pass
@@ -164,4 +170,4 @@ for epoch in range(1, epochs + 1):
 
 evaluate()
 
-#acc_evaluate()
+acc_evaluate()
