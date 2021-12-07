@@ -1,6 +1,6 @@
 import torch
 import mnist as m_train
-from toy_data import IdentityDataset, AffineDataset, PolynomialDataset, FormulaDataset, ThresholdDataset
+from data import IdentityDataset, AffineDataset, PolynomialDataset, FormulaDataset, ThresholdDataset
 from foolbox.models import PyTorchModel
 from foolbox.attacks import LinfPGD
 import matplotlib.pyplot as plt

@@ -1,7 +1,7 @@
 import torch
 import mnist as m_train
 from adults import AdultsDataset
-from toy_data import IdentityDataset, AffineDataset, PolynomialDataset, FormulaDataset, ThresholdDataset
+from data import IdentityDataset, AffineDataset, PolynomialDataset, FormulaDataset, ThresholdDataset
 from model import *
 
 

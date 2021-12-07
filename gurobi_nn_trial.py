@@ -5,7 +5,7 @@ import gurobipy as gp
 from gurobipy import GRB
 import torch.nn as nn
 
-from toy_data import ThresholdDataset
+from data import ThresholdDataset
 
 input_dim = 3
 output_dim = 2

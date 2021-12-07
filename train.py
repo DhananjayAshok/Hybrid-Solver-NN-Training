@@ -1,15 +1,11 @@
 import torch
-import mnist as m_train
-from adults import AdultsDataset
-from toy_data import IdentityDataset, AffineDataset, PolynomialDataset, FormulaDataset, ThresholdDataset
+from data import *
 from algorithms import GradientDescent, SolverFineTuning, SolverGDHybrid
-from evaluation import accuracy_evaluate
-from model import *
 
 
 def get_datasets(key):
     if key == "mnist":
-        return m_train.get_datasets()
+        return MNISTDataset.datasets()
     elif key == "identity":
         return IdentityDataset.datasets()
     elif key == "affine":
@@ -21,12 +17,12 @@ def get_datasets(key):
     elif key == "threshold":
         return ThresholdDataset.datasets()
     elif key == "adults":
-        return AdultsDataset.get_datasets()
+        return AdultsDataset.datasets()
 
 
 def get_model(key):
     if key == "mnist":
-        return m_train.model()
+        return MNISTDataset.model()
     elif key == "identity":
         return IdentityDataset.model()
     elif key == "affine":
@@ -43,7 +39,7 @@ def get_model(key):
 
 def get_metric(key):
     if key == "mnist":
-        return m_train.metric()
+        return MNISTDataset.metric()
     elif key == "identity":
         return IdentityDataset.metric()
     elif key == "affine":
@@ -58,7 +54,7 @@ def get_metric(key):
         return AdultsDataset.metric()
 
 
-key = "adults"
+key = "mnist"
 
 train_dataset, test_dataset = get_datasets(key)
 metric = get_metric(key)
