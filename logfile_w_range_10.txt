@@ -1,0 +1,606 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 5 with max points 10 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Academic license - for non-commercial use only - expires 2022-01-06
+Using license file /home/dhananjay/gurobi.lic
+Epoch Early Stopping After 3 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 36.45167541503906 Variance Accuracy: 8.168522834777832
+Begin Training Step 1/2: Gradient Descent
+Testing Results
+Mean Loss: 2.3553903102874756 Variance Loss: 0.20591045916080475
+Mean Accuracy: 27.206470489501953 Variance Accuracy: 8.03559398651123
+Begin Training Step 2/2: Gradient Descent
+Testing Results
+Mean Loss: 2.240699529647827 Variance Loss: 0.30777090787887573
+Mean Accuracy: 40.77476119995117 Variance Accuracy: 8.540373802185059
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 40.77476119995117 Variance Accuracy: 8.511003494262695
+Overall Success: True
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 5 with max points 32 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Evaluating GD Accuracy Overall
+Mean Accuracy: 36.02236557006836 Variance Accuracy: 8.369598388671875
+Begin Training Step 1/2: Gradient Descent
+Testing Results
+Mean Loss: 2.676340103149414 Variance Loss: 0.38853219151496887
+Mean Accuracy: 35.87260437011719 Variance Accuracy: 8.279539108276367
+Begin Training Step 2/2: Gradient Descent
+Testing Results
+Mean Loss: 1.8078258037567139 Variance Loss: 0.17712710797786713
+Mean Accuracy: 42.23242950439453 Variance Accuracy: 9.090544700622559
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 42.27236557006836 Variance Accuracy: 8.153647422790527
+Overall Success: True
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 5 with max points 100 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 4 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 39.686500549316406 Variance Accuracy: 8.608797073364258
+Begin Training Step 1/2: Gradient Descent
+Testing Results
+Mean Loss: 2.8560638427734375 Variance Loss: 0.5293391942977905
+Mean Accuracy: 38.18889617919922 Variance Accuracy: 9.048447608947754
+Begin Training Step 2/2: Gradient Descent
+Testing Results
+Mean Loss: 1.1269093751907349 Variance Loss: 0.26046860218048096
+Mean Accuracy: 65.97444152832031 Variance Accuracy: 8.2586669921875
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 65.94448852539062 Variance Accuracy: 8.06236743927002
+Overall Success: True
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 5 with max points 1000 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 3 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 70.38738250732422 Variance Accuracy: 8.00263500213623
+Begin Training Step 1/2: Gradient Descent
+Testing Results
+Mean Loss: 0.9348463416099548 Variance Loss: 0.2936626076698303
+Mean Accuracy: 72.41413879394531 Variance Accuracy: 7.841859340667725
+Begin Training Step 2/2: Gradient Descent
+Testing Results
+Mean Loss: 0.3660453259944916 Variance Loss: 0.18951299786567688
+Mean Accuracy: 88.7879409790039 Variance Accuracy: 5.28933572769165
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 88.80790710449219 Variance Accuracy: 5.60072135925293
+Overall Success: True
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 5 with max points 5000 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Evaluating GD Accuracy Overall
+Mean Accuracy: 91.20407104492188 Variance Accuracy: 4.790705680847168
+Begin Training Step 1/2: Gradient Descent
+Testing Results
+Mean Loss: 0.22582636773586273 Variance Loss: 0.14263486862182617
+Mean Accuracy: 93.15095520019531 Variance Accuracy: 4.526130199432373
+Begin Training Step 2/2: Gradient Descent
+Testing Results
+Mean Loss: 0.5343815684318542 Variance Loss: 0.24980831146240234
+Mean Accuracy: 84.69448852539062 Variance Accuracy: 6.380666255950928
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 84.7144546508789 Variance Accuracy: 6.534746170043945
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 10 with max points 10 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 3 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 30.37140655517578 Variance Accuracy: 7.386754512786865
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 2 iterations
+Testing Results
+Mean Loss: 3.3293793201446533 Variance Loss: 0.511633038520813
+Mean Accuracy: 30.501197814941406 Variance Accuracy: 8.155585289001465
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 49.30555555555556% of the constraints (142/288) were true
+After assignment 96.18055555555556% of the constraints (277/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 32.54569625854492 Variance Loss: 10.219505310058594
+Mean Accuracy: 31.93889808654785 Variance Accuracy: 7.731529712677002
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 2 iterations
+Testing Results
+Mean Loss: 1144.0712890625 Variance Loss: 203.30422973632812
+Mean Accuracy: 25.998401641845703 Variance Accuracy: 7.1647562980651855
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 43.40277777777778% of the constraints (125/288) were true
+After assignment 98.61111111111111% of the constraints (284/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 764.212158203125 Variance Loss: 222.05841064453125
+Mean Accuracy: 39.616615295410156 Variance Accuracy: 8.638992309570312
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 39.6265983581543 Variance Accuracy: 8.792769432067871
+Overall Success: True
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 10 with max points 32 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 5 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 41.593448638916016 Variance Accuracy: 8.808575630187988
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 4 iterations
+Testing Results
+Mean Loss: 4.845778942108154 Variance Loss: 0.6261593103408813
+Mean Accuracy: 12.629792213439941 Variance Accuracy: 5.219719409942627
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 72.56944444444444% of the constraints (209/288) were true
+After assignment 98.61111111111111% of the constraints (284/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 43.34864044189453 Variance Loss: 13.367020606994629
+Mean Accuracy: 29.35303497314453 Variance Accuracy: 7.972450256347656
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 2 iterations
+Testing Results
+Mean Loss: 11660.3671875 Variance Loss: 1839.521240234375
+Mean Accuracy: 12.23043155670166 Variance Accuracy: 5.880160808563232
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 64.93055555555556% of the constraints (187/288) were true
+After assignment 95.83333333333333% of the constraints (276/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 3871.398681640625 Variance Loss: 1304.216796875
+Mean Accuracy: 31.100238800048828 Variance Accuracy: 8.703734397888184
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 31.090255737304688 Variance Accuracy: 8.04770565032959
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 10 with max points 100 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 6 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 59.95407485961914 Variance Accuracy: 8.251398086547852
+Begin Training Step 1/2: Gradient Descent
+Testing Results
+Mean Loss: 2.247661590576172 Variance Loss: 0.4700755774974823
+Mean Accuracy: 48.0630989074707 Variance Accuracy: 8.752999305725098
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 3 iterations
+Testing Results
+Mean Loss: 1.1995220184326172 Variance Loss: 0.33779802918434143
+Mean Accuracy: 67.6517562866211 Variance Accuracy: 8.897673606872559
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 73.61111111111111% of the constraints (212/288) were true
+After assignment 99.30555555555556% of the constraints (286/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 130.061767578125 Variance Loss: 28.326993942260742
+Mean Accuracy: 21.655351638793945 Variance Accuracy: 7.265406608581543
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 21.655351638793945 Variance Accuracy: 7.204841136932373
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 10 with max points 1000 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 5 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 84.67452239990234 Variance Accuracy: 6.483819007873535
+Begin Training Step 1/2: Gradient Descent
+Testing Results
+Mean Loss: 1.0397871732711792 Variance Loss: 0.4060012698173523
+Mean Accuracy: 75.92851257324219 Variance Accuracy: 7.492165565490723
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 4 iterations
+Testing Results
+Mean Loss: 0.43379655480384827 Variance Loss: 0.2531382143497467
+Mean Accuracy: 89.20726776123047 Variance Accuracy: 5.559791088104248
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 74.30555555555556% of the constraints (214/288) were true
+After assignment 92.36111111111111% of the constraints (266/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 86.88367462158203 Variance Loss: 19.27524185180664
+Mean Accuracy: 18.31070327758789 Variance Accuracy: 6.58605432510376
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 18.26078224182129 Variance Accuracy: 7.4920854568481445
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 10 with max points 5000 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 9 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 93.58026885986328 Variance Accuracy: 4.216733932495117
+Begin Training Step 1/2: Gradient Descent
+Testing Results
+Mean Loss: 0.21619203686714172 Variance Loss: 0.1599223017692566
+Mean Accuracy: 93.9496841430664 Variance Accuracy: 4.0371575355529785
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 2 iterations
+Testing Results
+Mean Loss: 0.2169751524925232 Variance Loss: 0.18573002517223358
+Mean Accuracy: 94.20926666259766 Variance Accuracy: 4.514847755432129
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 81.94444444444444% of the constraints (236/288) were true
+After assignment 99.30555555555556% of the constraints (286/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 72.96070861816406 Variance Loss: 20.04191017150879
+Mean Accuracy: 29.25319480895996 Variance Accuracy: 8.222807884216309
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 29.233226776123047 Variance Accuracy: 7.67025089263916
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 20 with max points 10 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 3 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 32.8075065612793 Variance Accuracy: 8.800238609313965
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 3 iterations
+Testing Results
+Mean Loss: 3.812772274017334 Variance Loss: 0.8243948221206665
+Mean Accuracy: 44.12939453125 Variance Accuracy: 8.03253173828125
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 45.138888888888886% of the constraints (130/288) were true
+After assignment 99.30555555555556% of the constraints (286/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 37.38105773925781 Variance Loss: 12.050130844116211
+Mean Accuracy: 28.75399398803711 Variance Accuracy: 8.108031272888184
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 2 iterations
+Testing Results
+Mean Loss: 3573.613525390625 Variance Loss: 808.7697143554688
+Mean Accuracy: 21.63538360595703 Variance Accuracy: 7.059371471405029
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 54.166666666666664% of the constraints (156/288) were true
+After assignment 98.26388888888889% of the constraints (283/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 1440.638916015625 Variance Loss: 411.5325012207031
+Mean Accuracy: 31.479633331298828 Variance Accuracy: 8.102219581604004
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 31.509584426879883 Variance Accuracy: 8.28279972076416
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 20 with max points 32 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 8 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 54.3130989074707 Variance Accuracy: 8.324108123779297
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 3 iterations
+Testing Results
+Mean Loss: 2.4953949451446533 Variance Loss: 0.3831250071525574
+Mean Accuracy: 32.41813278198242 Variance Accuracy: 7.8070197105407715
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 54.861111111111114% of the constraints (158/288) were true
+After assignment 96.52777777777777% of the constraints (278/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 20.27041244506836 Variance Loss: 6.159095764160156
+Mean Accuracy: 29.49281120300293 Variance Accuracy: 8.288834571838379
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 2 iterations
+Testing Results
+Mean Loss: 3755.229736328125 Variance Loss: 871.62060546875
+Mean Accuracy: 25.0 Variance Accuracy: 7.927834510803223
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 43.05555555555556% of the constraints (124/288) were true
+After assignment 98.61111111111111% of the constraints (284/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 1712.8297119140625 Variance Loss: 558.656005859375
+Mean Accuracy: 42.172523498535156 Variance Accuracy: 8.31373405456543
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 42.212459564208984 Variance Accuracy: 8.006856918334961
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 20 with max points 100 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 4 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 51.128196716308594 Variance Accuracy: 8.580453872680664
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 4 iterations
+Testing Results
+Mean Loss: 2.5930776596069336 Variance Loss: 0.5606701374053955
+Mean Accuracy: 47.92332458496094 Variance Accuracy: 9.46434497833252
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 77.08333333333333% of the constraints (222/288) were true
+After assignment 100.0% of the constraints (288/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 50.698062896728516 Variance Loss: 17.015512466430664
+Mean Accuracy: 35.25359344482422 Variance Accuracy: 8.442652702331543
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 6 iterations
+Testing Results
+Mean Loss: 2.302588939666748 Variance Loss: 0.007788334507495165
+Mean Accuracy: 9.584664344787598 Variance Accuracy: 5.353323459625244
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 50.0% of the constraints (144/288) were true
+After assignment 46.52777777777778% of the constraints (134/288) were true
+Accuracy on Training Sample: 18.75%
+Testing Results after fine tuning
+Mean Loss: 2.302582025527954 Variance Loss: 1.1203551366634201e-05
+Mean Accuracy: 11.351837158203125 Variance Accuracy: 6.2368340492248535
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 11.351837158203125 Variance Accuracy: 5.409036636352539
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 20 with max points 1000 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 6 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 87.4600601196289 Variance Accuracy: 5.605682849884033
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 3 iterations
+Testing Results
+Mean Loss: 1.1477222442626953 Variance Loss: 0.4387459456920624
+Mean Accuracy: 75.96845245361328 Variance Accuracy: 7.553684234619141
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 82.63888888888889% of the constraints (238/288) were true
+After assignment 99.65277777777777% of the constraints (287/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 139.57852172851562 Variance Loss: 36.778202056884766
+Mean Accuracy: 23.851837158203125 Variance Accuracy: 7.540844917297363
+Begin Training Step 2/2: Gradient Descent
+Testing Results
+Mean Loss: 2.302778720855713 Variance Loss: 0.013939248397946358
+Mean Accuracy: 10.30351448059082 Variance Accuracy: 5.620790004730225
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 10.293530464172363 Variance Accuracy: 5.614078998565674
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 20 with max points 5000 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 6 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 93.86981201171875 Variance Accuracy: 4.251710891723633
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 6 iterations
+Testing Results
+Mean Loss: 0.22444115579128265 Variance Loss: 0.18352708220481873
+Mean Accuracy: 93.72004699707031 Variance Accuracy: 4.212629318237305
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 87.84722222222223% of the constraints (253/288) were true
+After assignment 99.65277777777777% of the constraints (287/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 129.7051239013672 Variance Loss: 26.977853775024414
+Mean Accuracy: 22.71365737915039 Variance Accuracy: 7.365958213806152
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 4 iterations
+Testing Results
+Mean Loss: 2.3018367290496826 Variance Loss: 0.01186277810484171
+Mean Accuracy: 11.341853141784668 Variance Accuracy: 5.5469160079956055
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 45.138888888888886% of the constraints (130/288) were true
+After assignment 46.52777777777778% of the constraints (134/288) were true
+Accuracy on Training Sample: 15.625%
+Testing Results after fine tuning
+Mean Loss: 2.302002191543579 Variance Loss: 0.009012416936457157
+Mean Accuracy: 10.10383415222168 Variance Accuracy: 5.555274963378906
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 10.113818168640137 Variance Accuracy: 5.219853401184082
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 30 with max points 10 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 2 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 36.44169235229492 Variance Accuracy: 8.36975383758545
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 2 iterations
+Testing Results
+Mean Loss: 2.55178165435791 Variance Loss: 0.3755328059196472
+Mean Accuracy: 39.55670928955078 Variance Accuracy: 8.639015197753906
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 43.05555555555556% of the constraints (124/288) were true
+After assignment 98.95833333333333% of the constraints (285/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 21.22947883605957 Variance Loss: 6.079860210418701
+Mean Accuracy: 27.78554344177246 Variance Accuracy: 8.219195365905762
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 2 iterations
+Testing Results
+Mean Loss: 2624.47802734375 Variance Loss: 700.964599609375
+Mean Accuracy: 20.89656639099121 Variance Accuracy: 7.314487934112549
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 54.861111111111114% of the constraints (158/288) were true
+After assignment 98.61111111111111% of the constraints (284/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 1022.510498046875 Variance Loss: 271.33544921875
+Mean Accuracy: 29.263179779052734 Variance Accuracy: 8.29910659790039
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 29.28314781188965 Variance Accuracy: 7.603390693664551
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 30 with max points 32 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 8 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 55.14177322387695 Variance Accuracy: 8.659306526184082
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 6 iterations
+Testing Results
+Mean Loss: 1.3509562015533447 Variance Loss: 0.2535697817802429
+Mean Accuracy: 58.13698196411133 Variance Accuracy: 9.067602157592773
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 68.75% of the constraints (198/288) were true
+After assignment 99.30555555555556% of the constraints (286/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 44.10972595214844 Variance Loss: 14.010520935058594
+Mean Accuracy: 33.656150817871094 Variance Accuracy: 8.024834632873535
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 2 iterations
+Testing Results
+Mean Loss: 21826.166015625 Variance Loss: 2711.433837890625
+Mean Accuracy: 10.333466529846191 Variance Accuracy: 5.842472553253174
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 46.18055555555556% of the constraints (133/288) were true
+After assignment 100.0% of the constraints (288/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 3932.33837890625 Variance Loss: 1269.2755126953125
+Mean Accuracy: 34.744407653808594 Variance Accuracy: 9.163318634033203
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 34.71445846557617 Variance Accuracy: 8.459407806396484
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 30 with max points 100 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 8 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 64.21725463867188 Variance Accuracy: 8.702298164367676
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 6 iterations
+Testing Results
+Mean Loss: 1.2922160625457764 Variance Loss: 0.4385462999343872
+Mean Accuracy: 68.76996612548828 Variance Accuracy: 8.37327766418457
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 70.13888888888889% of the constraints (202/288) were true
+After assignment 99.30555555555556% of the constraints (286/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 28.846179962158203 Variance Loss: 9.062829971313477
+Mean Accuracy: 31.289936065673828 Variance Accuracy: 8.38441276550293
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 4 iterations
+Testing Results
+Mean Loss: 10.721485137939453 Variance Loss: 2.841916799545288
+Mean Accuracy: 9.335063934326172 Variance Accuracy: 5.212184906005859
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 36.458333333333336% of the constraints (105/288) were true
+After assignment 97.56944444444444% of the constraints (281/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 18.74486541748047 Variance Loss: 3.6946170330047607
+Mean Accuracy: 24.520767211914062 Variance Accuracy: 7.4487409591674805
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 24.520767211914062 Variance Accuracy: 7.117831707000732
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 30 with max points 1000 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 3 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 79.47284698486328 Variance Accuracy: 7.631667613983154
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 4 iterations
+Testing Results
+Mean Loss: 0.695152759552002 Variance Loss: 0.295523464679718
+Mean Accuracy: 81.34983825683594 Variance Accuracy: 6.656644344329834
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 81.25% of the constraints (234/288) were true
+After assignment 100.0% of the constraints (288/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 2841.21875 Variance Loss: 294.9809265136719
+Mean Accuracy: 15.904552459716797 Variance Accuracy: 6.101745128631592
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 14 iterations
+Testing Results
+Mean Loss: 82.20267486572266 Variance Loss: 28.560163497924805
+Mean Accuracy: 46.70527267456055 Variance Accuracy: 9.385138511657715
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 68.75% of the constraints (198/288) were true
+After assignment 100.0% of the constraints (288/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 191.33871459960938 Variance Loss: 47.74729537963867
+Mean Accuracy: 37.420127868652344 Variance Accuracy: 8.473251342773438
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 37.45008087158203 Variance Accuracy: 8.023824691772461
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch 30 with max points 5000 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Epoch Early Stopping After 7 iterations
+Evaluating GD Accuracy Overall
+Mean Accuracy: 92.83146667480469 Variance Accuracy: 4.541525363922119
+Begin Training Step 1/2: Gradient Descent
+Epoch Early Stopping After 6 iterations
+Testing Results
+Mean Loss: 0.24323779344558716 Variance Loss: 0.18874920904636383
+Mean Accuracy: 93.09105682373047 Variance Accuracy: 4.134300708770752
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 87.5% of the constraints (252/288) were true
+After assignment 100.0% of the constraints (288/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 141.8037567138672 Variance Loss: 35.049400329589844
+Mean Accuracy: 24.27116584777832 Variance Accuracy: 7.559969902038574
+Begin Training Step 2/2: Gradient Descent
+Epoch Early Stopping After 10 iterations
+Testing Results
+Mean Loss: 0.5333912968635559 Variance Loss: 0.2725279927253723
+Mean Accuracy: 84.83426666259766 Variance Accuracy: 6.54176664352417
+Detected Early Stopping, calling Solver Fine Tuning
+Finished Building Model
+MILP Solved: Solutions found
+<gurobi.Model MIP instance MLP: 1 constrs, 19080 vars, Parameter changes: OutputFlag=0>
+Warm Start assignment 82.29166666666667% of the constraints (237/288) were true
+After assignment 100.0% of the constraints (288/288) were true
+Accuracy on Training Sample: 100.0%
+Testing Results after fine tuning
+Mean Loss: 28.531312942504883 Variance Loss: 8.064788818359375
+Mean Accuracy: 41.69329071044922 Variance Accuracy: 8.37035083770752
+Evaluating Hybrid Accuracy Overall
+Mean Accuracy: 41.66333770751953 Variance Accuracy: 8.615473747253418
+Overall Success: False
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

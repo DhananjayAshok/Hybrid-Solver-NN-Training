@@ -8,7 +8,7 @@ class MNISTModel(nn.Module):
     def __init__(self):
         nn.Module.__init__(self)
         self.conv = NamedConv2d(1, 3, 4)
-        self.milp_model = MILPNet(nn.Sequential(NamedLinear(1875, 10)), w_range=10)
+        self.milp_model = MILPNet(nn.Sequential(NamedLinear(1875, 10)), w_range=0.1)
 
     def forward(self, x):
         h = self.forward_till_dense(x)
@@ -116,4 +116,5 @@ class SimpleClassification(nn.Module):
         return r
 
     def predict(self, x):
-        return self.forward(x)
+        logits = self.forward(x)
+        return argmax(logits, dim=1)

@@ -22,7 +22,7 @@ class AdultsDataset(Dataset):
             self.y = y_v
 
     def __getitem__(self, item):
-        return self.X[item], self.y[item]
+        return self.X[item], int(self.y[item])
 
     def __len__(self):
         return len(self.y)
@@ -38,7 +38,7 @@ class AdultsDataset(Dataset):
         return train_loader, test_loader
 
     def model(self=None):
-        return SimpleClassification(input_dim=13, output_dim=2, w_range=10000)
+        return SimpleClassification(input_dim=13, output_dim=2, w_range=0.001)
 
     def get_dataset(test_ratio=0.2):
         url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
@@ -66,3 +66,10 @@ class AdultsDataset(Dataset):
         y_train = torch.LongTensor(y_train.values)
         y_test = torch.LongTensor(y_test.values)
         return X_train, X_test, y_train, y_test
+
+    def get_datasets(test_ratio=0.2):
+        train_dataset = AdultsDataset(test_ratio=test_ratio)
+        test_dataset = AdultsDataset(train=False, test_ratio=test_ratio)
+        return train_dataset, test_dataset
+
+

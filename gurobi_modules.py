@@ -62,11 +62,13 @@ class MILPNet(nn.Module):
                         self.model[l].weight[j, i] = self.m.getVarByName(f"w_{l},{i},{j}").start
                     self.model[l].bias[j] = self.m.getVarByName(f"b_{l},{j}").start
 
-    def initialize_mlp_model(self, w_range=10):
+    def initialize_mlp_model(self, w_range=None):
         """
         Sets up the mapping between the weights and biases of each layer with variables in a MILP model
         :return:
         """
+        if w_range is None:
+            w_range = self.w_range
         m = gp.Model("MLP")
         m.setParam('OutputFlag', 0)
         w_b_var_dict = {}
