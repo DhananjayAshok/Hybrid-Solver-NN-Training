@@ -4,6 +4,33 @@ from gurobi_modules import NamedLinear, NamedConv2d, MILPNet
 from torchvision.models import resnet50
 
 
+class CIFAR10Model(nn.Module):
+    def __init__(self, internal_dim=2000):
+        nn.Module.__init__(self)
+        self.conv = NamedConv2d(3, 6, 4)
+        self.dense = nn.Linear(5046, internal_dim)
+        self.milp_model = MILPNet(nn.Sequential(NamedLinear(internal_dim, 10)), w_range=0.1)
+
+    def forward(self, x):
+        h = self.forward_till_dense(x)
+        y = self.milp_model(h)
+        out = y
+        return out
+
+    def forward_till_dense(self, x):
+        x = self.conv(x)
+        r = nn.functional.relu(x)
+        h = r.view(x.shape[0], -1)
+        o = self.dense(h)
+        o = nn.functional.relu(o)
+        return o
+
+    def predict(self, x):
+        logits = self.forward(x)
+        predictions = argmax(logits, dim=1)
+        return predictions
+
+
 class MNISTModel(nn.Module):
     def __init__(self):
         nn.Module.__init__(self)
@@ -118,3 +145,4 @@ class SimpleClassification(nn.Module):
     def predict(self, x):
         logits = self.forward(x)
         return argmax(logits, dim=1)
+

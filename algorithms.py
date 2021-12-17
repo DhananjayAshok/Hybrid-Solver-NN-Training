@@ -198,6 +198,7 @@ class SolverGDHybridManual(TrainingAlgorithm):
 class SolverGDHybrid(TrainingAlgorithm):
     def __init__(self, model, metric, train_dataset, test_dataset, batch_size):
         TrainingAlgorithm.__init__(self, model, metric, train_dataset, test_dataset, batch_size)
+        self.last_gd_res = None
 
     def configure(self, epochs_sequence, n_iters=None, incorrect_subset=False, lr_sequence=None,
                   early_stopping=None, early_stopping_max_points=val_cutoff, early_stop_batch=False,
@@ -235,7 +236,9 @@ class SolverGDHybrid(TrainingAlgorithm):
             print(f"Testing Results")
             self.evaluate_loss()
             if self.classification:
-                self.evaluate_accuracy()
+                tmp = self.evaluate_accuracy()
+                if i == len(self.sequence) - 1:
+                    self.last_gd_res = tmp
             else:
                 self.evaluate_l1()
             if early_stop:

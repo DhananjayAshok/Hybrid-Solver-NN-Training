@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from sklearn.model_selection import train_test_split
 
-from model import SimpleRegression, SingleLayerRegression, SimpleClassification, MNISTModel, PreTrainedMNISTModel
+from model import *
 from torch.utils.data import Dataset, DataLoader
 from torchvision import datasets, transforms
 import numpy as np
@@ -11,6 +11,35 @@ import pandas as pd
 
 input_dim = 3
 output_dim = 2
+
+
+class CIFAR10Dataset():
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def metric():
+        return nn.CrossEntropyLoss()
+
+    @staticmethod
+    def datasets():
+        train_dataset = datasets.CIFAR10('data', train=True, download=True,
+                                       transform=transforms.Compose([
+                                           transforms.ToTensor(),
+                                           transforms.Normalize((0.5,0.5, 0.5), (0.5, 0.5, 0.5)),
+                                           lambda x: x.float(),
+                                       ]))
+
+        test_dataset = datasets.CIFAR10('data', train=False, transform=transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize((0.5,0.5, 0.5), (0.5, 0.5, 0.5)),
+            lambda x: x.float(),
+        ]))
+        return train_dataset, test_dataset
+
+    @staticmethod
+    def model():
+        return CIFAR10Model()
 
 
 class MNISTDataset():
