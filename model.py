@@ -31,6 +31,41 @@ class CIFAR10Model(nn.Module):
         return predictions
 
 
+class CIFAR10ModelDeep(nn.Module):
+    def __init__(self, internal_dim=500):
+        nn.Module.__init__(self)
+        self.conv = NamedConv2d(3, 16, 1, padding=1)
+        self.conv1 = NamedConv2d(16, 32, 3, 1, padding=1)
+        self.conv2 = NamedConv2d(32, 64, 3, 1, padding=1)
+        self.dense = nn.Linear(4*4*64, internal_dim)
+        self.milp_model = MILPNet(nn.Sequential(NamedLinear(internal_dim, 10)), w_range=0.1)
+
+    def forward(self, x):
+        h = self.forward_till_dense(x)
+        out = self.milp_model(h)
+        return out
+
+    def forward_till_dense(self, x):
+        x = self.conv(x)
+        x = nn.functional.relu(x)
+        x = nn.functional.max_pool2d(x, 2, 2)
+        x = self.conv1(x)
+        x = nn.functional.relu(x)
+        x = nn.functional.max_pool2d(x, 2, 2)
+        x = self.conv2(x)
+        x = nn.functional.relu(x)
+        x = nn.functional.max_pool2d(x, 2, 2)
+        h = x.view(x.shape[0], -1)
+        h = self.dense(h)
+        o = nn.functional.relu(h)
+        return o
+
+    def predict(self, x):
+        logits = self.forward(x)
+        predictions = argmax(logits, dim=1)
+        return predictions
+
+
 class MNISTModel(nn.Module):
     def __init__(self):
         nn.Module.__init__(self)

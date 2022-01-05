@@ -1,6 +1,8 @@
 import torch
 import pandas as pd
 import matplotlib.pyplot as plt
+from tqdm import tqdm
+
 
 class AccuracyMetric:
     def __call__(self, output, target):
@@ -48,12 +50,24 @@ def get_incorrect_subset(model, train_dataset, limit=None):
 
 def get_log_df(key):
     from train import logfolder
-    df0 = pd.read_csv(logfolder + f"/{key}_gdTest.csv")
-    df1 = pd.read_csv(logfolder + f"/{key}_gd_vs_hybrid.csv")
+    try:
+        df0 = pd.read_csv(logfolder + f"/{key}_gdTest.csv")
+    except FileNotFoundError:
+        print(f"Here")
+        df0 = None
+    try:
+        df1 = pd.read_csv(logfolder + f"/{key}_gd_vs_hybrid.csv")
+    except FileNotFoundError:
+        df1 = None
+    if df0 is None and df1 is None:
+        raise FileNotFoundError(f"Neither Files {logfolder}/{key}_gdTest.csv or {logfolder}/{key}_gd_vs_hybrid.csv could be found")
     return df0, df1
 
 
-def plot_max_points_vs_accuracy_by_method(df, exclude_methods=[]):
+def plot_max_points_vs_metric_by_method(df, exclude_methods=[], save_plot=False, key=None):
+    if key is None:
+        save_plot = False
+    metric_col = "metric" if 'metric' in df.columns else "accuracy"
     methods = df['method'].unique()
     epochs = df['epochs'].unique()
     for method in methods:
@@ -62,16 +76,55 @@ def plot_max_points_vs_accuracy_by_method(df, exclude_methods=[]):
         for epoch in epochs:
             subset = df[df["method"] == method]
             subset = subset[subset["epochs"] == epoch]
-            plt.plot(subset["max_points"], subset["accuracy"], label=f"{method}: {epoch} epochs")
+            plt.plot(subset["max_points"], subset[metric_col], label=f"{method}: {epoch} epochs")
     plt.legend()
     plt.xlabel("Max Points")
-    plt.ylabel("Accuracy")
-    plt.title(f"Max Points vs Accuracy by Method")
-    plt.show()
+    plt.ylabel("Metric")
+    title = f"{key if key is not None else ''} Max Points vs Metric by Method"
+    plt.title(title)
+    if not save_plot:
+        plt.show()
+    else:
+        from train import logfolder
+        plt.savefig(f"{logfolder}/{title}.jpg")
+    plt.clf()
     return
 
 
-def plot_epochs_vs_accuracy_by_optimizer_and_max_points(df):
+def plot_metric_averages_by_method(df, exclude_methods=[], save_plot=False, key=None):
+    if key is None:
+        save_plot = False
+    metric_col = "metric" if 'metric' in df.columns else "accuracy"
+    methods = df['method'].unique()
+    methods_to_plot = []
+    averages = []
+    stds = []
+    for method in methods:
+        if method in exclude_methods:
+            continue
+        methods_to_plot.append(method)
+        averages.append(df[df["method"] == method][metric_col].mean())
+        stds.append(df[df["method"] == method][metric_col].std())
+
+    use_stds = not pd.isna(stds).any()
+    plt.bar(x=methods, height=averages, yerr=stds if use_stds else None)
+    plt.xlabel("Methods")
+    plt.ylabel("Avg Metric")
+    title = f"{key if key is not None else ''} Metric Averages by Method"
+    plt.title(title)
+    if not save_plot:
+        plt.show()
+    else:
+        from train import logfolder
+        plt.savefig(f"{logfolder}/{title}.jpg")
+    plt.clf()
+    return
+
+
+def plot_epochs_vs_metric_by_optimizer_and_max_points(df, save_plot=False, key=None):
+    if key is None:
+        save_plot = False
+    metric_col = "metric" if 'metric' in df.columns else "accuracy"
     optimizers = df["optimizer"].unique()
     lr_scheduling = df["lr_scheduling"].unique()
     max_points = df["max_points"].unique()
@@ -79,18 +132,63 @@ def plot_epochs_vs_accuracy_by_optimizer_and_max_points(df):
         subset = df[df["optimizer"] == optimizer]
         # subset = subset[subset["lr_scheduling"] == lr_schedule]
         # subset = subset[subset["max_points"] == max_point]
-        plt.plot(subset["epochs"], subset["accuracy"], label=f"{optimizer} "
+        plt.plot(subset["epochs"], subset[metric_col], label=f"{optimizer} "
                  )#f"{'with' if lr_schedule else 'without'} LRS")
     plt.legend()
     plt.xlabel("Epochs")
-    plt.ylabel("Accuracy")
-    plt.title(f"Epochs vs Accuracy by Method and Max Points")
-    plt.show()
+    plt.ylabel("Metric")
+    title = f"{key if key is not None else ''} Epochs vs Metric by Method and Max Points"
+    plt.title(title)
+    if not save_plot:
+        plt.show()
+    else:
+        from train import logfolder
+        plt.savefig(f"{logfolder}/{title}.jpg")
+    plt.clf()
+    return
 
 
-def plot_0(df, exclusions=[]):
-    plot_max_points_vs_accuracy_by_method(df, exclude_methods=exclusions)
+def plot_0(df, save_plot=False, key=None):
+    plot_epochs_vs_metric_by_optimizer_and_max_points(df, save_plot=save_plot, key=key)
 
 
-def plot_1(df):
-    plot_epochs_vs_accuracy_by_optimizer_and_max_points(df)
+def plot_1(df, exclusions=[], save_plot=False, key=None):
+    plot_max_points_vs_metric_by_method(df, exclude_methods=exclusions, save_plot=save_plot, key=key)
+
+
+def plot_2(df, exclusions=[], save_plot=False, key=None):
+    plot_metric_averages_by_method(df, exclude_methods=exclusions, save_plot=save_plot, key=key)
+
+
+def slicer(df, slicing={}):
+    """
+    slicing in format {col: value}
+    """
+    for col in slicing:
+        if col not in df.columns:
+            print(f"Column {col} not in dataframe columns")
+            continue
+        df = df[df[col] == slicing[col]]
+    return df
+
+
+def gen_all_plots(keys=None, save_plot=True, slicing_0={}, slicing_1={}):
+    if keys is None:
+        from train import all_keys
+        keys = all_keys
+    for key in tqdm(keys):
+        try:
+            df_0, df_1 = get_log_df(key)
+            if df_0 is not None:
+                df_0 = slicer(df_0, slicing_0)
+                if key == "cifar10":
+                    pass
+                else:
+                    plot_0(df_0, key=key, save_plot=save_plot)
+            if df_1 is not None:
+                df_1 = slicer(df_1, slicing_1)
+                plot_1(df_1, key=key, save_plot=save_plot)
+                plot_2(df_1, key=key, save_plot=save_plot)
+        except FileNotFoundError:
+            print(f"Could not find files for {key}")
+    return

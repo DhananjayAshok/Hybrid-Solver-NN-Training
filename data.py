@@ -39,7 +39,7 @@ class CIFAR10Dataset():
 
     @staticmethod
     def model():
-        return CIFAR10Model()
+        return CIFAR10ModelDeep()#CIFAR10Model()
 
 
 class MNISTDataset():

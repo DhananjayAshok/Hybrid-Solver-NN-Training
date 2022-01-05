@@ -169,6 +169,10 @@ class SolverGDHybridManual(TrainingAlgorithm):
         self.epoch_sequence = epochs_sequence
         self.lr_sequence = lr_sequence
         self.classification = classification
+        if not classification:
+            self.incorrect_only = False
+        else:
+            self.incorrect_only = incorrect_only
         self.sequence = []
         for i, e in enumerate(epochs_sequence):
             if isinstance(e, int):
@@ -177,7 +181,7 @@ class SolverGDHybridManual(TrainingAlgorithm):
                 self.sequence.append(g)
             elif e == "s" or e == "solver":
                 s = SolverFineTuning(self.model, self.metric, self.train_dataset, self.test_dataset, self.batch_size)
-                s.configure(n_iters=n_iters, incorrect_only=incorrect_only)
+                s.configure(n_iters=n_iters, incorrect_only=self.incorrect_only)
                 self.sequence.append(s)
         self.configured = True
 
@@ -212,7 +216,7 @@ class SolverGDHybrid(TrainingAlgorithm):
         self.epoch_sequence = epochs_sequence
         self.lr_sequence = lr_sequence
         self.n_iters = n_iters
-        self.incorrect_subset = incorrect_subset
+        self.incorrect_subset = incorrect_subset if classification else False
         self.classification = classification
         self.lr_scheduling = lr_scheduling
         self.sequence = []
@@ -248,7 +252,9 @@ class SolverGDHybrid(TrainingAlgorithm):
                 if i == len(self.sequence) - 1:
                     self.last_gd_res = tmp
             else:
-                self.evaluate_l1()
+                tmp = self.evaluate_l1()
+                if i == len(self.sequence) - 1:
+                    self.last_gd_res = tmp
             if early_stop:
                 print(f"Detected Early Stopping, calling Solver Fine Tuning")
                 s = SolverFineTuning(self.model, self.metric, self.train_dataset, self.test_dataset,
