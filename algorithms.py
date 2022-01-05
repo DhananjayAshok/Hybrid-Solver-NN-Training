@@ -47,13 +47,15 @@ class GradientDescent(TrainingAlgorithm):
     def __init__(self, model, metric, train_dataset, test_dataset, batch_size):
         TrainingAlgorithm.__init__(self, model, metric, train_dataset, test_dataset, batch_size)
 
-    def configure(self, epochs, lr=None, early_stopping=None, max_points=None, early_stopping_max_points=val_cutoff, early_stop_batch=False):
+    def configure(self, epochs, lr=None, early_stopping=None, max_points=None, early_stopping_max_points=val_cutoff, early_stop_batch=False, optimizer=torch.optim.SGD, lr_scheduling=False):
         self.epochs = epochs
         self.lr = lr
         self.early_stopping = early_stopping
         self.max_points = max_points
         self.early_stopping_max_points=early_stopping_max_points
         self.early_stopping_batch = early_stop_batch
+        self.optimizer = optimizer
+        self.lr_scheduling = lr_scheduling
         if early_stopping is not None and early_stopping_max_points is None:
             raise ValueError("Must specify early_stopping_max_points parameter as well")
         self.configured = True
@@ -65,10 +67,14 @@ class GradientDescent(TrainingAlgorithm):
         self.max_points = None
         self.early_stopping_max_points = None
         self.early_stopping_batch = None
+        self.optimizer = None
+        self.lr_scheduling = None
         self.configured = False
 
     def _train(self):
-        self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.lr)
+        self.optimizer = self.optimizer(self.model.parameters(), lr=self.lr)
+        if self.lr_scheduling:
+            self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, 'min', factor=0.6, patience=2, verbose=True)
         if self.max_points is None:
             self.train_loader = torch.utils.data.DataLoader(self.train_dataset, batch_size=self.batch_size, shuffle=True)
         else:
@@ -159,7 +165,7 @@ class SolverGDHybridManual(TrainingAlgorithm):
         TrainingAlgorithm.__init__(self, model, metric, train_dataset, test_dataset, batch_size)
 
     def configure(self, epochs_sequence, n_iters=None, incorrect_only=None, lr_sequence=None,
-                  max_points=None, classification=True):
+                  max_points=None, classification=True, ):
         self.epoch_sequence = epochs_sequence
         self.lr_sequence = lr_sequence
         self.classification = classification
@@ -202,18 +208,20 @@ class SolverGDHybrid(TrainingAlgorithm):
 
     def configure(self, epochs_sequence, n_iters=None, incorrect_subset=False, lr_sequence=None,
                   early_stopping=None, early_stopping_max_points=val_cutoff, early_stop_batch=False,
-                  max_points=None, classification=True):
+                  max_points=None, classification=True, optimizer=torch.optim.SGD, lr_scheduling=False):
         self.epoch_sequence = epochs_sequence
         self.lr_sequence = lr_sequence
         self.n_iters = n_iters
         self.incorrect_subset = incorrect_subset
         self.classification = classification
+        self.lr_scheduling = lr_scheduling
         self.sequence = []
         for i, e in enumerate(epochs_sequence):
             if isinstance(e, int):
                 g = GradientDescent(self.model, self.metric, self.train_dataset, self.test_dataset, self.batch_size)
                 g.configure(e, lr_sequence[i], max_points=max_points, early_stopping=early_stopping,
-                            early_stopping_max_points=val_cutoff, early_stop_batch=early_stop_batch,)
+                            early_stopping_max_points=val_cutoff, early_stop_batch=early_stop_batch,
+                            optimizer=optimizer, lr_scheduling=self.lr_scheduling)
                 self.sequence.append(g)
             elif e == "s" or e == "solver":
                 raise ValueError("Use SolverGDHybridManual Algorithm instead")
