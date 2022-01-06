@@ -153,9 +153,10 @@ class SolverFineTuning(TrainingAlgorithm):
             else:
                 l1 = torch.abs(output - target)
                 l1 = l1.mean()
-                # l1 = None
+                l1 = None
                 self.model.milp_model.build_mlp_model(X, target, max_loss=l1)
             # model.milp_model.report_mlp(verbose=False, constraint_loop_verbose=True)
+            self.model.milp_model.verbose = False # Force silence to improve time efficiency
             self.model.milp_model.solve_and_assign()
             # model.milp_model.report_mlp(verbose=False, constraint_loop_verbose=True))
 
@@ -164,15 +165,12 @@ class SolverGDHybridManual(TrainingAlgorithm):
     def __init__(self, model, metric, train_dataset, test_dataset, batch_size):
         TrainingAlgorithm.__init__(self, model, metric, train_dataset, test_dataset, batch_size)
 
-    def configure(self, epochs_sequence, n_iters=None, incorrect_only=None, lr_sequence=None,
+    def configure(self, epochs_sequence, n_iters=None, incorrect_subset=None, lr_sequence=None,
                   max_points=None, classification=True, ):
         self.epoch_sequence = epochs_sequence
         self.lr_sequence = lr_sequence
+        self.incorrect_subset = incorrect_subset if classification else False
         self.classification = classification
-        if not classification:
-            self.incorrect_only = False
-        else:
-            self.incorrect_only = incorrect_only
         self.sequence = []
         for i, e in enumerate(epochs_sequence):
             if isinstance(e, int):
@@ -181,7 +179,7 @@ class SolverGDHybridManual(TrainingAlgorithm):
                 self.sequence.append(g)
             elif e == "s" or e == "solver":
                 s = SolverFineTuning(self.model, self.metric, self.train_dataset, self.test_dataset, self.batch_size)
-                s.configure(n_iters=n_iters, incorrect_only=self.incorrect_only)
+                s.configure(n_iters=n_iters, incorrect_subset=self.incorrect_subset)
                 self.sequence.append(s)
         self.configured = True
 
@@ -197,12 +195,6 @@ class SolverGDHybridManual(TrainingAlgorithm):
             elif isinstance(trainer, SolverFineTuning):
                 print(f"Begin Training Step {i + 1}: Solver Fine Tuning")
             trainer.train()
-            print(f"Testing Results")
-            self.evaluate_loss()
-            if self.classification:
-                self.evaluate_accuracy()
-            else:
-                self.evaluate_l1()
 
 
 class SolverGDHybrid(TrainingAlgorithm):
@@ -261,9 +253,3 @@ class SolverGDHybrid(TrainingAlgorithm):
                                      self.batch_size)
                 s.configure(n_iters=self.n_iters, incorrect_subset=self.incorrect_subset)
                 s.train()
-                print(f"Testing Results after fine tuning")
-                self.evaluate_loss()
-                if self.classification:
-                    self.evaluate_accuracy()
-                else:
-                    self.evaluate_l1()

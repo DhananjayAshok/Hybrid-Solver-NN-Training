@@ -55,12 +55,16 @@ def get_log_df(key):
     except FileNotFoundError:
         df0 = None
     try:
-        df1 = pd.read_csv(logfolder + f"/{key}_gd_vs_hybrid.csv")
+        df1 = pd.read_csv(logfolder + f"/{key}_gd_vs_hybrid_metric.csv")
     except FileNotFoundError:
         df1 = None
-    if df0 is None and df1 is None:
-        raise FileNotFoundError(f"Neither Files {logfolder}/{key}_gdTest.csv or {logfolder}/{key}_gd_vs_hybrid.csv could be found")
-    return df0, df1
+    try:
+        df2 = pd.read_csv(logfolder + f"/{key}_gd_vs_hybrid_cost.csv")
+    except FileNotFoundError:
+        df2 = None
+    if df0 is None and df1 is None and df2 is None:
+        raise FileNotFoundError(f"None of the Files in {logfolder}/{key}_....csv could be found")
+    return df0, df1, df2
 
 
 def plot_max_points_vs_metric_by_method(df, exclude_methods=[], save_plot=False, key=None):
@@ -120,6 +124,58 @@ def plot_metric_averages_by_method(df, exclude_methods=[], save_plot=False, key=
     return
 
 
+def plot_epochs_vs_time_by_method(df, exclude_methods=[], save_plot=False, key=None):
+    if key is None:
+        save_plot = False
+    time_column = "time"
+    methods = df['method'].unique()
+    for method in methods:
+        if method in exclude_methods:
+            continue
+        subset = df[df["method"] == method]
+        plt.plot(subset["epochs"], subset[time_column], label=f"{method}")
+
+    plt.xlabel("Epochs")
+    plt.ylabel("Time")
+    title = f"{key if key is not None else ''} Epochs vs Time by Method"
+    plt.title(title)
+    plt.legend()
+    if not save_plot:
+        plt.show()
+    else:
+        from train import logfolder
+        plt.savefig(f"{logfolder}/{title}.jpg")
+    plt.clf()
+    return
+
+
+def plot_epochs_vs_metric_by_method(df, exclude_methods=[], save_plot=False, key=None):
+    if key is None:
+        save_plot = False
+    metric_col = "metric" if 'metric' in df.columns else "accuracy"
+    methods = df['method'].unique()
+    lrs = df["lr"].unique()
+    for method in methods:
+        if method in exclude_methods:
+            continue
+        for lr in lrs:
+            subset = df[df["method"] == method]
+            subset = subset[subset["lr"] == lr]
+            plt.plot(subset["epochs"], subset[metric_col], label=f"{method}: lr {lr}")
+    plt.legend()
+    plt.xlabel("Epochs")
+    plt.ylabel("Metric")
+    title = f"{key if key is not None else ''} Epochs vs Metric by Method"
+    plt.title(title)
+    if not save_plot:
+        plt.show()
+    else:
+        from train import logfolder
+        plt.savefig(f"{logfolder}/{title}.jpg")
+    plt.clf()
+    return
+
+
 def plot_epochs_vs_metric_by_optimizer_and_max_points(df, save_plot=False, key=None):
     if key is None:
         save_plot = False
@@ -159,6 +215,14 @@ def plot_2(df, exclusions=[], save_plot=False, key=None):
     plot_metric_averages_by_method(df, exclude_methods=exclusions, save_plot=save_plot, key=key)
 
 
+def plot_3(df, exclusions=[], save_plot=False, key=None):
+    plot_epochs_vs_time_by_method(df, exclude_methods=exclusions, save_plot=save_plot, key=key)
+
+
+def plot_4(df, exclusions=[], save_plot=False, key=None):
+    plot_epochs_vs_metric_by_method(df, exclude_methods=exclusions, save_plot=save_plot, key=key)
+
+
 def slicer(df, slicing={}):
     """
     slicing in format {col: value}
@@ -171,13 +235,13 @@ def slicer(df, slicing={}):
     return df
 
 
-def gen_all_plots(keys=None, exclusions=[],  save_plot=True, slicing_0={}, slicing_1={}):
+def gen_all_plots(keys=None, exclusions=[],  save_plot=True, slicing_0={}, slicing_1={}, slicing_2={}):
     if keys is None:
         from train import all_keys
         keys = all_keys
     for key in tqdm(keys):
         try:
-            df_0, df_1 = get_log_df(key)
+            df_0, df_1, df_2 = get_log_df(key)
             if df_0 is not None:
                 df_0 = slicer(df_0, slicing_0)
                 if key == "cifar10":
@@ -188,10 +252,14 @@ def gen_all_plots(keys=None, exclusions=[],  save_plot=True, slicing_0={}, slici
                 df_1 = slicer(df_1, slicing_1)
                 plot_1(df_1, key=key, exclusions=exclusions, save_plot=save_plot)
                 plot_2(df_1, key=key, exclusions=exclusions, save_plot=save_plot)
+            if df_2 is not None:
+                df_2 = slicer(df_2, slicing_2)
+                plot_3(df_2, key=key, exclusions=exclusions, save_plot=save_plot)
+                plot_4(df_2, key=key, exclusions=exclusions, save_plot=save_plot)
         except FileNotFoundError:
             print(f"Could not find files for {key}")
     return
 
 
 if __name__ == "__main__":
-    gen_all_plots(exclusions=["Adam", "hybrid"])
+    gen_all_plots()

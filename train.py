@@ -2,29 +2,22 @@ import pandas as pd
 import torch
 import os
 from data import *
-from algorithms import GradientDescent, SolverFineTuning, SolverGDHybrid
+from algorithms import GradientDescent, SolverGDHybridManual, SolverGDHybrid
 import argparse
+from time import time
 
-all_keys = ["mnist", "identity", "affine", "polynomial", "formula", "adults", "cifar10", "threshold"]
+regression_keys = ["identity", "affine", "polynomial", "formula"]
+classification_keys = ["mnist", "adults", "cifar10"]
+all_keys = regression_keys + classification_keys
 
 
 def get_classification(key):
-    if key == "mnist":
+    if key in classification_keys:
         return True
-    elif key == "identity":
+    elif key in regression_keys:
         return False
-    elif key == "affine":
-        return False
-    elif key == "polynomial":
-        return False
-    elif key == "formula":
-        return False
-    elif key == "threshold":
-        return True
-    elif key == "adults":
-        return True
-    elif key == "cifar10":
-        return True
+    else:
+        raise ValueError
 
 
 def get_datasets(key):
@@ -90,12 +83,14 @@ def train_gd(batch_size=32, epochs=2, lr=0.05, early_stopping=None, max_points=N
     trainer = GradientDescent(model, metric, train_dataset, test_dataset, batch_size)
     trainer.configure(epochs=epochs, lr=lr, early_stopping=early_stopping, max_points=max_points,
                       optimizer=optimizer, lr_scheduling=lr_scheduling)
+    start_time = time()
     trainer.train()
+    time_taken = time() - start_time
     print("Evaluating GD Accuracy Overall")
     if classification:
-        return trainer.evaluate_accuracy()
+        return trainer.evaluate_accuracy(), time_taken
     else:
-        return trainer.evaluate_l1()[0]
+        return trainer.evaluate_l1()[0], time_taken
 
 
 def train_hybrid(batch_size=32, epoch_sequence=[20, 20], lr_sequence=[0.1, 0.05], early_stopping=2, max_points=None,
@@ -105,21 +100,40 @@ def train_hybrid(batch_size=32, epoch_sequence=[20, 20], lr_sequence=[0.1, 0.05]
     trainer.configure(epochs_sequence=epoch_sequence, lr_sequence=lr_sequence,
                       early_stopping=early_stopping, max_points=max_points, incorrect_subset=incorrect_subset,
                       classification=classification)
+    start_time = time()
     trainer.train()
+    time_taken = time() - start_time
     print("Evaluating Hybrid Accuracy Overall - Last GD Result, Final Result")
     if classification:
-        return trainer.last_gd_res, trainer.evaluate_accuracy()
+        return trainer.last_gd_res, trainer.evaluate_accuracy(), time_taken
     else:
-        return trainer.last_gd_res[0], trainer.evaluate_l1()[0]
+        return trainer.last_gd_res[0], trainer.evaluate_l1()[0], time_taken
 
 
-def test_gd_vs_hybrid():
+def train_hybrid_manual(batch_size=32, epoch_sequence=[20, "s"], lr_sequence=[0.1, None], max_points=None,
+                 incorrect_subset=True):
+    model = get_model(key)
+    trainer = SolverGDHybridManual(model, metric, train_dataset, test_dataset, batch_size)
+    trainer.configure(epochs_sequence=epoch_sequence, lr_sequence=lr_sequence,
+                      max_points=max_points, incorrect_subset=incorrect_subset,
+                      classification=classification)
+    start_time = time()
+    trainer.train()
+    time_taken = time() - start_time
+    print("Evaluating Hybrid Accuracy Overall - Last GD Result, Final Result")
+    if classification:
+        return trainer.evaluate_accuracy(), time_taken
+    else:
+        return trainer.evaluate_l1()[0], time_taken
+
+
+def test_gd_vs_hybrid_metric():
     d = []
     columns = ["method", "epochs", "max_points", "metric"]
     lr = 0.01
     early_stopping = 2
     epochs = [20]
-    max_points = [10_000, 20_000, 30_0000, 40_000, 50_000]
+    max_points = [5_000, 10_000, 15_000, 20_000, 25_000, 30_000, 35_000, 40_000, 45_000, 50_000, 55_000, 60_000]
     lr_sequence = [lr, lr/2]
 
     for epoch in epochs:
@@ -127,10 +141,10 @@ def test_gd_vs_hybrid():
             print(f"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch {epoch} with max points {max_point}/"
                   f"{len(train_dataset)} XXXXXXXXXXXXXXXXXXXXXXXXXXXX")
             epoch_sequence = [epoch // 2, epoch // 2]
-            sgd_metric = train_gd(max_points=max_point, epochs=epoch, early_stopping=early_stopping)
-            sgd_lrs_metric = train_gd(max_points=max_point, epochs=epoch, early_stopping=early_stopping, lr_scheduling=True)
-            adam_metric = train_gd(max_points=max_point, epochs=epoch, early_stopping=early_stopping, optimizer=torch.optim.Adam)
-            last_gd, hybrid_metric = train_hybrid(max_points=max_point, epoch_sequence=epoch_sequence, early_stopping=early_stopping)
+            sgd_metric, sgd_time = train_gd(max_points=max_point, epochs=epoch, early_stopping=early_stopping)
+            sgd_lrs_metric, sgd_lrs_time = train_gd(max_points=max_point, epochs=epoch, early_stopping=early_stopping, lr_scheduling=True)
+            adam_metric, adam_time = train_gd(max_points=max_point, epochs=epoch, early_stopping=early_stopping, optimizer=torch.optim.Adam)
+            last_gd, hybrid_metric, hybrid_time = train_hybrid(max_points=max_point, epoch_sequence=epoch_sequence, early_stopping=early_stopping)
             best_metric = max([sgd_metric, sgd_lrs_metric, adam_metric])
             d.append(["SGD", epoch, max_point, float(sgd_metric)])
             d.append(["SGD LRS", epoch, max_point, float(sgd_lrs_metric)])
@@ -143,7 +157,37 @@ def test_gd_vs_hybrid():
             print(f"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
     df = pd.DataFrame(data=d, columns=columns)
     print(df)
-    df.to_csv(os.path.join(logfolder, f"{key}_gd_vs_hybrid.csv"), index=False)
+    df.to_csv(os.path.join(logfolder, f"{key}_gd_vs_hybrid_metric.csv"), index=False)
+    return df
+
+
+def test_gd_vs_hybrid_cost():
+    d = []
+    columns = ["method", "epochs", "lr", "metric", "time"]
+    lrs = [0.01, 0.1]
+    early_stopping = None
+    epochs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    max_point = 1000
+    for epoch in epochs:
+        for lr in lrs:
+            print(f"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Starting epoch {epoch} with max points {max_point}/"
+                  f"{len(train_dataset)} XXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+            epoch_sequence = [epoch, "s"]
+            lr_sequence = [lr, None]
+            sgd_metric, sgd_time = train_gd(max_points=max_point, epochs=epoch, early_stopping=early_stopping)
+            sgd_lrs_metric, sgd_lrs_time = train_gd(max_points=max_point, epochs=epoch, early_stopping=early_stopping, lr_scheduling=True)
+            adam_metric, adam_time = train_gd(max_points=max_point, epochs=epoch, early_stopping=early_stopping, optimizer=torch.optim.Adam)
+            hybrid_metric, hybrid_time = train_hybrid_manual(max_points=max_point,
+                                                  epoch_sequence=epoch_sequence,
+                                                  lr_sequence=lr_sequence)
+            d.append(["SGD", epoch, lr, float(sgd_metric), sgd_time])
+            d.append(["SGD LRS", epoch, lr, float(sgd_lrs_metric), sgd_lrs_time])
+            d.append(["Adam", epoch, lr, float(adam_metric), adam_time])
+            d.append(["hybrid", epoch, lr, float(hybrid_metric), hybrid_time])
+            print(f"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+    df = pd.DataFrame(data=d, columns=columns)
+    print(df)
+    df.to_csv(os.path.join(logfolder, f"{key}_gd_vs_hybrid_cost.csv"), index=False)
     return df
 
 
@@ -176,7 +220,7 @@ def test_gd():
 
 
 logfolder = "logs"
-key = "cifar10"
+key = "affine"
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--key', metavar='K', type=str, help='key to run tests')
@@ -189,4 +233,4 @@ train_dataset, test_dataset = get_datasets(key)
 metric = get_metric(key)
 
 if __name__ == "__main__":
-    test_gd_vs_hybrid()
+    test_gd_vs_hybrid_cost()
