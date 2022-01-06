@@ -126,6 +126,7 @@ class SimpleRegression(nn.Module):
         self.layer_1 = nn.Linear(input_dim, (input_dim + output_dim)//2)
         self.milp_model = MILPNet(nn.Sequential(NamedLinear((input_dim + output_dim)//2, output_dim) ),
                                   classification=False, w_range=w_range)
+
     def forward(self, x):
         h = self.forward_till_dense(x)
         y = self.milp_model(h)

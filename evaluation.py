@@ -53,7 +53,6 @@ def get_log_df(key):
     try:
         df0 = pd.read_csv(logfolder + f"/{key}_gdTest.csv")
     except FileNotFoundError:
-        print(f"Here")
         df0 = None
     try:
         df1 = pd.read_csv(logfolder + f"/{key}_gd_vs_hybrid.csv")
@@ -107,7 +106,7 @@ def plot_metric_averages_by_method(df, exclude_methods=[], save_plot=False, key=
         stds.append(df[df["method"] == method][metric_col].std())
 
     use_stds = not pd.isna(stds).any()
-    plt.bar(x=methods, height=averages, yerr=stds if use_stds else None)
+    plt.bar(x=methods_to_plot, height=averages, yerr=stds if use_stds else None)
     plt.xlabel("Methods")
     plt.ylabel("Avg Metric")
     title = f"{key if key is not None else ''} Metric Averages by Method"
@@ -172,7 +171,7 @@ def slicer(df, slicing={}):
     return df
 
 
-def gen_all_plots(keys=None, save_plot=True, slicing_0={}, slicing_1={}):
+def gen_all_plots(keys=None, exclusions=[],  save_plot=True, slicing_0={}, slicing_1={}):
     if keys is None:
         from train import all_keys
         keys = all_keys
@@ -187,8 +186,12 @@ def gen_all_plots(keys=None, save_plot=True, slicing_0={}, slicing_1={}):
                     plot_0(df_0, key=key, save_plot=save_plot)
             if df_1 is not None:
                 df_1 = slicer(df_1, slicing_1)
-                plot_1(df_1, key=key, save_plot=save_plot)
-                plot_2(df_1, key=key, save_plot=save_plot)
+                plot_1(df_1, key=key, exclusions=exclusions, save_plot=save_plot)
+                plot_2(df_1, key=key, exclusions=exclusions, save_plot=save_plot)
         except FileNotFoundError:
             print(f"Could not find files for {key}")
     return
+
+
+if __name__ == "__main__":
+    gen_all_plots(exclusions=["Adam", "hybrid"])

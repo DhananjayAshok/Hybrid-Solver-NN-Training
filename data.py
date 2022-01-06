@@ -102,7 +102,7 @@ class AdultsDataset(Dataset):
         return train_loader, test_loader
 
     def model(self=None):
-        return SimpleClassification(input_dim=13, output_dim=2, w_range=0.001)
+        return SimpleClassification(input_dim=13, output_dim=2, w_range=0.0001)
 
     def get_dataset(test_ratio=0.2):
         url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
@@ -218,7 +218,6 @@ class FormulaDataset(Dataset):
         self.n = n
         self.X = torch.rand(n, input_dim)
         self.y = 2*torch.exp(self.X[:, :output_dim]) + 3 * torch.sin(self.X[:, :output_dim]) * self.X[:, :output_dim]**5
-
 
     def __getitem__(self, item):
         return self.X[item], self.y[item]
