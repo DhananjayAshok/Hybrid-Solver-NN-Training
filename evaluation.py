@@ -262,4 +262,5 @@ def gen_all_plots(keys=None, exclusions=[],  save_plot=True, slicing_0={}, slici
 
 
 if __name__ == "__main__":
-    gen_all_plots()
+    from train import all_keys, regression_keys, classification_keys
+    gen_all_plots(slicing_2={"lr": 0.01})
