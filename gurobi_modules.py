@@ -10,9 +10,8 @@ epsilon = 0.0001
 
 class MILPNet(nn.Module):
     """
-    Class to hold the last few dense layers of a network.
-    Model will be an instance of a Sequential model, i.e list of NamedLinear layers
-    The names of the layers must be index numbers.
+    Class to hold the last dense layer of a network.
+    Model must be an instance of a Sequential model
     """
     def __init__(self, model, classification=True, w_range=10, verbose=True):
         nn.Module.__init__(self)
@@ -40,6 +39,9 @@ class MILPNet(nn.Module):
             return "classification"
 
     def assign(self):
+        """
+        Assign the NN weights to the current solution of the MILP Solver.
+        """
         if self.m.SolCount <= 0:
             print(f"Cannot Assign: MLP solver found no solutions")
             return
@@ -53,6 +55,9 @@ class MILPNet(nn.Module):
                     self.model[l].bias[j] = self.m.getVarByName(f"b_{l},{j}").x
 
     def assign_start(self):
+        """
+        Assign the NN weights to the starting assignment of the MILP Solver
+        """
         with torch.no_grad():
             for l in range(self.n_layers):
                 output_dim = self.model[l].out_features
@@ -64,8 +69,8 @@ class MILPNet(nn.Module):
 
     def initialize_mlp_model(self, w_range=None):
         """
-        Sets up the mapping between the weights and biases of each layer with variables in a MILP model
-        :return:
+        Sets up the mapping between the weights and biases of each layer with variables in a MILP model.
+        Ensures that the created weights are bounded by w_range within the current assignment.
         """
         if w_range is None:
             w_range = self.w_range
@@ -91,8 +96,7 @@ class MILPNet(nn.Module):
 
     def build_mlp_model(self, X, y, max_loss=None, min_acc=None, w_range=None):
         """
-        Encodes the entire network because one layer is the network here.
-        :return:
+        Encodes the final layer training as an MILP Problem.
         """
         if w_range is None:
             w_range = self.w_range
@@ -215,7 +219,6 @@ class MILPNet(nn.Module):
                 self.m.printAttr("start")
                 if hasattr(items[0], 'x'):
                     self.m.printAttr('x')
-
 
     def loop_constraints(self, eval_attr="x", verbose=False):
         if self.constraints is not None:

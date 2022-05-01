@@ -1,13 +1,12 @@
 import torch
-import mnist as m_train
-from adults import AdultsDataset
-from data import IdentityDataset, AffineDataset, PolynomialDataset, FormulaDataset, ThresholdDataset
+from data import IdentityDataset, AffineDataset, PolynomialDataset, FormulaDataset, ThresholdDataset, AdultsDataset, \
+    MNISTDataset
 from model import *
 
 
 def get_loaders(key, train_batch_size=32):
     if key == "mnist":
-        return m_train.loaders(train_batch_size=train_batch_size)
+        return MNISTDataset.loaders(train_batch_size=train_batch_size)
     elif key == "identity":
         return IdentityDataset.loaders()
     elif key == "affine":
@@ -24,7 +23,7 @@ def get_loaders(key, train_batch_size=32):
 
 def get_model(key):
     if key == "mnist":
-        return m_train.model()
+        return MNISTDataset.model()
     elif key == "identity":
         return IdentityDataset.model()
     elif key == "affine":
@@ -41,7 +40,7 @@ def get_model(key):
 
 def get_metric(key):
     if key == "mnist":
-        return m_train.metric()
+        return MNISTDataset.metric()
     elif key == "identity":
         return IdentityDataset.metric()
     elif key == "affine":
@@ -55,6 +54,7 @@ def get_metric(key):
     elif key == "adults":
         return AdultsDataset.metric()
 
+
 def train(model, optimizer, metric, data, target):
     model.train()
     optimizer.zero_grad()
@@ -63,6 +63,7 @@ def train(model, optimizer, metric, data, target):
     loss.backward()
     optimizer.step()
     return
+
 
 def milp_train(model, metric, l1_metric, data, target):
     X = model.forward_till_dense(data)

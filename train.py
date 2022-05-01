@@ -220,7 +220,7 @@ def test_gd():
 
 
 logfolder = "logs"
-key = "affine"
+key = "mnist"
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--key', metavar='K', type=str, help='key to run tests')
@@ -233,4 +233,4 @@ train_dataset, test_dataset = get_datasets(key)
 metric = get_metric(key)
 
 if __name__ == "__main__":
-    test_gd_vs_hybrid_cost()
+    test_gd_vs_hybrid_metric()
