@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+---
+layout: default
+---
 
-You can use the [editor on GitHub](https://github.com/DhananjayAshok/Hybrid-Solver-NN-Training/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# The LGGA Approach
+## Auxiliary Truths for Symbolic Regression
+The problem we aim to solve is the following: How can the user of a symbolic regression (SR) system leverage their domain-specific knowledge, i.e., auxilliary truths (ATs), to make SR more data efficient and more likely to find the target equation. In our work we first note the huge potential in the use of auxiliary truths in the symbolic regression setting and showcase how many flaws of current industrial level SR tools can be attributed in part to their lack of consideration of these truths. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Genetic Algorithms with Auxiliary Truths
+We outline a novel approach to using Auxiliary Truths in scoring functions and provide a method to combine this loss with existing metrics (like Mean Squared Error). Additionally we provide a method to generate new datapoints which are new, sound, and useful without ever having to query an oracle. 
 
-### Markdown
+## Results
+In our results we note that the LGGA tool with its data augmentation can enhance modern SR tools, enabling them to discover new equations and improving their data efficiency by up to 62%
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Citation
+If you use our work, please cite our paper. [Logic Guided Genetic Algorithms](https://arxiv.org/abs/2010.11328)
 
-```markdown
-Syntax highlighted code block
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-# Header 1
-## Header 2
-### Header 3
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/). For any commercial uses or derivatives, please contact us.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DhananjayAshok/Hybrid-Solver-NN-Training/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
