@@ -27,7 +27,7 @@ For a more technical and complete explanation, please see our paper []()
 In our experiments, we find that GDSolver not only scales well to additional data and very large model sizes, but also outperforms competing methods (Stochastic Gradiest Descent, Adam Optimization, Learning Rate Scheduling) in terms of rates of convergence and data efficiency. For regression tasks, GD-Solver produced models with, on average, 31.5% lower MSE in 48% less time, and for classification tasks on MNIST and CIFAR10, GDSolver was able to achieve the highest accuracy over all competing methods, using only 50% of the training data that GD baselines required.
 
 ## Citation
-If you use our work, please cite our paper. [Logic Guided Genetic Algorithms](https://arxiv.org/abs/2010.11328)
+If you use our work, please cite our paper. [A Solver + Gradient Descent Training Algorithm for Deep Neural Networks](https://www.ijcai.org/proceedings/2022/246)
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
